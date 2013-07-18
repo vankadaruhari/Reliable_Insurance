@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realtime:RealTimeSearch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" xmlns:realtime="http://xcp.emc.com/search/realtime" urn="urn:relyins:com.emc.xcp.artifact.search.realtime:Artifacts/Real-time Queries/related_policies.realtime" categoryId="com.emc.xcp.artifact.search.realtime" name="related_policies" label="Related policies">
+  <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="related_policies" label="Related policies" implCategoryId="com.emc.xcp.artifact.search.realtime">
+    <inputs xsi:type="nsDataserviceContract:IdElement" name="input_object_id" label="Object ID">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </outputs>
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="vehicle_id" label="Vehicle ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="vehicle_name" label="Vehicle name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="child_policyid" label="Policy Obj ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:IdElement" name="id" label="Object ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement>
+      <dataModel href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_policy.relationship#/"/>
+    </primaryElement>
+  </datasource>
+  <columns label="Vehicle ID">
+    <contextSelection>
+      <parentRef selectionName="policy" selectionLabel="Policy" repeating="true" useNamePreferred="true">
+        <parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_policy.relationship#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_policy.relationship#//@qualifyingAttributes.0"/>
+    </contextSelection>
+  </columns>
+  <columns label="Vehicle name">
+    <contextSelection>
+      <parentRef selectionName="policy" selectionLabel="Policy" repeating="true" useNamePreferred="true">
+        <parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_policy.relationship#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_policy.relationship#//@qualifyingAttributes.1"/>
+    </contextSelection>
+  </columns>
+  <columns label="Policy Obj ID">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="policy" selectionLabel="Policy" repeating="true" useNamePreferred="true">
+          <parentRef>
+            <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+          </parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_policy.relationship#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.doc:Artifacts/Content/policy.content#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_object_id']"/>
+    </contextSelection>
+  </columns>
+  <defaultSort ascending="true"/>
+  <dataType xsi:type="nsDatatypes:BusinessObject" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+  <resultOrientation selectionName="policy" selectionLabel="Policy" useNamePreferred="true">
+    <parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+    </parentRef>
+    <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_policy.relationship#/"/>
+  </resultOrientation>
+</realtime:RealTimeSearch>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsPicklist:Picklist xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsPicklist="http://xcp.emc.com/picklist" urn="urn:rely:com.emc.xcp.artifact.picklist:Artifacts/Picklists/rating.picklist" categoryId="com.emc.xcp.artifact.picklist" name="rating" label="Rating">
+  <type xsi:type="nsAttributeDatatypes:StringType"/>
+  <entries label="&lt;img src=&quot;Artifacts/Resources/Poor.png&quot; height=&quot;18&quot;/>" value="&lt;img src=&quot;Artifacts/Resources/Poor.png&quot; height=&quot;18&quot;/>"/>
+  <entries label="&lt;img src=&quot;Artifacts/Resources/Weak.png&quot; height=&quot;18&quot;/>" value="&lt;img src=&quot;Artifacts/Resources/Weak.png&quot; height=&quot;18&quot;/>"/>
+  <entries label="&lt;img src=&quot;Artifacts/Resources/Marginal.png&quot; height=&quot;18&quot;/>" value="&lt;img src=&quot;Artifacts/Resources/Marginal.png&quot; height=&quot;18&quot;/>"/>
+  <entries label="&lt;img src=&quot;Artifacts/Resources/Acceptable.png&quot; height=&quot;18&quot;/>" value="&lt;img src=&quot;Artifacts/Resources/Acceptable.png&quot; height=&quot;18&quot;/>"/>
+  <entries label="&lt;img src=&quot;Artifacts/Resources/Good.png&quot; height=&quot;18&quot;/>" value="&lt;img src=&quot;Artifacts/Resources/Good.png&quot; height=&quot;18&quot;/>"/>
+</nsPicklist:Picklist>

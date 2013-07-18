@@ -1,0 +1,62 @@
+{
+  "padding" : "10 10 5 10",
+  "border" : false,
+  "xtype" : "xcp_form",
+  "models" : [ "relyins_customer_add_a_vehicle_model" ],
+  "loadModel" : false,
+  "items" : [ {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "100%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "vin",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_UIStep_relyins_add_a_vehicle_ste_1_vin_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "vin"
+      }, {
+        "xcpId" : "license_plate",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_UIStep_relyins_add_a_vehicle_ste_1_license_plate_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "license_plate"
+      }, {
+        "xcpId" : "new_or_used",
+        "xtype" : "xcp_checkbox",
+        "fieldLabel" : "${_UI_UIStep_relyins_add_a_vehicle_ste_1_new_or_used_fieldLabel}",
+        "valueType" : "BOOLEAN",
+        "name" : "new_vehicle"
+      }, {
+        "xcpId" : "mileage",
+        "xtype" : "xcp_number_input",
+        "fieldLabel" : "${_UI_UIStep_relyins_add_a_vehicle_ste_1_mileage_fieldLabel}",
+        "allowDecimals" : false,
+        "hideTrigger" : true,
+        "keyNavEnabled" : false,
+        "mouseWheelEnabled" : false,
+        "autoStripChars" : true,
+        "hstretch" : true,
+        "valueType" : "INTEGER",
+        "name" : "mileage"
+      } ]
+    } ]
+  } ]
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realtime:RealTimeSearch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" xmlns:nsPicklist="http://xcp.emc.com/picklist" xmlns:realtime="http://xcp.emc.com/search/realtime" urn="urn:relyins:com.emc.xcp.artifact.search.realtime:Artifacts/Real-time Queries/recent_activities.realtime" categoryId="com.emc.xcp.artifact.search.realtime" name="recent_activities" label="Recent activities">
+  <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="recent_activities" label="Recent activities" implCategoryId="com.emc.xcp.artifact.search.realtime">
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </outputs>
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="r_creation_date" label="Created on" sortable="true">
+          <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="activity_type" label="Activity type">
+          <attributeType xsi:type="nsPicklist:PickListType">
+            <pickList href="urn:relyins:com.emc.xcp.artifact.picklist:Artifacts/Picklists/activity_type.picklist#/"/>
+          </attributeType>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="description" label="Description">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="id" label="Object ID" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="r_object_type" label="Object type" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement>
+      <dataModel href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#/"/>
+    </primaryElement>
+  </datasource>
+  <columns label="Created on" sortable="true">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_creation_date']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Activity type">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#//@attributes[name='activity_type']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Description">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#//@attributes[name='description']"/>
+    </contextSelection>
+  </columns>
+  <defaultSort>
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_creation_date']"/>
+    </contextSelection>
+  </defaultSort>
+  <dataType xsi:type="nsDatatypes:BusinessObject" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#/"/>
+  <resultOrientation>
+    <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#/"/>
+  </resultOrientation>
+</realtime:RealTimeSearch>

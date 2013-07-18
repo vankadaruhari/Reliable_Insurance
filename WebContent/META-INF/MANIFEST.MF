@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: dmadmin
+Build-Jdk: 1.6.0_32
+Require-Bundle: xcpcommons, xcpcore, xCP_Extended_Functions, HumanizeJ
+ S, ReliableTheme
+Bundle-Version: 1.0.0
+Bundle-Name: Reliable_Insurance
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: Reliable_Insurance
+NAMESPACE: relyins
+

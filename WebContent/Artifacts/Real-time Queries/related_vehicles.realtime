@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realtime:RealTimeSearch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" xmlns:nsPicklist="http://xcp.emc.com/picklist" xmlns:realtime="http://xcp.emc.com/search/realtime" urn="urn:relyins:com.emc.xcp.artifact.search.realtime:Artifacts/Real-time Queries/related_vehicles.realtime" categoryId="com.emc.xcp.artifact.search.realtime" name="related_vehicles" label="Related vehicles">
+  <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="related_vehicles" label="Related vehicles" implCategoryId="com.emc.xcp.artifact.search.realtime">
+    <inputs xsi:type="nsDataserviceContract:IdElement" name="input_object_id" label="Object ID">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </outputs>
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="child_vehicleid" label="Object ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="child_vehiclemake" label="Make">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="child_vehiclemodel" label="Model">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="child_vehicleyear" label="Year">
+          <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="child_vehiclemsrp" label="MSRP">
+          <attributeType xsi:type="nsAttributeDatatypes:FloatType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="child_vehiclerating" label="Rating">
+          <attributeType xsi:type="nsPicklist:PickListType">
+            <pickList href="urn:rely:com.emc.xcp.artifact.picklist:Artifacts/Picklists/rating.picklist#/"/>
+          </attributeType>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="vin" label="VIN">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="license_plate" label="License plate">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="mileage" label="Mileage">
+          <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="new_vehicle" label="New vehicle">
+          <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="child_vehicleobject_name" label="Name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="child_vehiclebody_type" label="Body Type">
+          <attributeType xsi:type="nsPicklist:PickListType">
+            <pickList href="urn:relyins:com.emc.xcp.artifact.picklist:Artifacts/Picklists/vehicle_body_type.picklist#/"/>
+          </attributeType>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:IdElement" name="id" label="Object ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement>
+      <dataModel href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+    </primaryElement>
+  </datasource>
+  <columns label="Object ID">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="vehicles" selectionLabel="Vehicles" repeating="true" useNamePreferred="true">
+          <parentRef>
+            <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+          </parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_object_id']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Make">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="vehicles" selectionLabel="Vehicles" repeating="true" useNamePreferred="true">
+          <parentRef>
+            <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+          </parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#//@attributes[name='make']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Model">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="vehicles" selectionLabel="Vehicles" repeating="true" useNamePreferred="true">
+          <parentRef>
+            <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+          </parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#//@attributes[name='model']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Year">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="vehicles" selectionLabel="Vehicles" repeating="true" useNamePreferred="true">
+          <parentRef>
+            <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+          </parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#//@attributes[name='year']"/>
+    </contextSelection>
+  </columns>
+  <columns label="MSRP">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="vehicles" selectionLabel="Vehicles" repeating="true" useNamePreferred="true">
+          <parentRef>
+            <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+          </parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#//@attributes[name='msrp']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Rating">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="vehicles" selectionLabel="Vehicles" repeating="true" useNamePreferred="true">
+          <parentRef>
+            <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+          </parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#//@attributes[name='rating']"/>
+    </contextSelection>
+  </columns>
+  <columns label="VIN">
+    <contextSelection>
+      <parentRef selectionName="vehicles" selectionLabel="Vehicles" repeating="true" useNamePreferred="true">
+        <parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#//@qualifyingAttributes.0"/>
+    </contextSelection>
+  </columns>
+  <columns label="License plate">
+    <contextSelection>
+      <parentRef selectionName="vehicles" selectionLabel="Vehicles" repeating="true" useNamePreferred="true">
+        <parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#//@qualifyingAttributes.2"/>
+    </contextSelection>
+  </columns>
+  <columns label="Mileage">
+    <contextSelection>
+      <parentRef selectionName="vehicles" selectionLabel="Vehicles" repeating="true" useNamePreferred="true">
+        <parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#//@qualifyingAttributes.3"/>
+    </contextSelection>
+  </columns>
+  <columns label="New vehicle">
+    <contextSelection>
+      <parentRef selectionName="vehicles" selectionLabel="Vehicles" repeating="true" useNamePreferred="true">
+        <parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#//@qualifyingAttributes.1"/>
+    </contextSelection>
+  </columns>
+  <columns label="Name">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="vehicles" selectionLabel="Vehicles" repeating="true" useNamePreferred="true">
+          <parentRef>
+            <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+          </parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='object_name']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Body Type">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="vehicles" selectionLabel="Vehicles" repeating="true" useNamePreferred="true">
+          <parentRef>
+            <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+          </parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#//@attributes[name='body_type']"/>
+    </contextSelection>
+  </columns>
+  <defaultSort ascending="true"/>
+  <dataType xsi:type="nsDatatypes:BusinessObject" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+  <resultOrientation selectionName="vehicles" selectionLabel="Vehicles" repeating="true" useNamePreferred="true">
+    <parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+    </parentRef>
+    <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+  </resultOrientation>
+</realtime:RealTimeSearch>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realtime:RealTimeSearch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" xmlns:nsPicklist="http://xcp.emc.com/picklist" xmlns:realtime="http://xcp.emc.com/search/realtime" urn="urn:relyins:com.emc.xcp.artifact.search.realtime:Artifacts/Real-time Queries/search_vehicle.realtime" categoryId="com.emc.xcp.artifact.search.realtime" name="search_vehicle" label="Search - Vehicle">
+  <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="search_vehicle" label="Search - Vehicle" implCategoryId="com.emc.xcp.artifact.search.realtime">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="input_make" label="Make">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </outputs>
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="make" label="Make">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="model" label="Model" sortable="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="rating" label="Rating">
+          <attributeType xsi:type="nsPicklist:PickListType">
+            <pickList href="urn:rely:com.emc.xcp.artifact.picklist:Artifacts/Picklists/rating.picklist#/"/>
+          </attributeType>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="year" label="Year">
+          <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="msrp" label="MSRP">
+          <attributeType xsi:type="nsAttributeDatatypes:FloatType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="body_type" label="Body Type">
+          <attributeType xsi:type="nsPicklist:PickListType">
+            <pickList href="urn:relyins:com.emc.xcp.artifact.picklist:Artifacts/Picklists/vehicle_body_type.picklist#/"/>
+          </attributeType>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="id" label="Object ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="r_object_type" label="Object type" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement>
+      <dataModel href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+    </primaryElement>
+  </datasource>
+  <inputParameters label="Make" name="make">
+    <formInputs xsi:type="realtime:RealTimeStringFormInput" operator="com.emc.xcp.model.common.StringOperator:EQUAL">
+      <contextSelection>
+        <parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#//@attributes[name='make']"/>
+      </contextSelection>
+    </formInputs>
+  </inputParameters>
+  <columns label="Make">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#//@attributes[name='make']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Model" sortable="true">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#//@attributes[name='model']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Rating">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#//@attributes[name='rating']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Year">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#//@attributes[name='year']"/>
+    </contextSelection>
+  </columns>
+  <columns label="MSRP">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#//@attributes[name='msrp']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Body Type">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#//@attributes[name='body_type']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Object ID">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_object_id']"/>
+    </contextSelection>
+  </columns>
+  <defaultSort ascending="true">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#//@attributes[name='model']"/>
+    </contextSelection>
+  </defaultSort>
+  <dataType xsi:type="nsDatatypes:BusinessObject" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+  <resultOrientation>
+    <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+  </resultOrientation>
+</realtime:RealTimeSearch>

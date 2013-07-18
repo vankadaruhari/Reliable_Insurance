@@ -1,0 +1,1970 @@
+{
+  "relyins_customer" : {
+    "relyins_add_a_vehicle" : {
+      "flowDef" : {
+        "action-type" : "Relate",
+        "actionmodel" : {
+          "name" : "relyins_customer_add_a_vehicle_model",
+          "attribute-mapping" : {
+            "targetId" : "relyins_search_vehicle_outputs.id",
+            "vin" : "relyins_customer_add_a_vehicle_model.vin",
+            "new_vehicle" : "relyins_customer_add_a_vehicle_model.new_vehicle",
+            "license_plate" : "relyins_customer_add_a_vehicle_model.license_plate",
+            "mileage" : "relyins_customer_add_a_vehicle_model.mileage"
+          }
+        },
+        "initial-state" : "add_a_vehicle_step_",
+        "view-state" : [ {
+          "id" : "add_a_vehicle_step_",
+          "pageUrl" : "relyins_customer/relyins_customer_relyins_add_a_vehicle_step_",
+          "output-model" : {
+            "relyins_search_vehicle_outputs" : "relyins_search_vehicle_outputs"
+          },
+          "transition" : [ {
+            "on" : "next",
+            "to" : "add_a_vehicle_ste_1"
+          }, {
+            "on" : "cancel"
+          } ]
+        }, {
+          "id" : "add_a_vehicle_ste_1",
+          "pageUrl" : "relyins_customer/relyins_customer_relyins_add_a_vehicle_ste_1",
+          "output-model" : {
+            "relyins_customer_add_a_vehicle_model" : "relyins_customer_add_a_vehicle_model"
+          },
+          "transition" : [ {
+            "on" : "back",
+            "to" : "add_a_vehicle_step_"
+          }, {
+            "on" : "cancel"
+          }, {
+            "on" : "finish"
+          } ]
+        } ],
+        "action-state" : {
+          "id" : "finish",
+          "action" : "save"
+        }
+      }
+    },
+    "relyins_select_customer" : {
+      "flowDef" : {
+        "action-type" : "Selector",
+        "actionmodel" : {
+          "name" : "xcp_da_def_selector_rootbo"
+        },
+        "initial-state" : "viewState_select_customer_ste",
+        "view-state" : [ {
+          "id" : "viewState_select_customer_ste",
+          "xcpId" : "select_customer_ste",
+          "pageUrl" : "relyins_customer/relyins_customer_relyins_select_customer_ste",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_select_customer",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "data-action" : [ {
+          "xcpId" : "da_actionflow_select_customer",
+          "actionType" : "selector",
+          "actionModel" : "xcp_da_def_selector_rootbo",
+          "plugins" : [ {
+            "ptype" : "xcp_actionflow_expression_properties",
+            "expression" : [ {
+              "propertyId" : "selection",
+              "setterFunName" : "setInputProperty",
+              "etype" : "select_customer_da_selection_1",
+              "pageId" : "select_customer_ste",
+              "events" : ["results_list.selectionchange" ]
+            } ]
+          } ]
+        } ]
+      }
+    }
+  },
+  "relyins_new_application_review_application" : {
+    "relyins_new_application_r_3" : {
+      "flowDef" : {
+        "action-type" : "DelegateTask",
+        "actionmodel" : {
+          "name" : "relyins_da_def_delegate_new_application_manual_task"
+        },
+        "initial-state" : "viewState_usergroup_selection",
+        "view-state" : [ {
+          "id" : "viewState_usergroup_selection",
+          "xcpId" : "usergroup_selection",
+          "pageUrl" : "application/xcp_usergroup_selection",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "data-action" : [ {
+          "xcpId" : "da_actionflow_",
+          "actionType" : "xcp_delegate_task",
+          "actionModel" : "relyins_da_def_delegate_new_application_manual_task",
+          "plugins" : [ {
+            "ptype" : "xcp_actionflow_expression_properties",
+            "expression" : [ {
+              "propertyId" : "processVariables.license",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processVariables_license_1"
+            }, {
+              "propertyId" : "processVariables.mileage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processVariables_mileage_1"
+            }, {
+              "propertyId" : "processVariables.new_vehicle",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processVariables_new_vehicle_1"
+            }, {
+              "propertyId" : "processVariables.vin",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processVariables_vin_1"
+            }, {
+              "propertyId" : "processPackages.application_form.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_application_form_object_name_1"
+            }, {
+              "propertyId" : "processPackages.application_form.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_application_form_id_1"
+            }, {
+              "propertyId" : "processPackages.customer.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_object_name_1"
+            }, {
+              "propertyId" : "processPackages.customer.birth_date",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_birth_date_1"
+            }, {
+              "propertyId" : "processPackages.customer.bodily_injury",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_bodily_injury_1"
+            }, {
+              "propertyId" : "processPackages.customer.city",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_city_1"
+            }, {
+              "propertyId" : "processPackages.customer.collision",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_collision_1"
+            }, {
+              "propertyId" : "processPackages.customer.comprehensive",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_comprehensive_1"
+            }, {
+              "propertyId" : "processPackages.customer.customer_id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_customer_id_1"
+            }, {
+              "propertyId" : "processPackages.customer.driver_license",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_driver_license_1"
+            }, {
+              "propertyId" : "processPackages.customer.email",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_email_1"
+            }, {
+              "propertyId" : "processPackages.customer.first_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_first_name_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_accident",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_had_accident_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_insurance_declined",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_had_insurance_declined_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_license_revoked",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_had_license_revoked_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_mental_impairments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_had_mental_impairments_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_moving_violation",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_had_moving_violation_1"
+            }, {
+              "propertyId" : "processPackages.customer.last_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_last_name_1"
+            }, {
+              "propertyId" : "processPackages.customer.medical_payments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_medical_payments_1"
+            }, {
+              "propertyId" : "processPackages.customer.occupation",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_occupation_1"
+            }, {
+              "propertyId" : "processPackages.customer.phone",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_phone_1"
+            }, {
+              "propertyId" : "processPackages.customer.property_damage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_property_damage_1"
+            }, {
+              "propertyId" : "processPackages.customer.risk",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_risk_1"
+            }, {
+              "propertyId" : "processPackages.customer.ssn",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_ssn_1"
+            }, {
+              "propertyId" : "processPackages.customer.state",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_state_1"
+            }, {
+              "propertyId" : "processPackages.customer.street",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_street_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_1",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_telematic_1_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_2",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_telematic_2_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_3",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_telematic_3_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_4",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_telematic_4_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_5",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_telematic_5_1"
+            }, {
+              "propertyId" : "processPackages.customer.vehicles_make",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_vehicles_make_1"
+            }, {
+              "propertyId" : "processPackages.customer.vehicles_model",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_vehicles_model_1"
+            }, {
+              "propertyId" : "processPackages.customer.zip",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_zip_1"
+            }, {
+              "propertyId" : "processPackages.customer.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_customer_id_1"
+            }, {
+              "propertyId" : "processPackages.policy.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_policy_object_name_1"
+            }, {
+              "propertyId" : "processPackages.policy.approval",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_policy_approval_1"
+            }, {
+              "propertyId" : "processPackages.policy.bodily_injury",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_policy_bodily_injury_1"
+            }, {
+              "propertyId" : "processPackages.policy.collision",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_policy_collision_1"
+            }, {
+              "propertyId" : "processPackages.policy.comprehensive",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_policy_comprehensive_1"
+            }, {
+              "propertyId" : "processPackages.policy.deductible",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_policy_deductible_1"
+            }, {
+              "propertyId" : "processPackages.policy.description",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_policy_description_1"
+            }, {
+              "propertyId" : "processPackages.policy.medical_payments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_policy_medical_payments_1"
+            }, {
+              "propertyId" : "processPackages.policy.monthly_payment",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_policy_monthly_payment_1"
+            }, {
+              "propertyId" : "processPackages.policy.monthly_payment_float",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_policy_monthly_payment_float_1"
+            }, {
+              "propertyId" : "processPackages.policy.property_damage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_policy_property_damage_1"
+            }, {
+              "propertyId" : "processPackages.policy.total_coverage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_policy_total_coverage_1"
+            }, {
+              "propertyId" : "processPackages.policy.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_policy_id_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_vehicle_object_name_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.body_type",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_vehicle_body_type_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.make",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_vehicle_make_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.model",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_vehicle_model_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.msrp",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_vehicle_msrp_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.rating",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_vehicle_rating_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.year",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_vehicle_year_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_processPackages_vehicle_id_1"
+            }, {
+              "propertyId" : "attachments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_attachments_1"
+            }, {
+              "propertyId" : "id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_id_1"
+            }, {
+              "propertyId" : "userName",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_3_da_userName_1",
+              "pageId" : "usergroup_selection",
+              "required" : true,
+              "events" : ["username_dropdown_list.change" ]
+            } ]
+          } ]
+        } ]
+      }
+    },
+    "relyins_new_application_r_1" : {
+      "flowDef" : {
+        "action-type" : "RepeatTask",
+        "actionmodel" : {
+          "name" : "relyins_da_def_repeat_new_application_manual_task"
+        },
+        "initial-state" : "viewState_usergroup_selection_multi",
+        "view-state" : [ {
+          "id" : "viewState_usergroup_selection_multi",
+          "xcpId" : "usergroup_selection_multi",
+          "pageUrl" : "application/xcp_usergroup_selection_multi",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "data-action" : [ {
+          "xcpId" : "da_actionflow_",
+          "actionType" : "xcp_repeat_task",
+          "actionModel" : "relyins_da_def_repeat_new_application_manual_task",
+          "plugins" : [ {
+            "ptype" : "xcp_actionflow_expression_properties",
+            "expression" : [ {
+              "propertyId" : "processVariables.license",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processVariables_license_1"
+            }, {
+              "propertyId" : "processVariables.mileage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processVariables_mileage_1"
+            }, {
+              "propertyId" : "processVariables.new_vehicle",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processVariables_new_vehicle_1"
+            }, {
+              "propertyId" : "processVariables.vin",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processVariables_vin_1"
+            }, {
+              "propertyId" : "processPackages.application_form.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_application_form_object_name_1"
+            }, {
+              "propertyId" : "processPackages.application_form.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_application_form_id_1"
+            }, {
+              "propertyId" : "processPackages.customer.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_object_name_1"
+            }, {
+              "propertyId" : "processPackages.customer.birth_date",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_birth_date_1"
+            }, {
+              "propertyId" : "processPackages.customer.bodily_injury",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_bodily_injury_1"
+            }, {
+              "propertyId" : "processPackages.customer.city",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_city_1"
+            }, {
+              "propertyId" : "processPackages.customer.collision",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_collision_1"
+            }, {
+              "propertyId" : "processPackages.customer.comprehensive",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_comprehensive_1"
+            }, {
+              "propertyId" : "processPackages.customer.customer_id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_customer_id_1"
+            }, {
+              "propertyId" : "processPackages.customer.driver_license",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_driver_license_1"
+            }, {
+              "propertyId" : "processPackages.customer.email",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_email_1"
+            }, {
+              "propertyId" : "processPackages.customer.first_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_first_name_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_accident",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_had_accident_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_insurance_declined",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_had_insurance_declined_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_license_revoked",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_had_license_revoked_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_mental_impairments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_had_mental_impairments_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_moving_violation",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_had_moving_violation_1"
+            }, {
+              "propertyId" : "processPackages.customer.last_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_last_name_1"
+            }, {
+              "propertyId" : "processPackages.customer.medical_payments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_medical_payments_1"
+            }, {
+              "propertyId" : "processPackages.customer.occupation",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_occupation_1"
+            }, {
+              "propertyId" : "processPackages.customer.phone",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_phone_1"
+            }, {
+              "propertyId" : "processPackages.customer.property_damage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_property_damage_1"
+            }, {
+              "propertyId" : "processPackages.customer.risk",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_risk_1"
+            }, {
+              "propertyId" : "processPackages.customer.ssn",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_ssn_1"
+            }, {
+              "propertyId" : "processPackages.customer.state",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_state_1"
+            }, {
+              "propertyId" : "processPackages.customer.street",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_street_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_1",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_telematic_1_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_2",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_telematic_2_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_3",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_telematic_3_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_4",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_telematic_4_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_5",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_telematic_5_1"
+            }, {
+              "propertyId" : "processPackages.customer.vehicles_make",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_vehicles_make_1"
+            }, {
+              "propertyId" : "processPackages.customer.vehicles_model",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_vehicles_model_1"
+            }, {
+              "propertyId" : "processPackages.customer.zip",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_zip_1"
+            }, {
+              "propertyId" : "processPackages.customer.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_customer_id_1"
+            }, {
+              "propertyId" : "processPackages.policy.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_policy_object_name_1"
+            }, {
+              "propertyId" : "processPackages.policy.approval",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_policy_approval_1"
+            }, {
+              "propertyId" : "processPackages.policy.bodily_injury",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_policy_bodily_injury_1"
+            }, {
+              "propertyId" : "processPackages.policy.collision",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_policy_collision_1"
+            }, {
+              "propertyId" : "processPackages.policy.comprehensive",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_policy_comprehensive_1"
+            }, {
+              "propertyId" : "processPackages.policy.deductible",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_policy_deductible_1"
+            }, {
+              "propertyId" : "processPackages.policy.description",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_policy_description_1"
+            }, {
+              "propertyId" : "processPackages.policy.medical_payments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_policy_medical_payments_1"
+            }, {
+              "propertyId" : "processPackages.policy.monthly_payment",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_policy_monthly_payment_1"
+            }, {
+              "propertyId" : "processPackages.policy.monthly_payment_float",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_policy_monthly_payment_float_1"
+            }, {
+              "propertyId" : "processPackages.policy.property_damage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_policy_property_damage_1"
+            }, {
+              "propertyId" : "processPackages.policy.total_coverage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_policy_total_coverage_1"
+            }, {
+              "propertyId" : "processPackages.policy.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_policy_id_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_vehicle_object_name_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.body_type",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_vehicle_body_type_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.make",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_vehicle_make_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.model",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_vehicle_model_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.msrp",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_vehicle_msrp_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.rating",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_vehicle_rating_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.year",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_vehicle_year_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_processPackages_vehicle_id_1"
+            }, {
+              "propertyId" : "attachments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_attachments_1"
+            }, {
+              "propertyId" : "id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_id_1"
+            }, {
+              "propertyId" : "userName",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_r_1_da_userName_1",
+              "pageId" : "usergroup_selection_multi",
+              "required" : true,
+              "events" : ["username_dropdown_list.change" ]
+            } ]
+          } ]
+        } ]
+      }
+    }
+  },
+  "xcp_dm_document" : {
+    "xcp_attachment_sel" : {
+      "flowDef" : {
+        "action-type" : "Selector",
+        "actionmodel" : {
+          "name" : "xcp_attachment_sel"
+        },
+        "initial-state" : "viewState_attachment_selector",
+        "view-state" : [ {
+          "id" : "viewState_attachment_selector",
+          "xcpId" : "attachment_step",
+          "pageUrl" : "xcp_dm_document/xcp_dm_document_xcp_attachment_step",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_attachment_selector",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "data-action" : [ {
+          "xcpId" : "da_actionflow_attachment_selector",
+          "actionType" : "selector",
+          "actionModel" : "xcp_da_def_selector_rootbo",
+          "plugins" : [ {
+            "ptype" : "xcp_actionflow_expression_properties",
+            "expression" : [ {
+              "propertyId" : "selection",
+              "setterFunName" : "setInputProperty",
+              "etype" : "attachment_sel_da_selection_1",
+              "pageId" : "attachment_step",
+              "events" : ["results_list.selectionchange" ]
+            } ]
+          } ]
+        } ]
+      }
+    },
+    "xcp_selector_content" : {
+      "flowDef" : {
+        "action-type" : "Selector",
+        "actionmodel" : {
+          "name" : "xcp_da_def_selector_rootbo"
+        },
+        "initial-state" : "viewState_selector_content_st",
+        "view-state" : [ {
+          "id" : "viewState_selector_content_st",
+          "xcpId" : "selector_content_st",
+          "pageUrl" : "xcp_dm_document/xcp_dm_document_xcp_selector_content_st",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_selector_content",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "data-action" : [ {
+          "xcpId" : "da_actionflow_selector_content",
+          "actionType" : "selector",
+          "actionModel" : "xcp_da_def_selector_rootbo",
+          "plugins" : [ {
+            "ptype" : "xcp_actionflow_expression_properties",
+            "expression" : [ {
+              "propertyId" : "selection",
+              "setterFunName" : "setInputProperty",
+              "etype" : "selector_content_da_selection_1",
+              "pageId" : "selector_content_st",
+              "events" : ["results_list.selectionchange" ]
+            } ]
+          } ]
+        } ]
+      }
+    }
+  },
+  "xcp_currenttask" : {
+    "xcp_assign_task" : {
+      "flowDef" : {
+        "action-type" : "AssignTask",
+        "actionmodel" : {
+          "name" : "xcp_da_def_assign_currenttask"
+        },
+        "initial-state" : "viewState_user_from_queue",
+        "view-state" : [ {
+          "id" : "viewState_user_from_queue",
+          "xcpId" : "user_from_queue",
+          "pageUrl" : "application/xcp_user_from_queue",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_assign_task",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "data-action" : [ {
+          "xcpId" : "da_actionflow_assign_task",
+          "actionType" : "xcp_assign_task",
+          "actionModel" : "xcp_da_def_assign_currenttask",
+          "plugins" : [ {
+            "ptype" : "xcp_actionflow_expression_properties",
+            "expression" : [ {
+              "propertyId" : "id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "assign_task_da_id_1"
+            }, {
+              "propertyId" : "userName",
+              "setterFunName" : "setInputProperty",
+              "etype" : "assign_task_da_userName_1",
+              "pageId" : "user_from_queue",
+              "events" : ["dropdown_list.change" ]
+            } ]
+          } ]
+        } ]
+      }
+    },
+    "xcp_reassign_task" : {
+      "flowDef" : {
+        "action-type" : "ReassignTask",
+        "actionmodel" : {
+          "name" : "xcp_da_def_reassign_currenttask"
+        },
+        "initial-state" : "viewState_user_from_queue",
+        "view-state" : [ {
+          "id" : "viewState_user_from_queue",
+          "xcpId" : "user_from_queue",
+          "pageUrl" : "application/xcp_user_from_queue",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_reassign_task",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "data-action" : [ {
+          "xcpId" : "da_actionflow_reassign_task",
+          "actionType" : "xcp_reassign_task",
+          "actionModel" : "xcp_da_def_reassign_currenttask",
+          "plugins" : [ {
+            "ptype" : "xcp_actionflow_expression_properties",
+            "expression" : [ {
+              "propertyId" : "id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "reassign_task_da_id_1"
+            }, {
+              "propertyId" : "userName",
+              "setterFunName" : "setInputProperty",
+              "etype" : "reassign_task_da_userName_1",
+              "pageId" : "user_from_queue",
+              "events" : ["dropdown_list.change" ]
+            } ]
+          } ]
+        } ]
+      }
+    },
+    "xcp_hold_task" : {
+      "flowDef" : {
+        "action-type" : "HoldTask",
+        "actionmodel" : {
+          "name" : "xcp_da_def_hold_currenttask"
+        },
+        "initial-state" : "viewState_hold_task",
+        "view-state" : [ {
+          "id" : "viewState_hold_task",
+          "xcpId" : "hold_task",
+          "pageUrl" : "application/xcp_hold_task",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_hold_task",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "data-action" : [ {
+          "xcpId" : "da_actionflow_hold_task",
+          "actionType" : "xcp_hold_task",
+          "actionModel" : "xcp_da_def_hold_currenttask",
+          "plugins" : [ {
+            "ptype" : "xcp_actionflow_expression_properties",
+            "expression" : [ {
+              "propertyId" : "id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "hold_task_da_id_1"
+            }, {
+              "propertyId" : "holdUntil",
+              "setterFunName" : "setInputProperty",
+              "etype" : "hold_task_da_holdUntil_1",
+              "pageId" : "hold_task",
+              "events" : ["hold_until.change" ]
+            } ]
+          } ]
+        } ]
+      }
+    },
+    "xcp_changeworkqueue" : {
+      "flowDef" : {
+        "action-type" : "ChangeWorkQueue",
+        "actionmodel" : {
+          "name" : "xcp_da_def_changeworkqueue"
+        },
+        "initial-state" : "viewState_queue_selection",
+        "view-state" : [ {
+          "id" : "viewState_queue_selection",
+          "xcpId" : "queue_selection",
+          "pageUrl" : "application/xcp_queue_selection",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_changeworkqueue",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "data-action" : [ {
+          "xcpId" : "da_actionflow_changeworkqueue",
+          "actionType" : "xcp_changeworkqueue",
+          "actionModel" : "xcp_da_def_changeworkqueue",
+          "plugins" : [ {
+            "ptype" : "xcp_actionflow_expression_properties",
+            "expression" : [ {
+              "propertyId" : "id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "changeworkqueue_da_id_1"
+            }, {
+              "propertyId" : "queueName",
+              "setterFunName" : "setInputProperty",
+              "etype" : "changeworkqueue_da_queueName_1",
+              "pageId" : "queue_selection",
+              "events" : ["queue_dropdown_list.change" ]
+            } ]
+          } ]
+        } ]
+      }
+    }
+  },
+  "xcp_dm_folder" : {
+    "relyins_base_folder_1" : {
+      "flowDef" : {
+        "action-type" : "Create",
+        "actionmodel" : {
+          "name" : "xcp_dm_folder_base_folder_1_model",
+          "attribute-mapping" : {
+            "object_name" : "xcp_dm_folder_base_folder_1_model.object_name",
+            "subject" : "xcp_dm_folder_base_folder_1_model.subject",
+            "title" : "xcp_dm_folder_base_folder_1_model.title",
+            "content_id" : "xcp_dm_folder_base_folder_1_model.content_id",
+            "folder_id" : "xcp_dm_folder_base_folder_1_model.folder_id"
+          }
+        },
+        "initial-state" : "base_folder_1_step_",
+        "view-state" : [ {
+          "id" : "base_folder_1_step_",
+          "pageUrl" : "xcp_dm_folder/xcp_dm_folder_relyins_base_folder_1_step_",
+          "output-model" : {
+            "xcp_dm_folder_base_folder_1_model" : "xcp_dm_folder_base_folder_1_model"
+          },
+          "transition" : [ {
+            "on" : "cancel"
+          }, {
+            "on" : "finish"
+          } ]
+        } ],
+        "action-state" : {
+          "id" : "finish",
+          "action" : "save"
+        }
+      }
+    },
+    "relyins_base_folder_4" : {
+      "flowDef" : {
+        "action-type" : "Create",
+        "actionmodel" : {
+          "name" : "xcp_dm_folder_base_folder_4_model",
+          "attribute-mapping" : {
+            "object_name" : "xcp_dm_folder_base_folder_4_model.object_name",
+            "subject" : "xcp_dm_folder_base_folder_4_model.subject",
+            "title" : "xcp_dm_folder_base_folder_4_model.title",
+            "content_id" : "xcp_dm_folder_base_folder_4_model.content_id",
+            "folder_id" : "xcp_dm_folder_base_folder_4_model.folder_id"
+          }
+        },
+        "initial-state" : "base_folder_4_step_",
+        "view-state" : [ {
+          "id" : "base_folder_4_step_",
+          "pageUrl" : "xcp_dm_folder/xcp_dm_folder_relyins_base_folder_4_step_",
+          "output-model" : {
+            "xcp_dm_folder_base_folder_4_model" : "xcp_dm_folder_base_folder_4_model"
+          },
+          "transition" : [ {
+            "on" : "cancel"
+          }, {
+            "on" : "finish"
+          } ]
+        } ],
+        "action-state" : {
+          "id" : "finish",
+          "action" : "save"
+        }
+      }
+    },
+    "relyins_base_folder_3" : {
+      "flowDef" : {
+        "action-type" : "Create",
+        "actionmodel" : {
+          "name" : "xcp_dm_folder_base_folder_3_model",
+          "attribute-mapping" : {
+            "object_name" : "xcp_dm_folder_base_folder_3_model.object_name",
+            "subject" : "xcp_dm_folder_base_folder_3_model.subject",
+            "title" : "xcp_dm_folder_base_folder_3_model.title",
+            "content_id" : "xcp_dm_folder_base_folder_3_model.content_id",
+            "folder_id" : "xcp_dm_folder_base_folder_3_model.folder_id"
+          }
+        },
+        "initial-state" : "base_folder_3_step_",
+        "view-state" : [ {
+          "id" : "base_folder_3_step_",
+          "pageUrl" : "xcp_dm_folder/xcp_dm_folder_relyins_base_folder_3_step_",
+          "output-model" : {
+            "xcp_dm_folder_base_folder_3_model" : "xcp_dm_folder_base_folder_3_model"
+          },
+          "transition" : [ {
+            "on" : "cancel"
+          }, {
+            "on" : "finish"
+          } ]
+        } ],
+        "action-state" : {
+          "id" : "finish",
+          "action" : "save"
+        }
+      }
+    },
+    "relyins_base_folder" : {
+      "flowDef" : {
+        "action-type" : "Create",
+        "actionmodel" : {
+          "name" : "xcp_dm_folder_base_folder_model",
+          "attribute-mapping" : {
+            "object_name" : "xcp_dm_folder_base_folder_model.object_name",
+            "subject" : "xcp_dm_folder_base_folder_model.subject",
+            "title" : "xcp_dm_folder_base_folder_model.title",
+            "content_id" : "xcp_dm_folder_base_folder_model.content_id",
+            "folder_id" : "xcp_dm_folder_base_folder_model.folder_id"
+          }
+        },
+        "initial-state" : "base_folder_step_1",
+        "view-state" : [ {
+          "id" : "base_folder_step_1",
+          "pageUrl" : "xcp_dm_folder/xcp_dm_folder_relyins_base_folder_step_1",
+          "output-model" : {
+            "xcp_dm_folder_base_folder_model" : "xcp_dm_folder_base_folder_model"
+          },
+          "transition" : [ {
+            "on" : "cancel"
+          }, {
+            "on" : "finish"
+          } ]
+        } ],
+        "action-state" : {
+          "id" : "finish",
+          "action" : "save"
+        }
+      }
+    },
+    "relyins_base_folder_2" : {
+      "flowDef" : {
+        "action-type" : "Create",
+        "actionmodel" : {
+          "name" : "xcp_dm_folder_base_folder_2_model",
+          "attribute-mapping" : {
+            "object_name" : "xcp_dm_folder_base_folder_2_model.object_name",
+            "subject" : "xcp_dm_folder_base_folder_2_model.subject",
+            "title" : "xcp_dm_folder_base_folder_2_model.title",
+            "content_id" : "xcp_dm_folder_base_folder_2_model.content_id",
+            "folder_id" : "xcp_dm_folder_base_folder_2_model.folder_id"
+          }
+        },
+        "initial-state" : "base_folder_2_step_",
+        "view-state" : [ {
+          "id" : "base_folder_2_step_",
+          "pageUrl" : "xcp_dm_folder/xcp_dm_folder_relyins_base_folder_2_step_",
+          "output-model" : {
+            "xcp_dm_folder_base_folder_2_model" : "xcp_dm_folder_base_folder_2_model"
+          },
+          "transition" : [ {
+            "on" : "cancel"
+          }, {
+            "on" : "finish"
+          } ]
+        } ],
+        "action-state" : {
+          "id" : "finish",
+          "action" : "save"
+        }
+      }
+    },
+    "xcp_selector_folder" : {
+      "flowDef" : {
+        "action-type" : "Selector",
+        "actionmodel" : {
+          "name" : "xcp_da_def_selector_rootbo"
+        },
+        "initial-state" : "viewState_selector_folder_ste",
+        "view-state" : [ {
+          "id" : "viewState_selector_folder_ste",
+          "xcpId" : "selector_folder_ste",
+          "pageUrl" : "xcp_dm_folder/xcp_dm_folder_xcp_selector_folder_ste",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_selector_folder",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "data-action" : [ {
+          "xcpId" : "da_actionflow_selector_folder",
+          "actionType" : "selector",
+          "actionModel" : "xcp_da_def_selector_rootbo",
+          "plugins" : [ {
+            "ptype" : "xcp_actionflow_expression_properties",
+            "expression" : [ {
+              "propertyId" : "selection",
+              "setterFunName" : "setInputProperty",
+              "etype" : "selector_folder_da_selection_1",
+              "pageId" : "selector_folder_ste",
+              "events" : ["results_list.selectionchange" ]
+            } ]
+          } ]
+        } ]
+      }
+    }
+  },
+  "relyins_new_application_approve_or_reject_a" : {
+    "relyins_new_application_a_1" : {
+      "flowDef" : {
+        "action-type" : "RepeatTask",
+        "actionmodel" : {
+          "name" : "relyins_da_def_repeat_new_application_manual_task_1_1"
+        },
+        "initial-state" : "viewState_usergroup_selection_multi",
+        "view-state" : [ {
+          "id" : "viewState_usergroup_selection_multi",
+          "xcpId" : "usergroup_selection_multi",
+          "pageUrl" : "application/xcp_usergroup_selection_multi",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "data-action" : [ {
+          "xcpId" : "da_actionflow_",
+          "actionType" : "xcp_repeat_task",
+          "actionModel" : "relyins_da_def_repeat_new_application_manual_task_1_1",
+          "plugins" : [ {
+            "ptype" : "xcp_actionflow_expression_properties",
+            "expression" : [ {
+              "propertyId" : "processVariables.license",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processVariables_license_1"
+            }, {
+              "propertyId" : "processVariables.mileage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processVariables_mileage_1"
+            }, {
+              "propertyId" : "processVariables.new_vehicle",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processVariables_new_vehicle_1"
+            }, {
+              "propertyId" : "processVariables.vin",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processVariables_vin_1"
+            }, {
+              "propertyId" : "processPackages.application_form.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_application_form_object_name_1"
+            }, {
+              "propertyId" : "processPackages.application_form.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_application_form_id_1"
+            }, {
+              "propertyId" : "processPackages.customer.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_object_name_1"
+            }, {
+              "propertyId" : "processPackages.customer.birth_date",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_birth_date_1"
+            }, {
+              "propertyId" : "processPackages.customer.bodily_injury",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_bodily_injury_1"
+            }, {
+              "propertyId" : "processPackages.customer.city",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_city_1"
+            }, {
+              "propertyId" : "processPackages.customer.collision",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_collision_1"
+            }, {
+              "propertyId" : "processPackages.customer.comprehensive",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_comprehensive_1"
+            }, {
+              "propertyId" : "processPackages.customer.customer_id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_customer_id_1"
+            }, {
+              "propertyId" : "processPackages.customer.driver_license",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_driver_license_1"
+            }, {
+              "propertyId" : "processPackages.customer.email",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_email_1"
+            }, {
+              "propertyId" : "processPackages.customer.first_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_first_name_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_accident",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_had_accident_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_insurance_declined",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_had_insurance_declined_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_license_revoked",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_had_license_revoked_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_mental_impairments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_had_mental_impairments_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_moving_violation",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_had_moving_violation_1"
+            }, {
+              "propertyId" : "processPackages.customer.last_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_last_name_1"
+            }, {
+              "propertyId" : "processPackages.customer.medical_payments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_medical_payments_1"
+            }, {
+              "propertyId" : "processPackages.customer.occupation",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_occupation_1"
+            }, {
+              "propertyId" : "processPackages.customer.phone",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_phone_1"
+            }, {
+              "propertyId" : "processPackages.customer.property_damage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_property_damage_1"
+            }, {
+              "propertyId" : "processPackages.customer.risk",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_risk_1"
+            }, {
+              "propertyId" : "processPackages.customer.ssn",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_ssn_1"
+            }, {
+              "propertyId" : "processPackages.customer.state",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_state_1"
+            }, {
+              "propertyId" : "processPackages.customer.street",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_street_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_1",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_telematic_1_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_2",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_telematic_2_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_3",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_telematic_3_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_4",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_telematic_4_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_5",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_telematic_5_1"
+            }, {
+              "propertyId" : "processPackages.customer.vehicles_make",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_vehicles_make_1"
+            }, {
+              "propertyId" : "processPackages.customer.vehicles_model",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_vehicles_model_1"
+            }, {
+              "propertyId" : "processPackages.customer.zip",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_zip_1"
+            }, {
+              "propertyId" : "processPackages.customer.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_customer_id_1"
+            }, {
+              "propertyId" : "processPackages.policy.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_policy_object_name_1"
+            }, {
+              "propertyId" : "processPackages.policy.approval",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_policy_approval_1"
+            }, {
+              "propertyId" : "processPackages.policy.bodily_injury",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_policy_bodily_injury_1"
+            }, {
+              "propertyId" : "processPackages.policy.collision",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_policy_collision_1"
+            }, {
+              "propertyId" : "processPackages.policy.comprehensive",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_policy_comprehensive_1"
+            }, {
+              "propertyId" : "processPackages.policy.deductible",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_policy_deductible_1"
+            }, {
+              "propertyId" : "processPackages.policy.description",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_policy_description_1"
+            }, {
+              "propertyId" : "processPackages.policy.medical_payments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_policy_medical_payments_1"
+            }, {
+              "propertyId" : "processPackages.policy.monthly_payment",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_policy_monthly_payment_1"
+            }, {
+              "propertyId" : "processPackages.policy.monthly_payment_float",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_policy_monthly_payment_float_1"
+            }, {
+              "propertyId" : "processPackages.policy.property_damage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_policy_property_damage_1"
+            }, {
+              "propertyId" : "processPackages.policy.total_coverage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_policy_total_coverage_1"
+            }, {
+              "propertyId" : "processPackages.policy.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_policy_id_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_vehicle_object_name_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.body_type",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_vehicle_body_type_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.make",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_vehicle_make_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.model",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_vehicle_model_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.msrp",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_vehicle_msrp_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.rating",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_vehicle_rating_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.year",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_vehicle_year_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_processPackages_vehicle_id_1"
+            }, {
+              "propertyId" : "attachments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_attachments_1"
+            }, {
+              "propertyId" : "id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_id_1"
+            }, {
+              "propertyId" : "userName",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_1_da_userName_1",
+              "pageId" : "usergroup_selection_multi",
+              "required" : true,
+              "events" : ["username_dropdown_list.change" ]
+            } ]
+          } ]
+        } ]
+      }
+    },
+    "relyins_new_application_a_2" : {
+      "flowDef" : {
+        "action-type" : "DelegateTask",
+        "actionmodel" : {
+          "name" : "relyins_da_def_delegate_new_application_manual_task_1_1"
+        },
+        "initial-state" : "viewState_usergroup_selection",
+        "view-state" : [ {
+          "id" : "viewState_usergroup_selection",
+          "xcpId" : "usergroup_selection",
+          "pageUrl" : "application/xcp_usergroup_selection",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "data-action" : [ {
+          "xcpId" : "da_actionflow_",
+          "actionType" : "xcp_delegate_task",
+          "actionModel" : "relyins_da_def_delegate_new_application_manual_task_1_1",
+          "plugins" : [ {
+            "ptype" : "xcp_actionflow_expression_properties",
+            "expression" : [ {
+              "propertyId" : "processVariables.license",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processVariables_license_1"
+            }, {
+              "propertyId" : "processVariables.mileage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processVariables_mileage_1"
+            }, {
+              "propertyId" : "processVariables.new_vehicle",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processVariables_new_vehicle_1"
+            }, {
+              "propertyId" : "processVariables.vin",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processVariables_vin_1"
+            }, {
+              "propertyId" : "processPackages.application_form.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_application_form_object_name_1"
+            }, {
+              "propertyId" : "processPackages.application_form.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_application_form_id_1"
+            }, {
+              "propertyId" : "processPackages.customer.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_object_name_1"
+            }, {
+              "propertyId" : "processPackages.customer.birth_date",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_birth_date_1"
+            }, {
+              "propertyId" : "processPackages.customer.bodily_injury",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_bodily_injury_1"
+            }, {
+              "propertyId" : "processPackages.customer.city",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_city_1"
+            }, {
+              "propertyId" : "processPackages.customer.collision",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_collision_1"
+            }, {
+              "propertyId" : "processPackages.customer.comprehensive",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_comprehensive_1"
+            }, {
+              "propertyId" : "processPackages.customer.customer_id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_customer_id_1"
+            }, {
+              "propertyId" : "processPackages.customer.driver_license",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_driver_license_1"
+            }, {
+              "propertyId" : "processPackages.customer.email",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_email_1"
+            }, {
+              "propertyId" : "processPackages.customer.first_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_first_name_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_accident",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_had_accident_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_insurance_declined",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_had_insurance_declined_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_license_revoked",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_had_license_revoked_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_mental_impairments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_had_mental_impairments_1"
+            }, {
+              "propertyId" : "processPackages.customer.had_moving_violation",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_had_moving_violation_1"
+            }, {
+              "propertyId" : "processPackages.customer.last_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_last_name_1"
+            }, {
+              "propertyId" : "processPackages.customer.medical_payments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_medical_payments_1"
+            }, {
+              "propertyId" : "processPackages.customer.occupation",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_occupation_1"
+            }, {
+              "propertyId" : "processPackages.customer.phone",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_phone_1"
+            }, {
+              "propertyId" : "processPackages.customer.property_damage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_property_damage_1"
+            }, {
+              "propertyId" : "processPackages.customer.risk",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_risk_1"
+            }, {
+              "propertyId" : "processPackages.customer.ssn",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_ssn_1"
+            }, {
+              "propertyId" : "processPackages.customer.state",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_state_1"
+            }, {
+              "propertyId" : "processPackages.customer.street",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_street_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_1",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_telematic_1_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_2",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_telematic_2_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_3",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_telematic_3_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_4",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_telematic_4_1"
+            }, {
+              "propertyId" : "processPackages.customer.telematic_5",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_telematic_5_1"
+            }, {
+              "propertyId" : "processPackages.customer.vehicles_make",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_vehicles_make_1"
+            }, {
+              "propertyId" : "processPackages.customer.vehicles_model",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_vehicles_model_1"
+            }, {
+              "propertyId" : "processPackages.customer.zip",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_zip_1"
+            }, {
+              "propertyId" : "processPackages.customer.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_customer_id_1"
+            }, {
+              "propertyId" : "processPackages.policy.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_policy_object_name_1"
+            }, {
+              "propertyId" : "processPackages.policy.approval",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_policy_approval_1"
+            }, {
+              "propertyId" : "processPackages.policy.bodily_injury",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_policy_bodily_injury_1"
+            }, {
+              "propertyId" : "processPackages.policy.collision",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_policy_collision_1"
+            }, {
+              "propertyId" : "processPackages.policy.comprehensive",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_policy_comprehensive_1"
+            }, {
+              "propertyId" : "processPackages.policy.deductible",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_policy_deductible_1"
+            }, {
+              "propertyId" : "processPackages.policy.description",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_policy_description_1"
+            }, {
+              "propertyId" : "processPackages.policy.medical_payments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_policy_medical_payments_1"
+            }, {
+              "propertyId" : "processPackages.policy.monthly_payment",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_policy_monthly_payment_1"
+            }, {
+              "propertyId" : "processPackages.policy.monthly_payment_float",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_policy_monthly_payment_float_1"
+            }, {
+              "propertyId" : "processPackages.policy.property_damage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_policy_property_damage_1"
+            }, {
+              "propertyId" : "processPackages.policy.total_coverage",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_policy_total_coverage_1"
+            }, {
+              "propertyId" : "processPackages.policy.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_policy_id_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.object_name",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_vehicle_object_name_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.body_type",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_vehicle_body_type_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.make",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_vehicle_make_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.model",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_vehicle_model_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.msrp",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_vehicle_msrp_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.rating",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_vehicle_rating_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.year",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_vehicle_year_1"
+            }, {
+              "propertyId" : "processPackages.vehicle.id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_processPackages_vehicle_id_1"
+            }, {
+              "propertyId" : "attachments",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_attachments_1"
+            }, {
+              "propertyId" : "id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_id_1"
+            }, {
+              "propertyId" : "userName",
+              "setterFunName" : "setInputProperty",
+              "etype" : "new_application_a_2_da_userName_1",
+              "pageId" : "usergroup_selection",
+              "required" : true,
+              "events" : ["username_dropdown_list.change" ]
+            } ]
+          } ]
+        } ]
+      }
+    }
+  },
+  "relyins_application_form" : {
+    "relyins_import_application_" : {
+      "flowDef" : {
+        "action-type" : "Import",
+        "actionmodel" : {
+          "name" : "relyins_application_form_import_application__model",
+          "attribute-mapping" : {
+            "object_name" : "relyins_application_form_import_application__model.object_name",
+            "subject" : "relyins_application_form_import_application__model.subject",
+            "title" : "relyins_application_form_import_application__model.title",
+            "a_content_type" : "relyins_application_form_import_application__model.a_content_type",
+            "content_id" : "relyins_application_form_import_application__model.content_id",
+            "folder_id" : "relyins_application_form_import_application__model.folder_id"
+          }
+        },
+        "initial-state" : "import_application_",
+        "view-state" : [ {
+          "id" : "import_application_",
+          "pageUrl" : "relyins_application_form/relyins_application_form_relyins_import_application_",
+          "output-model" : {
+            "relyins_application_form_import_application__model" : "relyins_application_form_import_application__model"
+          },
+          "transition" : [ {
+            "on" : "cancel"
+          }, {
+            "on" : "finish"
+          } ]
+        } ],
+        "action-state" : {
+          "id" : "finish",
+          "action" : "save"
+        }
+      }
+    },
+    "relyins_select_application" : {
+      "flowDef" : {
+        "action-type" : "Selector",
+        "actionmodel" : {
+          "name" : "xcp_da_def_selector_rootbo"
+        },
+        "initial-state" : "viewState_select_application_",
+        "view-state" : [ {
+          "id" : "viewState_select_application_",
+          "xcpId" : "select_application_",
+          "pageUrl" : "relyins_application_form/relyins_application_form_relyins_select_application_",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_select_application",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "data-action" : [ {
+          "xcpId" : "da_actionflow_select_application",
+          "actionType" : "selector",
+          "actionModel" : "xcp_da_def_selector_rootbo",
+          "plugins" : [ {
+            "ptype" : "xcp_actionflow_expression_properties",
+            "expression" : [ {
+              "propertyId" : "selection",
+              "setterFunName" : "setInputProperty",
+              "etype" : "select_application_da_selection_1",
+              "pageId" : "select_application_",
+              "events" : ["results_list.selectionchange" ]
+            } ]
+          } ]
+        } ]
+      }
+    }
+  }
+}

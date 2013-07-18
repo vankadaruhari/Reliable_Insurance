@@ -1,0 +1,1826 @@
+/**
+ * @var {string} $prefix 
+ * The prefix to be applied to all CSS selectors. If this is changed, it must also be changed in your 
+ * JavaScript application.
+ */
+/**
+ * @var {string} $theme-name 
+ * The name of the theme. This must match the the output directory of the images.
+ * (defaults to 'default')
+ */
+/**
+ * @var {boolean/string} $relative-image-path-for-uis 
+ * True to use a relative image path for all new UIs. If true, the path will be "../images/".
+ * It can also be a string of the path value.
+ * It defaults to false, which means it will look for the images in the ExtJS SDK folder.
+ */
+/**
+ * @var {string} $font-family 
+ * The default font-family to be used throughout the theme.
+ */
+/**
+ * @var {string} $base-gradient 
+ * The base gradient to be used throughout the theme.
+ */
+/**
+ * @var {color} $base-color
+ * The base color to be used throughout the theme.
+ */
+/**
+ * @var {boolean} $include-not-found-images
+ * True to include files which are not found when compiling your SASS
+ */
+/**
+ * @var {boolean} $include-ie
+ * True to include Internet Explorer specific rules
+ */
+/**
+ * @var {boolean} $include-ff
+ * True to include Firefox specific rules
+ */
+/**
+ * @var {boolean} $include-chrome
+ * True to include Chrome specific rules
+ */
+/**
+ * @var {boolean} $include-safari
+ * True to include Safari specific rules
+ */
+/**
+ * @var {boolean} $include-opera
+ * True to include Opera specific rules
+ */
+/**
+ * @var {boolean} $include-webkit
+ * True to include Webkit specific rules
+ */
+/**
+ * @var {boolean} $compile-all
+ * True to copile all CSS, even if above include rules are false
+ */
+/**
+ * @var {boolean} $scope-reset-css
+ * True to scope the reset CSS within the $prefix variable.
+ */
+/**
+ * @var {color} $css-shadow-background-color
+ * The base color for CSS shadows
+ */
+/**
+ * @var {color} $include-shadow-images
+ * True to include all shadow images.
+ */
+/**
+ * Toolbar buttons
+ */
+/**
+ * @class Ext.form.*
+ */
+/**
+ * @class Ext.form.field.Base
+ */
+/**
+ * @class Ext.form.field.TextArea
+ */
+/**
+ * @class Ext.form.Label
+ */
+/**
+ * @class Ext.form.field.Checkbox
+ */
+/**
+ * @class Ext.form.field.Radio
+ */
+/**
+ * Error messages
+ */
+/**
+ * Trigger Field
+ */
+/**
+ * Fieldsets
+ */
+/**
+ * Sliders
+ */
+/**
+ * @mixin background-gradient
+ * 
+ * @param {Color} $background-color The background color of the gradient
+ * @param {String/List} $type The type of gradient to be used. Can either be a String which is a predefined gradient, or it can
+ *                            can be a list of color_stops. If none is set, it will still set the `background-color` to the $background-color.
+ * @param {String} $direction The direction of the gradient. Can either me `top` or `left`. (defaults to `top`)
+ */
+/**
+ * Method which inserts a full background-image property for a theme image.
+ * It checks if the file exists and if it doesn't, it'll throw an error. 
+ * By default it will not include the background-image property if it is not found,
+ * but this can be changed by changing the default value of $include-missing-images to 
+ * be true. 
+ */
+/**
+  * @class Ext.Button
+  * Used to create the base structure of an Ext.Button
+  */
+/**
+*  This file contains all the xcp variables that is modifiable by the theme editor
+*/
+/** Default font **/
+/** widget selection color **/
+/** Widget Label Text **/
+/** Widget Value Text **/
+/** Widget Title Text **/
+/** Widget Button Text **/
+/** Link Text **/
+/** Widget Interior **/
+/** Widget Border **/
+/** Widget Header **/
+/** ColumnBox Header **/
+/** Widget Button **/
+/** Widget Panel **/
+/** Widget Labels **/
+/** List Selection **/
+/** Framework Tab **/
+/** App Header Background **/
+/** App Menu Background **/
+/** App Menu Border **/
+/** App Menu button **/
+/** App Menu Button Border **/
+/** App Menu marker **/
+/** Nav Menu **/
+/** Case Menu **/
+/** Master Background **/
+/** Page Background **/
+/** Content Area **/
+/** Menu, Context Menu **/
+/** Context menu item **/
+/** load mask **/
+/** Toolbar **/
+/** tab bar **/
+/** tab button **/
+/** ToolTip **/
+/** Window **/
+/** Date picker **/
+/* Box-Shadow for widgets */
+/* line 1, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_checkbox.scss */
+.x-form-cb-label {
+  font-family: Helvetica, Arial, sans-serif;
+  font: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #363636;
+  word-wrap: break-word;
+}
+
+/* line 5, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_checkbox.scss */
+.x-item-disabled .x-form-cb-label {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+
+/* line 17, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+BODY {
+  font-family: 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif;
+}
+
+/* Header Text Style */
+/* line 23, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+H1, H2, H3, .x-panel-header-text-xcp-column-box-ui {
+  font-family: Helvetica, Arial;
+}
+
+/* line 26, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+H1 {
+  font-size: 20px;
+  font-weight: normal;
+  color: #39C;
+}
+
+/* line 32, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+H2 {
+  font-size: 16px;
+  font-weight: normal;
+  color: #363636;
+}
+
+/* line 38, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+H3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #464649;
+  padding-bottom: 4px;
+}
+
+/* line 45, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp_plain_text-cls, .xcp_rich_text-cls, .x-form-item, .x-grid-row .x-grid-cell, .x-column-header {
+  font-family: 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif;
+}
+
+/* line 51, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp-viewport {
+  background: none;
+}
+
+/******************************
+**			     **
+**	NAVIGATION MENU      ** 
+**			     **
+*******************************/
+/* line 14, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.xcp-master-header > * > .x-box-inner {
+  background-image: none;
+  background-color: black;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+  background-image: -ms-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #ffffff 100%);
+}
+
+/* line 18, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.nav-menu-caret {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid white;
+}
+
+/* line 23, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.nav-menu-caret.x-layer {
+  overflow: visible;
+}
+
+/* line 27, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.nav-menu-caret .inner-caret {
+  position: relative;
+  top: 2px;
+  right: 6px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #3399cc;
+}
+
+/* line 34, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.xcp-master-header .x-toolbar-xcp-nav-toolbar {
+  border: none;
+  background: none;
+}
+
+/* line 41, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-toolbar {
+  border: none;
+}
+
+/* line 46, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.xcp_nav_menuitem-cls .x-menu-item-link {
+  margin: 0px;
+}
+
+/* line 52, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.xcp_nav_menuitem-cls.x-menu-item-active .x-menu-item-link {
+  border: 0px;
+  margin: 0px;
+  background-color: #3399cc !important;
+}
+
+/* line 59, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-toolbar-xcp-nav-toolbar {
+  position: relative;
+  background-image: none;
+  background-color: black;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+  background-image: -ms-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #ffffff 100%);
+  border-bottom: 5px #3399cc solid !important;
+}
+/* line 633, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small {
+  border-color: transparent;
+}
+/* line 69, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -o-border-radius: 0;
+  -ms-border-radius: 0;
+  -khtml-border-radius: 0;
+  border-radius: 0;
+  padding: 8px 0 6px 0;
+  border-width: 1px;
+  border-style: solid;
+  background-color: none;
+}
+/* line 102, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
+.x-toolbar-xcp-nav-toolbar .x-nlg .x-btn-xcp-nav-button-toolbar-small-mc {
+  background-color: none;
+}
+/* line 115, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small {
+  padding: 0 !important;
+  border-width: 0 !important;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -o-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -khtml-border-radius: 0px;
+  border-radius: 0px;
+  background-color: transparent;
+  background-position: 1100000px 1000000px;
+}
+/* line 147, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-tl,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-bl,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-tr,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-br,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-tc,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-bc,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-ml,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-mr {
+  zoom: 1;
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-corners.gif');
+}
+/* line 168, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-ml,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-mr {
+  zoom: 1;
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-sides.gif');
+  background-position: 0 0;
+  background-repeat: repeat-y;
+}
+/* line 200, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-mc {
+  padding: 9px 1px 7px 1px;
+}
+/* line 210, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
+.x-toolbar-xcp-nav-toolbar .x-strict .x-ie7 .x-btn-xcp-nav-button-toolbar-small-tl,
+.x-toolbar-xcp-nav-toolbar .x-strict .x-ie7 .x-btn-xcp-nav-button-toolbar-small-bl {
+  position: relative;
+  right: 0;
+}
+/* line 639, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small .x-btn-inner {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Helvetica, Arial;
+  color: #8b8b91;
+  background-repeat: no-repeat;
+  padding: 0 5px;
+}
+/* line 652, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon button,
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon a,
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon .x-btn-inner,
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-noicon button,
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-noicon a,
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-noicon .x-btn-inner {
+  height: 16px;
+  line-height: 16px;
+}
+/* line 661, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon button,
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon a {
+  padding: 0;
+}
+/* line 665, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon .x-btn-inner {
+  /* even though there is no text we set a width and padding as buttons shrink-wrap around this element */
+  width: 16px;
+  padding: 0;
+}
+/* line 671, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon .x-btn-icon {
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+/* line 683, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-left button,
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-left a {
+  height: 16px;
+}
+/* line 686, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-left .x-btn-inner {
+  height: 16px;
+  line-height: 16px;
+  padding-left: 20px;
+}
+/* line 692, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-left .x-btn-icon {
+  width: 16px;
+  height: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: auto;
+}
+/* line 701, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-ie6 .x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-left .x-btn-icon, .x-quirks .x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-left .x-btn-icon {
+  height: 16px;
+}
+/* line 709, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-right button,
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-right a {
+  height: 16px;
+}
+/* line 712, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-right .x-btn-inner {
+  height: 16px;
+  line-height: 16px;
+  padding-right: 20px !important;
+}
+/* line 718, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-right .x-btn-icon {
+  width: 16px;
+  height: auto;
+  top: 0;
+  left: auto;
+  bottom: 0;
+  right: 0;
+}
+/* line 727, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-ie6 .x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-right .x-btn-icon, .x-quirks .x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-right .x-btn-icon {
+  height: 16px;
+}
+/* line 734, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-top .x-btn-inner {
+  padding-top: 20px;
+}
+/* line 738, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-top .x-btn-icon {
+  width: auto;
+  height: 16px;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: 0;
+}
+/* line 747, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-ie6 .x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-top .x-btn-icon, .x-quirks .x-ie .x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-top .x-btn-icon {
+  width: 16px;
+}
+/* line 754, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-bottom .x-btn-inner {
+  padding-bottom: 20px;
+}
+/* line 758, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-bottom .x-btn-icon {
+  width: auto;
+  height: 16px;
+  top: auto;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+/* line 767, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-ie6 .x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-bottom .x-btn-icon, .x-quirks .x-ie .x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon-text-bottom .x-btn-icon {
+  width: 16px;
+}
+/* line 773, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-over {
+  border-color: rgba(64, 191, 255, 0.25);
+  background-image: none;
+  background-color: rgba(51, 153, 204, 0.25);
+}
+/* line 781, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-over .x-btn-inner {
+  color: white;
+}
+/* line 797, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-focus {
+  background-image: none;
+  background-color: rgba(51, 153, 204, 0.25);
+}
+/* line 805, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-focus .x-btn-inner {
+  color: white;
+}
+/* line 822, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-menu-active,
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-pressed {
+  background-image: none;
+  background-color: none;
+}
+/* line 830, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-menu-active .x-btn-inner,
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-pressed .x-btn-inner {
+  color: white;
+}
+/* line 846, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-disabled {
+  background-image: none;
+  background-color: transparent;
+}
+/* line 894, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-over .x-frame-tl,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-over .x-frame-bl,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-over .x-frame-tr,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-over .x-frame-br,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-over .x-frame-tc,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-over .x-frame-bc {
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-over-corners.gif');
+}
+/* line 898, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-over .x-frame-ml,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-over .x-frame-mr {
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-over-sides.gif');
+}
+/* line 901, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-over .x-frame-mc {
+  background-color: rgba(51, 153, 204, 0.25);
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-over-bg.gif');
+}
+/* line 915, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-focus .x-frame-tl,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-focus .x-frame-bl,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-focus .x-frame-tr,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-focus .x-frame-br,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-focus .x-frame-tc,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-focus .x-frame-bc {
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-focus-corners.gif');
+}
+/* line 919, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-focus .x-frame-ml,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-focus .x-frame-mr {
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-focus-sides.gif');
+}
+/* line 922, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-focus .x-frame-mc {
+  background-color: rgba(51, 153, 204, 0.25);
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-focus-bg.gif');
+}
+/* line 937, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-menu-active .x-frame-tl,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-menu-active .x-frame-bl,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-menu-active .x-frame-tr,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-menu-active .x-frame-br,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-menu-active .x-frame-tc,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-menu-active .x-frame-bc,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-pressed .x-frame-tl,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-pressed .x-frame-bl,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-pressed .x-frame-tr,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-pressed .x-frame-br,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-pressed .x-frame-tc,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-pressed .x-frame-bc {
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-pressed-corners.gif');
+}
+/* line 941, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-menu-active .x-frame-ml,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-menu-active .x-frame-mr,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-pressed .x-frame-ml,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-pressed .x-frame-mr {
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-pressed-sides.gif');
+}
+/* line 944, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-menu-active .x-frame-mc,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-pressed .x-frame-mc {
+  background-color: none;
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-pressed-bg.gif');
+}
+/* line 958, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-disabled .x-frame-tl,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-disabled .x-frame-bl,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-disabled .x-frame-tr,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-disabled .x-frame-br,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-disabled .x-frame-tc,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-disabled .x-frame-bc {
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-disabled-corners.gif');
+}
+/* line 962, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-disabled .x-frame-ml,
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-disabled .x-frame-mr {
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-disabled-sides.gif');
+}
+/* line 965, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nbr .x-btn-xcp-nav-button-toolbar-small-disabled .x-frame-mc {
+  background-color: transparent;
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-disabled-bg.gif');
+}
+/* line 987, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nlg .x-btn-xcp-nav-button-toolbar-small-over {
+  background-repeat: repeat-x;
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-over-bg.gif');
+}
+/* line 996, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nlg .x-btn-xcp-nav-button-toolbar-small-focus {
+  background-repeat: repeat-x;
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-focus-bg.gif');
+}
+/* line 1006, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nlg .x-btn-xcp-nav-button-toolbar-small-menu-active,
+.x-toolbar-xcp-nav-toolbar .x-nlg .x-btn-xcp-nav-button-toolbar-small-pressed {
+  background-repeat: repeat-x;
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-pressed-bg.gif');
+}
+/* line 1015, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/ext-4.1/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
+.x-toolbar-xcp-nav-toolbar .x-nlg .x-btn-xcp-nav-button-toolbar-small-disabled {
+  background-repeat: repeat-x;
+  background-image: url('../../ext-4.1/resources/themes/images/default/btn/btn-xcp-nav-button-toolbar-small-disabled-bg.gif');
+}
+/* line 132, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-toolbar-xcp-nav-toolbar .x-box-inner {
+  border-bottom: 1px white solid !important;
+}
+/* line 137, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-default-toolbar-small {
+  background: none;
+}
+/* line 143, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small .x-btn-inner {
+  margin: 0 25px;
+}
+/* line 147, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small .x-btn-arrow-right .x-btn-inner {
+  margin-right: 15px;
+}
+/* line 152, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-default-toolbar-small-over {
+  background: rgba(51, 153, 204, 0.25);
+}
+/* line 155, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-default-toolbar-small-over .x-toolbar-more-icon {
+  background-image: url('../../ext-4.1/resources/themes/images/default/toolbar/nav_more_on.png') !important;
+}
+/* line 160, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn button {
+  vertical-align: middle;
+}
+/* line 167, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon button,
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-icon .x-btn-inner,
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-noicon button,
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-noicon .x-btn-inner {
+  height: 18px;
+  line-height: 16px;
+}
+/* line 172, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-toolbar-xcp-nav-toolbar .x-toolbar-more-icon {
+  background-image: url('../../ext-4.1/resources/themes/images/default/toolbar/nav_more_default.png') !important;
+  width: 8px !important;
+  background-repeat: no-repeat;
+  background-position: center !important;
+}
+/* line 179, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-default-toolbar-small-icon .x-toolbar-more-icon {
+  left: 4px;
+}
+/* line 183, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-toolbar-xcp-nav-toolbar .x-box-menu-right {
+  padding: 8px 0 6px 0;
+  float: left;
+}
+
+/* line 190, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.xcp-master-header .x-toolbar-xcp-nav-toolbar {
+  border-bottom: none !important;
+}
+/* line 193, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.xcp-master-header .x-toolbar-xcp-nav-toolbar .x-box-inner {
+  border-bottom: none !important;
+}
+
+/* line 200, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-nlg .x-toolbar-xcp-nav-toolbar {
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr='#3e3e3e', endColorstr='black');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#3e3e3e', endColorstr='black')";
+}
+/* line 205, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-nlg .xcp-master-header .x-toolbar-xcp-nav-toolbar {
+  background: none;
+}
+
+/* line 214, C:/xCP Designer/plugins/com.emc.xcp.uitemplate.ui_1.0.0.201210261902/WebContent/js/resources/themes/stylesheets/xcp/default/widgets/_app-menu.scss */
+.x-nbr .x-toolbar-xcp-nav-toolbar .x-btn-default-toolbar-small-over .x-frame-mc {
+  background-color: transparent;
+}
+
+/* line 69, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-over,
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-focus {
+  background-image: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #fe9e18), color-stop(94%, #fe8d0f));
+  background-image: -webkit-linear-gradient(#fe9e18 30%, #fe8d0f 94%);
+  background-image: -moz-linear-gradient(#fe9e18 30%, #fe8d0f 94%);
+  background-image: -o-linear-gradient(#fe9e18 30%, #fe8d0f 94%);
+  background-image: -ms-linear-gradient(#fe9e18 30%, #fe8d0f 94%);
+  background-image: linear-gradient(#fe9e18 30%, #fe8d0f 94%);
+  background-color: #fe8103;
+}
+
+/* line 77, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-menu-active .x-btn-inner {
+  color: #8b8b91;
+}
+
+/* line 81, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.x-toolbar-xcp-nav-toolbar .x-btn-xcp-nav-button-toolbar-small-pressed .x-btn-inner {
+  color: #242426;
+}
+
+/* line 85, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp-userButton.x-menu-active {
+  border: none !important;
+}
+
+/* line 89, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp-userButton-userIcon {
+  background-image: url("Artifacts/Resources/User.png") !important;
+}
+
+/* line 93, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp-master-header {
+  border-bottom: 2px #fe8d0f solid!important;
+}
+
+/* line 97, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.nav-menu-caret .inner-caret {
+  position: relative;
+  top: 2px;
+  right: 6px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #fe8103;
+}
+
+/* line 109, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.x-form-item-label {
+  font-weight: bold;
+}
+
+/* line 114, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp_gauge_chart-cls .x-panel-header-default {
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  padding-left: 10px;
+  height: auto;
+}
+/* line 121, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp_gauge_chart-cls .x-panel-body-default {
+  border: none;
+}
+
+/******************************
+**			     **
+**	COLUMN BOX - BLACK   ** 
+**			     **
+*******************************/
+/* line 132, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.black-box .x-panel-header {
+  margin: 0 !important;
+}
+
+/* line 136, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.black-box .x-panel-header-xcp-column-box-ui {
+  background-image: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #505054), color-stop(94%, #464649));
+  background-image: -webkit-linear-gradient(#505054 30%, #464649 94%);
+  background-image: -moz-linear-gradient(#505054 30%, #464649 94%);
+  background-image: -o-linear-gradient(#505054 30%, #464649 94%);
+  background-image: -ms-linear-gradient(#505054 30%, #464649 94%);
+  background-image: linear-gradient(#505054 30%, #464649 94%);
+  background-color: #464649;
+  padding: 6px;
+  height: 32px;
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -o-border-top-left-radius: 6px;
+  -ms-border-top-left-radius: 6px;
+  -khtml-border-top-left-radius: 6px;
+  border-top-left-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -o-border-top-right-radius: 6px;
+  -ms-border-top-right-radius: 6px;
+  -khtml-border-top-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+/* line 145, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.black-box .x-panel-header-text-xcp-column-box-ui {
+  color: #fff;
+}
+
+/* line 149, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.black-box .x-panel-header-xcp-column-box-ui + .x-panel-body-xcp-column-box-ui {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #464649), color-stop(94%, #2e2e30));
+  background-image: -webkit-linear-gradient(#464649 30%, #2e2e30 94%);
+  background-image: -moz-linear-gradient(#464649 30%, #2e2e30 94%);
+  background-image: -o-linear-gradient(#464649 30%, #2e2e30 94%);
+  background-image: -ms-linear-gradient(#464649 30%, #2e2e30 94%);
+  background-image: linear-gradient(#464649 30%, #2e2e30 94%);
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -o-border-bottom-left-radius: 6px;
+  -ms-border-bottom-left-radius: 6px;
+  -khtml-border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -o-border-bottom-right-radius: 6px;
+  -ms-border-bottom-right-radius: 6px;
+  -khtml-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/* line 155, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.black-box .x-form-item-label {
+  color: #fff;
+  font-sixe: 14px;
+}
+
+/* line 160, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.black-box .x-form-display-field {
+  color: #fff!important;
+  font-sixe: 14px;
+}
+
+/*************************************************
+**			     			**
+**	COLUMN BOX - BLACK WITHOUT HEADER   	** 
+**			     			**
+**************************************************/
+/* line 171, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.black-box-no-header .x-box-inner {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #505054), color-stop(94%, #464649));
+  background-image: -webkit-linear-gradient(#505054 30%, #464649 94%);
+  background-image: -moz-linear-gradient(#505054 30%, #464649 94%);
+  background-image: -o-linear-gradient(#505054 30%, #464649 94%);
+  background-image: -ms-linear-gradient(#505054 30%, #464649 94%);
+  background-image: linear-gradient(#505054 30%, #464649 94%);
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -o-border-bottom-left-radius: 6px;
+  -ms-border-bottom-left-radius: 6px;
+  -khtml-border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -o-border-bottom-right-radius: 6px;
+  -ms-border-bottom-right-radius: 6px;
+  -khtml-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -o-border-top-left-radius: 6px;
+  -ms-border-top-left-radius: 6px;
+  -khtml-border-top-left-radius: 6px;
+  border-top-left-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -o-border-top-right-radius: 6px;
+  -ms-border-top-right-radius: 6px;
+  -khtml-border-top-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+/******************************
+**			     **
+**	COLUMN BOX - ORANGE  ** 
+**			     **
+*******************************/
+/* line 183, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.orange-box .x-panel-header {
+  margin: 0 !important;
+}
+
+/* line 187, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.orange-box .x-panel-header-xcp-column-box-ui {
+  background-image: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #fe9e18), color-stop(94%, #fe8d0f));
+  background-image: -webkit-linear-gradient(#fe9e18 30%, #fe8d0f 94%);
+  background-image: -moz-linear-gradient(#fe9e18 30%, #fe8d0f 94%);
+  background-image: -o-linear-gradient(#fe9e18 30%, #fe8d0f 94%);
+  background-image: -ms-linear-gradient(#fe9e18 30%, #fe8d0f 94%);
+  background-image: linear-gradient(#fe9e18 30%, #fe8d0f 94%);
+  background-color: #fe8103;
+  padding: 6px;
+  height: 32px;
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -o-border-top-left-radius: 6px;
+  -ms-border-top-left-radius: 6px;
+  -khtml-border-top-left-radius: 6px;
+  border-top-left-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -o-border-top-right-radius: 6px;
+  -ms-border-top-right-radius: 6px;
+  -khtml-border-top-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+/* line 196, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.orange-box .x-panel-header-text-xcp-column-box-ui {
+  color: #fff;
+}
+
+/* line 200, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.orange-box .x-panel-header-xcp-column-box-ui + .x-panel-body-xcp-column-box-ui {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #fe8d0f), color-stop(94%, #fe8103));
+  background-image: -webkit-linear-gradient(#fe8d0f 30%, #fe8103 94%);
+  background-image: -moz-linear-gradient(#fe8d0f 30%, #fe8103 94%);
+  background-image: -o-linear-gradient(#fe8d0f 30%, #fe8103 94%);
+  background-image: -ms-linear-gradient(#fe8d0f 30%, #fe8103 94%);
+  background-image: linear-gradient(#fe8d0f 30%, #fe8103 94%);
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -o-border-bottom-left-radius: 6px;
+  -ms-border-bottom-left-radius: 6px;
+  -khtml-border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -o-border-bottom-right-radius: 6px;
+  -ms-border-bottom-right-radius: 6px;
+  -khtml-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/******************************
+**			     **
+**	COLUMN BOX - GREY    ** 
+**			     **
+*******************************/
+/* line 212, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.grey-box .x-panel-header {
+  margin: 0 !important;
+}
+
+/* line 216, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.grey-box .x-panel-header-xcp-column-box-ui {
+  background-image: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #f7f7f7), color-stop(94%, #f4f4f4));
+  background-image: -webkit-linear-gradient(#f7f7f7 30%, #f4f4f4 94%);
+  background-image: -moz-linear-gradient(#f7f7f7 30%, #f4f4f4 94%);
+  background-image: -o-linear-gradient(#f7f7f7 30%, #f4f4f4 94%);
+  background-image: -ms-linear-gradient(#f7f7f7 30%, #f4f4f4 94%);
+  background-image: linear-gradient(#f7f7f7 30%, #f4f4f4 94%);
+  background-color: #f7f7f7;
+  padding: 6px;
+  height: 32px;
+}
+
+/* line 224, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.grey-box .x-panel-header-text-xcp-column-box-ui {
+  color: #8b8b91;
+}
+
+/* line 228, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.grey-box .x-panel-header-xcp-column-box-ui + .x-panel-body-xcp-column-box-ui {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #f4f4f4), color-stop(94%, #eeeeee));
+  background-image: -webkit-linear-gradient(#f4f4f4 30%, #eeeeee 94%);
+  background-image: -moz-linear-gradient(#f4f4f4 30%, #eeeeee 94%);
+  background-image: -o-linear-gradient(#f4f4f4 30%, #eeeeee 94%);
+  background-image: -ms-linear-gradient(#f4f4f4 30%, #eeeeee 94%);
+  background-image: linear-gradient(#f4f4f4 30%, #eeeeee 94%);
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -o-border-bottom-left-radius: 6px;
+  -ms-border-bottom-left-radius: 6px;
+  -khtml-border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -o-border-bottom-right-radius: 6px;
+  -ms-border-bottom-right-radius: 6px;
+  -khtml-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/***************************************
+**			 	      **
+** COLUMN BOX - GREY WITHOUT HEADER   ** 
+**	          		      **
+****************************************/
+/* line 241, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.grey-box-no-header .x-box-inner {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #f4f4f4), color-stop(94%, #eeeeee));
+  background-image: -webkit-linear-gradient(#f4f4f4 30%, #eeeeee 94%);
+  background-image: -moz-linear-gradient(#f4f4f4 30%, #eeeeee 94%);
+  background-image: -o-linear-gradient(#f4f4f4 30%, #eeeeee 94%);
+  background-image: -ms-linear-gradient(#f4f4f4 30%, #eeeeee 94%);
+  background-image: linear-gradient(#f4f4f4 30%, #eeeeee 94%);
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -o-border-bottom-left-radius: 6px;
+  -ms-border-bottom-left-radius: 6px;
+  -khtml-border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -o-border-bottom-right-radius: 6px;
+  -ms-border-bottom-right-radius: 6px;
+  -khtml-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -o-border-top-left-radius: 6px;
+  -ms-border-top-left-radius: 6px;
+  -khtml-border-top-left-radius: 6px;
+  border-top-left-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -o-border-top-right-radius: 6px;
+  -ms-border-top-right-radius: 6px;
+  -khtml-border-top-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+/**************************************************
+**			     			 **
+**	COLUMN BOX - WHITE W/ BORDER WITH HEADER   ** 
+**			     			 **
+***************************************************/
+/* line 253, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.border-box .x-panel-header {
+  margin: 0 !important;
+}
+
+/* line 257, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.border-box .x-panel-header-xcp-column-box-ui {
+  background-image: none;
+  padding: 6px;
+  height: 32px;
+  border-top: 1px solid #8b8b91 !important;
+  border-left: 1px solid #8b8b91 !important;
+  border-right: 1px solid #8b8b91 !important;
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -o-border-top-left-radius: 6px;
+  -ms-border-top-left-radius: 6px;
+  -khtml-border-top-left-radius: 6px;
+  border-top-left-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -o-border-top-right-radius: 6px;
+  -ms-border-top-right-radius: 6px;
+  -khtml-border-top-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+/* line 268, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.border-box .x-panel-header-text-xcp-column-box-ui {
+  color: #8b8b91;
+}
+
+/* line 272, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.border-box .x-panel-header-xcp-column-box-ui + .x-panel-body-xcp-column-box-ui {
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -o-border-bottom-left-radius: 6px;
+  -ms-border-bottom-left-radius: 6px;
+  -khtml-border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -o-border-bottom-right-radius: 6px;
+  -ms-border-bottom-right-radius: 6px;
+  -khtml-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-left: 1px solid #8b8b91 !important;
+  border-right: 1px solid #8b8b91 !important;
+  border-bottom: 1px solid #8b8b91 !important;
+}
+
+/******************************
+**			     **
+**	TABS		     ** 
+**			     **
+*******************************/
+/* line 286, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp_tab_group-cls .x-tab {
+  border-color: #8b8b91;
+  border-width: 1px!important;
+}
+
+/* line 291, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp_tab_group-cls .x-tab button {
+  color: #8b8b91;
+  text-shadow: none;
+}
+
+/* line 296, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.x-tab-xcp-tab-ui-active {
+  background-image: none;
+  background-color: #fff!important;
+}
+
+/* line 301, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp_tab_group-cls .x-tab-active button {
+  color: #242426;
+  text-shadow: none;
+}
+
+/* line 306, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.x-tab-xcp-tab-ui-over {
+  background-image: none;
+  background-color: #fe8d0f!important;
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+
+/* line 313, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp_header_tab-cls {
+  background: none;
+}
+
+/* line 318, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp_tab_group-cls .x-tab-bar-top .xcp-tab-bar-caret {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #fe8103;
+}
+
+/* line 328, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.x-panel-header-default {
+  border: none;
+}
+
+/* line 332, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp-not-supported img {
+  opacity: 1!important;
+}
+
+/* line 336, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp-not-supported {
+  color: #363636!important;
+}
+
+/*********************************
+**				**
+**	Buttons			**
+**				**
+*********************************/
+/* line 349, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.orange-button .x-btn-default-small.x-btn-default-small-noicon {
+  border-radius: 6px;
+  font-size: 12px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #fe8103;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fea74f), color-stop(70%, #fe8103));
+  background: -webkit-linear-gradient(#fea74f, #fe8103 70%);
+  background: -moz-linear-gradient(#fea74f, #fe8103 70%);
+  background: -o-linear-gradient(#fea74f, #fe8103 70%);
+  background: -ms-linear-gradient(#fea74f, #fe8103 70%);
+  background: linear-gradient(#fea74f, #fe8103 70%);
+  -moz-box-shadow: #ffcd9b 0 1px 0 inset;
+  -webkit-box-shadow: #ffcd9b 0 1px 0 inset;
+  -o-box-shadow: #ffcd9b 0 1px 0 inset;
+  box-shadow: #ffcd9b 0 1px 0 inset;
+  border: 1px solid #e77401;
+  color: white;
+  text-shadow: #c66401 0 -1px 0;
+  padding: 0.5em 1.5em !important;
+  border-width: 1px !important;
+}
+/* line 15, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.orange-button .x-btn-default-small.x-btn-default-small-noicon:hover {
+  text-decoration: none;
+}
+/* line 18, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.orange-button .x-btn-default-small.x-btn-default-small-noicon:hover {
+  background-color: #e77401;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #fe9a36), color-stop(75%, #e77401));
+  background: -webkit-linear-gradient(#fe9a36 3%, #e77401 75%);
+  background: -moz-linear-gradient(#fe9a36 3%, #e77401 75%);
+  background: -o-linear-gradient(#fe9a36 3%, #e77401 75%);
+  background: -ms-linear-gradient(#fe9a36 3%, #e77401 75%);
+  background: linear-gradient(#fe9a36 3%, #e77401 75%);
+}
+/* line 21, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.orange-button .x-btn-default-small.x-btn-default-small-noicon:active {
+  -moz-box-shadow: #d76d01 0 1px 2px inset;
+  -webkit-box-shadow: #d76d01 0 1px 2px inset;
+  -o-box-shadow: #d76d01 0 1px 2px inset;
+  box-shadow: #d76d01 0 1px 2px inset;
+}
+/* line 6, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.orange-button .x-btn-default-small.x-btn-default-small-noicon.disabled, .orange-button .x-btn-default-small.x-btn-default-small-noicon[disabled] {
+  opacity: 0.6;
+  background: #fe8103;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+/* line 73, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/_sassy-buttons.sass */
+.orange-button .x-btn-default-small.x-btn-default-small-noicon::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 357, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.orange-button .x-btn-default-small.x-btn-default-small-noicon.x-btn-default-small-disabled {
+  opacity: 0.6;
+  background: #fe8103;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+/* line 364, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.orange-button .x-btn-default-small.x-btn-default-small-noicon.x-btn-default-small-focus {
+  box-shadow: 0 1px 2px #358FBA inset;
+}
+/* line 368, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.orange-button .x-btn-default-small.x-btn-default-small-noicon.x-btn .x-btn-center .x-btn-inner {
+  padding: 0;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+/* line 375, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.black-button .x-btn-default-small.x-btn-default-small-noicon {
+  border-radius: 6px;
+  font-size: 12px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #464649;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6b6b70), color-stop(70%, #464649));
+  background: -webkit-linear-gradient(#6b6b70, #464649 70%);
+  background: -moz-linear-gradient(#6b6b70, #464649 70%);
+  background: -o-linear-gradient(#6b6b70, #464649 70%);
+  background: -ms-linear-gradient(#6b6b70, #464649 70%);
+  background: linear-gradient(#6b6b70, #464649 70%);
+  -moz-box-shadow: #929296 0 1px 0 inset;
+  -webkit-box-shadow: #929296 0 1px 0 inset;
+  -o-box-shadow: #929296 0 1px 0 inset;
+  box-shadow: #929296 0 1px 0 inset;
+  border: 1px solid #3a3a3c;
+  color: white;
+  text-shadow: #29292b 0 -1px 0;
+  padding: 0.5em 1.5em !important;
+  border-width: 1px !important;
+}
+/* line 15, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.black-button .x-btn-default-small.x-btn-default-small-noicon:hover {
+  text-decoration: none;
+}
+/* line 18, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.black-button .x-btn-default-small.x-btn-default-small-noicon:hover {
+  background-color: #3a3a3c;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #5f5f63), color-stop(75%, #3a3a3c));
+  background: -webkit-linear-gradient(#5f5f63 3%, #3a3a3c 75%);
+  background: -moz-linear-gradient(#5f5f63 3%, #3a3a3c 75%);
+  background: -o-linear-gradient(#5f5f63 3%, #3a3a3c 75%);
+  background: -ms-linear-gradient(#5f5f63 3%, #3a3a3c 75%);
+  background: linear-gradient(#5f5f63 3%, #3a3a3c 75%);
+}
+/* line 21, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.black-button .x-btn-default-small.x-btn-default-small-noicon:active {
+  -moz-box-shadow: #323234 0 1px 2px inset;
+  -webkit-box-shadow: #323234 0 1px 2px inset;
+  -o-box-shadow: #323234 0 1px 2px inset;
+  box-shadow: #323234 0 1px 2px inset;
+}
+/* line 6, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.black-button .x-btn-default-small.x-btn-default-small-noicon.disabled, .black-button .x-btn-default-small.x-btn-default-small-noicon[disabled] {
+  opacity: 0.6;
+  background: #464649;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+/* line 73, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/_sassy-buttons.sass */
+.black-button .x-btn-default-small.x-btn-default-small-noicon::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 383, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.black-button .x-btn-default-small.x-btn-default-small-noicon.x-btn-default-small-disabled {
+  opacity: 0.6;
+  background: #93949a;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+/* line 390, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.black-button .x-btn-default-small.x-btn-default-small-noicon.x-btn-default-small-focus {
+  box-shadow: 0 1px 2px #358FBA inset;
+}
+/* line 394, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.black-button .x-btn-default-small.x-btn-default-small-noicon.x-btn .x-btn-center .x-btn-inner {
+  padding: 0;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+/* line 401, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.red-button .x-btn-default-small.x-btn-default-small-noicon {
+  border-radius: 6px;
+  font-size: 12px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #e86a43;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f0a087), color-stop(70%, #e86a43));
+  background: -webkit-linear-gradient(#f0a087, #e86a43 70%);
+  background: -moz-linear-gradient(#f0a087, #e86a43 70%);
+  background: -o-linear-gradient(#f0a087, #e86a43 70%);
+  background: -ms-linear-gradient(#f0a087, #e86a43 70%);
+  background: linear-gradient(#f0a087, #e86a43 70%);
+  -moz-box-shadow: #f9d6cb 0 1px 0 inset;
+  -webkit-box-shadow: #f9d6cb 0 1px 0 inset;
+  -o-box-shadow: #f9d6cb 0 1px 0 inset;
+  box-shadow: #f9d6cb 0 1px 0 inset;
+  border: 1px solid #e5582c;
+  color: white;
+  text-shadow: #d6471a 0 -1px 0;
+  padding: 0.5em 1.5em !important;
+  border-width: 1px !important;
+}
+/* line 15, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.red-button .x-btn-default-small.x-btn-default-small-noicon:hover {
+  text-decoration: none;
+}
+/* line 18, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.red-button .x-btn-default-small.x-btn-default-small-noicon:hover {
+  background-color: #e5582c;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #ee8e70), color-stop(75%, #e5582c));
+  background: -webkit-linear-gradient(#ee8e70 3%, #e5582c 75%);
+  background: -moz-linear-gradient(#ee8e70 3%, #e5582c 75%);
+  background: -o-linear-gradient(#ee8e70 3%, #e5582c 75%);
+  background: -ms-linear-gradient(#ee8e70 3%, #e5582c 75%);
+  background: linear-gradient(#ee8e70 3%, #e5582c 75%);
+}
+/* line 21, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.red-button .x-btn-default-small.x-btn-default-small-noicon:active {
+  -moz-box-shadow: #e44d1f 0 1px 2px inset;
+  -webkit-box-shadow: #e44d1f 0 1px 2px inset;
+  -o-box-shadow: #e44d1f 0 1px 2px inset;
+  box-shadow: #e44d1f 0 1px 2px inset;
+}
+/* line 6, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.red-button .x-btn-default-small.x-btn-default-small-noicon.disabled, .red-button .x-btn-default-small.x-btn-default-small-noicon[disabled] {
+  opacity: 0.6;
+  background: #e86a43;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+/* line 73, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/_sassy-buttons.sass */
+.red-button .x-btn-default-small.x-btn-default-small-noicon::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 409, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.red-button .x-btn-default-small.x-btn-default-small-noicon.x-btn-default-small-disabled {
+  opacity: 0.6;
+  background: #93949a;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+/* line 416, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.red-button .x-btn-default-small.x-btn-default-small-noicon.x-btn-default-small-focus {
+  box-shadow: 0 1px 2px #358FBA inset;
+}
+/* line 420, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.red-button .x-btn-default-small.x-btn-default-small-noicon.x-btn .x-btn-center .x-btn-inner {
+  padding: 0;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+/* line 428, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.green-button .x-btn-default-small.x-btn-default-small-noicon {
+  border-radius: 6px;
+  font-size: 12px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #8cbe5f;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b3d495), color-stop(70%, #8cbe5f));
+  background: -webkit-linear-gradient(#b3d495, #8cbe5f 70%);
+  background: -moz-linear-gradient(#b3d495, #8cbe5f 70%);
+  background: -o-linear-gradient(#b3d495, #8cbe5f 70%);
+  background: -ms-linear-gradient(#b3d495, #8cbe5f 70%);
+  background: linear-gradient(#b3d495, #8cbe5f 70%);
+  -moz-box-shadow: #daeacc 0 1px 0 inset;
+  -webkit-box-shadow: #daeacc 0 1px 0 inset;
+  -o-box-shadow: #daeacc 0 1px 0 inset;
+  box-shadow: #daeacc 0 1px 0 inset;
+  border: 1px solid #7fb74d;
+  color: white;
+  text-shadow: #6fa141 0 -1px 0;
+  padding: 0.5em 1.5em !important;
+  border-width: 1px !important;
+}
+/* line 15, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.green-button .x-btn-default-small.x-btn-default-small-noicon:hover {
+  text-decoration: none;
+}
+/* line 18, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.green-button .x-btn-default-small.x-btn-default-small-noicon:hover {
+  background-color: #7fb74d;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #a6cd83), color-stop(75%, #7fb74d));
+  background: -webkit-linear-gradient(#a6cd83 3%, #7fb74d 75%);
+  background: -moz-linear-gradient(#a6cd83 3%, #7fb74d 75%);
+  background: -o-linear-gradient(#a6cd83 3%, #7fb74d 75%);
+  background: -ms-linear-gradient(#a6cd83 3%, #7fb74d 75%);
+  background: linear-gradient(#a6cd83 3%, #7fb74d 75%);
+}
+/* line 21, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.green-button .x-btn-default-small.x-btn-default-small-noicon:active {
+  -moz-box-shadow: #77ae47 0 1px 2px inset;
+  -webkit-box-shadow: #77ae47 0 1px 2px inset;
+  -o-box-shadow: #77ae47 0 1px 2px inset;
+  box-shadow: #77ae47 0 1px 2px inset;
+}
+/* line 6, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.green-button .x-btn-default-small.x-btn-default-small-noicon.disabled, .green-button .x-btn-default-small.x-btn-default-small-noicon[disabled] {
+  opacity: 0.6;
+  background: #8cbe5f;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+/* line 73, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/_sassy-buttons.sass */
+.green-button .x-btn-default-small.x-btn-default-small-noicon::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 436, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.green-button .x-btn-default-small.x-btn-default-small-noicon.x-btn-default-small-disabled {
+  opacity: 0.6;
+  background: #93949a;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+/* line 443, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.green-button .x-btn-default-small.x-btn-default-small-noicon.x-btn-default-small-focus {
+  box-shadow: 0 1px 2px #358FBA inset;
+}
+/* line 447, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.green-button .x-btn-default-small.x-btn-default-small-noicon.x-btn .x-btn-center .x-btn-inner {
+  padding: 0;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+/* line 454, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.x-btn-default-small.x-btn-default-small-noicon {
+  border-radius: 6px;
+  font-size: 12px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #fe8103;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fea74f), color-stop(70%, #fe8103));
+  background: -webkit-linear-gradient(#fea74f, #fe8103 70%);
+  background: -moz-linear-gradient(#fea74f, #fe8103 70%);
+  background: -o-linear-gradient(#fea74f, #fe8103 70%);
+  background: -ms-linear-gradient(#fea74f, #fe8103 70%);
+  background: linear-gradient(#fea74f, #fe8103 70%);
+  -moz-box-shadow: #ffcd9b 0 1px 0 inset;
+  -webkit-box-shadow: #ffcd9b 0 1px 0 inset;
+  -o-box-shadow: #ffcd9b 0 1px 0 inset;
+  box-shadow: #ffcd9b 0 1px 0 inset;
+  border: 1px solid #e77401;
+  color: white;
+  text-shadow: #c66401 0 -1px 0;
+  padding: 0.5em 1.5em !important;
+  border-width: 1px !important;
+}
+/* line 15, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.x-btn-default-small.x-btn-default-small-noicon:hover {
+  text-decoration: none;
+}
+/* line 18, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.x-btn-default-small.x-btn-default-small-noicon:hover {
+  background-color: #e77401;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #fe9a36), color-stop(75%, #e77401));
+  background: -webkit-linear-gradient(#fe9a36 3%, #e77401 75%);
+  background: -moz-linear-gradient(#fe9a36 3%, #e77401 75%);
+  background: -o-linear-gradient(#fe9a36 3%, #e77401 75%);
+  background: -ms-linear-gradient(#fe9a36 3%, #e77401 75%);
+  background: linear-gradient(#fe9a36 3%, #e77401 75%);
+}
+/* line 21, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.x-btn-default-small.x-btn-default-small-noicon:active {
+  -moz-box-shadow: #d76d01 0 1px 2px inset;
+  -webkit-box-shadow: #d76d01 0 1px 2px inset;
+  -o-box-shadow: #d76d01 0 1px 2px inset;
+  box-shadow: #d76d01 0 1px 2px inset;
+}
+/* line 6, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.x-btn-default-small.x-btn-default-small-noicon.disabled, .x-btn-default-small.x-btn-default-small-noicon[disabled] {
+  opacity: 0.6;
+  background: #fe8103;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+/* line 73, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/_sassy-buttons.sass */
+.x-btn-default-small.x-btn-default-small-noicon::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 462, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.x-btn-default-small.x-btn-default-small-noicon.x-btn-default-small-disabled {
+  opacity: 0.6;
+  background: #fe8103;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+/* line 469, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.x-btn-default-small.x-btn-default-small-noicon.x-btn-default-small-focus {
+  box-shadow: 0 1px 2px #358FBA inset;
+}
+/* line 473, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.x-btn-default-small.x-btn-default-small-noicon.x-btn .x-btn-center .x-btn-inner {
+  padding: 0;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+/* line 481, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.cta .x-btn-default-small.x-btn-default-small-noicon {
+  font-size: 16px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  cursor: pointer;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #8cbe5f;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b3d495), color-stop(70%, #8cbe5f));
+  background: -webkit-linear-gradient(#b3d495, #8cbe5f 70%);
+  background: -moz-linear-gradient(#b3d495, #8cbe5f 70%);
+  background: -o-linear-gradient(#b3d495, #8cbe5f 70%);
+  background: -ms-linear-gradient(#b3d495, #8cbe5f 70%);
+  background: linear-gradient(#b3d495, #8cbe5f 70%);
+  -moz-box-shadow: #daeacc 0 1px 0 inset;
+  -webkit-box-shadow: #daeacc 0 1px 0 inset;
+  -o-box-shadow: #daeacc 0 1px 0 inset;
+  box-shadow: #daeacc 0 1px 0 inset;
+  border: 1px solid #7fb74d;
+  color: white;
+  text-shadow: #6fa141 0 -1px 0;
+}
+/* line 15, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.cta .x-btn-default-small.x-btn-default-small-noicon:hover {
+  text-decoration: none;
+}
+/* line 18, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.cta .x-btn-default-small.x-btn-default-small-noicon:hover {
+  background-color: #7fb74d;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #a6cd83), color-stop(75%, #7fb74d));
+  background: -webkit-linear-gradient(#a6cd83 3%, #7fb74d 75%);
+  background: -moz-linear-gradient(#a6cd83 3%, #7fb74d 75%);
+  background: -o-linear-gradient(#a6cd83 3%, #7fb74d 75%);
+  background: -ms-linear-gradient(#a6cd83 3%, #7fb74d 75%);
+  background: linear-gradient(#a6cd83 3%, #7fb74d 75%);
+}
+/* line 21, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.cta .x-btn-default-small.x-btn-default-small-noicon:active {
+  -moz-box-shadow: #77ae47 0 1px 2px inset;
+  -webkit-box-shadow: #77ae47 0 1px 2px inset;
+  -o-box-shadow: #77ae47 0 1px 2px inset;
+  box-shadow: #77ae47 0 1px 2px inset;
+}
+/* line 6, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/sassy-buttons/_sassy-button-pseudo-states.sass */
+.cta .x-btn-default-small.x-btn-default-small-noicon.disabled, .cta .x-btn-default-small.x-btn-default-small-noicon[disabled] {
+  opacity: 0.6;
+  background: #8cbe5f;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+/* line 73, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/sassy/_sassy-buttons.sass */
+.cta .x-btn-default-small.x-btn-default-small-noicon::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* line 484, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.cta .x-btn-default-small.x-btn-default-small-noicon.x-btn-default-small-disabled {
+  opacity: 0.6;
+  background: #8cbe5f;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+/* line 491, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.cta .x-btn-default-small.x-btn-default-small-noicon.x-btn .x-btn-center .x-btn-inner {
+  padding: 0;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+/* line 498, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.flat .x-btn-default-small.x-btn-default-small-noicon {
+  background-color: #4ba3cc;
+  border-radius: 4px;
+}
+/* line 503, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.flat .x-btn-default-small.x-btn-default-small-noicon.x-btn-default-small-disabled {
+  opacity: 0.6;
+  background: #4ba3cc;
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 513, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.signin-panel .signin-form .x-panel-body {
+  background: #fff !important;
+}
+
+/* line 517, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.signin-title {
+  color: #4E9AC9;
+}
+
+/* line 521, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+#signin-page {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  overflow: hidden;
+  height: 10000px;
+  position: static;
+  background-color: #F5F5F5;
+  background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 70, color-stop(0%, #ffffff), color-stop(70%, #f5f5f5));
+  background-image: -webkit-radial-gradient(center top, ellipse farthest-corner, #ffffff, #f5f5f5 70%);
+  background-image: -moz-radial-gradient(center top, ellipse farthest-corner, #ffffff, #f5f5f5 70%);
+  background-image: -o-radial-gradient(center top, ellipse farthest-corner, #ffffff, #f5f5f5 70%);
+  background-image: -ms-radial-gradient(center top, ellipse farthest-corner, #ffffff, #f5f5f5 70%);
+  background-image: radial-gradient(center top, ellipse farthest-corner, #ffffff, #f5f5f5 70%);
+}
+
+/* LOGO Goes here
+.signin-panel .signin-logo-panel .x-panel-body {
+	background: url("../../../icons/welcome.png") no-repeat scroll 0 0 transparent;
+	height: 50px;
+} */
+/* line 539, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+TABLE.x-form-item td {
+  vertical-align: top;
+}
+
+/* line 543, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.x-form-item-label, .x-form-display-field {
+  padding-top: 3px;
+}
+
+/* line 547, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp_folder_view-cls > .x-panel-body-default {
+  border: none;
+}
+
+/* line 551, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.x-panel-body-default {
+  border-radius: 6px;
+}
+
+/* line 555, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.signin-panel {
+  background-image: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(30%, #505054), color-stop(94%, #464649));
+  background-image: -webkit-linear-gradient(#505054 30%, #464649 94%);
+  background-image: -moz-linear-gradient(#505054 30%, #464649 94%);
+  background-image: -o-linear-gradient(#505054 30%, #464649 94%);
+  background-image: -ms-linear-gradient(#505054 30%, #464649 94%);
+  background-image: linear-gradient(#505054 30%, #464649 94%);
+  background-color: #464649!important;
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-top-left-radius: 8px;
+  -o-border-top-left-radius: 8px;
+  -ms-border-top-left-radius: 8px;
+  -khtml-border-top-left-radius: 8px;
+  border-top-left-radius: 8px;
+  -moz-border-radius-topright: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -o-border-top-right-radius: 8px;
+  -ms-border-top-right-radius: 8px;
+  -khtml-border-top-right-radius: 8px;
+  border-top-right-radius: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -o-border-bottom-left-radius: 8px;
+  -ms-border-bottom-left-radius: 8px;
+  -khtml-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  -o-border-bottom-right-radius: 8px;
+  -ms-border-bottom-right-radius: 8px;
+  -khtml-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* line 563, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.signin-panel .signin-form .x-panel-body {
+  background-color: white!important;
+}
+
+/* line 567, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.signin-panel .signin-logo-panel .x-panel-body {
+  background: url("Artifacts/Resources/Reliable_Logo_Orange.png") no-repeat scroll 0 0 transparent !important;
+  background-size: 90px !important;
+  background-position-x: 10px !important;
+}
+
+/* line 573, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.signin-title {
+  color: transparent!important;
+}
+
+/* line 577, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.xcp-master-header .x-css-shadow {
+  box-shadow: none !important;
+}
+
+/* line 581, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.nav-menu-caret {
+  top: 33px !important;
+  border-bottom: 7px solid transparent;
+}
+
+/* line 586, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.nav-menu-caret .inner-caret {
+  top: 20px !important;
+}
+
+/* line 590, C:/xCP Designer/Applications/Reliable_Insurance/.metadata/.plugins/com.emc.xcp.uitemplate.ui/resources/custom-themes/rely.ReliableTheme-1.1.jar/reliable-theme.scss */
+.x-btn-arrow {
+  background: transparent !important;
+}

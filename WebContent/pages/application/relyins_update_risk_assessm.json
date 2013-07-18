@@ -1,0 +1,6 @@
+{
+  "padding" : "0",
+  "border" : false,
+  "pageTitle" : "${_UI_Page_relyins_update_risk_assessm_title}",
+  "xtype" : "xcp_form"
+}

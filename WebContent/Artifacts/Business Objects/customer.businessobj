@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsDatatypes:BusinessObject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsCommon="http://xcp.emc.com/common" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" urn="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj" categoryId="com.emc.xcp.artifact.bo" name="customer" label="Customer" description="Customer business object">
+  <attributes name="customer_id" label="Customer ID">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </attributes>
+  <attributes name="first_name" label="First name">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </attributes>
+  <attributes name="last_name" label="Last name">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </attributes>
+  <attributes name="birth_date" label="Birth date">
+    <type xsi:type="nsAttributeDatatypes:DateTimeType"/>
+  </attributes>
+  <attributes name="street" label="Street">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </attributes>
+  <attributes name="zip" label="ZIP">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </attributes>
+  <attributes name="city" label="City">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </attributes>
+  <attributes name="state" label="State">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </attributes>
+  <attributes name="risk" label="Risk">
+    <type xsi:type="nsAttributeDatatypes:IntegerType"/>
+  </attributes>
+  <attributes name="driver_license" label="Driver license">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </attributes>
+  <attributes name="email" label="Email">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </attributes>
+  <attributes name="occupation" label="Occupation">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </attributes>
+  <attributes name="ssn" label="SSN">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </attributes>
+  <attributes name="phone" label="Phone">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </attributes>
+  <attributes name="had_accident" label="Had accident">
+    <type xsi:type="nsAttributeDatatypes:BooleanType"/>
+  </attributes>
+  <attributes name="had_insurance_declined" label="Had insurance declined">
+    <type xsi:type="nsAttributeDatatypes:BooleanType"/>
+  </attributes>
+  <attributes name="had_license_revoked" label="Had license revoked">
+    <type xsi:type="nsAttributeDatatypes:BooleanType"/>
+  </attributes>
+  <attributes name="had_moving_violation" label="Had moving violation">
+    <type xsi:type="nsAttributeDatatypes:BooleanType"/>
+  </attributes>
+  <attributes name="had_mental_impairments" label="Had mental impairments">
+    <type xsi:type="nsAttributeDatatypes:BooleanType"/>
+  </attributes>
+  <attributes name="vehicles_make" label="Vehicles Make" repeating="true">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="128"/>
+  </attributes>
+  <attributes name="vehicles_model" label="Vehicles Model" repeating="true">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="128"/>
+  </attributes>
+  <attributes name="bodily_injury" label="Bodily injury" repeating="true">
+    <type xsi:type="nsAttributeDatatypes:BooleanType"/>
+  </attributes>
+  <attributes name="property_damage" label="Property damage" repeating="true">
+    <type xsi:type="nsAttributeDatatypes:BooleanType"/>
+  </attributes>
+  <attributes name="medical_payments" label="Medical payments" repeating="true">
+    <type xsi:type="nsAttributeDatatypes:BooleanType"/>
+  </attributes>
+  <attributes name="comprehensive" label="Comprehensive" repeating="true">
+    <type xsi:type="nsAttributeDatatypes:BooleanType"/>
+  </attributes>
+  <attributes name="collision" label="Collision" repeating="true">
+    <type xsi:type="nsAttributeDatatypes:BooleanType"/>
+  </attributes>
+  <attributes name="telematic_1" label="Telematic 1">
+    <type xsi:type="nsAttributeDatatypes:IntegerType"/>
+  </attributes>
+  <attributes name="telematic_2" label="Telematic 2">
+    <type xsi:type="nsAttributeDatatypes:IntegerType"/>
+  </attributes>
+  <attributes name="telematic_3" label="Telematic 3">
+    <type xsi:type="nsAttributeDatatypes:IntegerType"/>
+  </attributes>
+  <attributes name="telematic_4" label="Telematic 4">
+    <type xsi:type="nsAttributeDatatypes:IntegerType"/>
+  </attributes>
+  <attributes name="telematic_5" label="Telematic 5">
+    <type xsi:type="nsAttributeDatatypes:IntegerType"/>
+  </attributes>
+  <eventConfigs label="New customer" description="">
+    <triggerType/>
+    <action xsi:type="nsCommon:ServiceEventAction">
+      <serviceBinding>
+        <service runtimeModuleName="SyncInvokeService">
+          <configParams name="CHILD_PROCESS_URN" value="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process"/>
+        </service>
+        <inputMappingRules>
+          <expression exprStr="event.customer.first_name+' '+event.customer.last_name+' has applied for a new policy'"/>
+          <targetNode>
+            <parentRef selectionName="Variables" selectionLabel="Variables">
+              <parentRef>
+                <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#/"/>
+              </parentRef>
+            </parentRef>
+            <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#//@processData/@variables[name='activity_desc']"/>
+          </targetNode>
+        </inputMappingRules>
+        <inputMappingRules>
+          <expression exprStr="'New customer'"/>
+          <targetNode>
+            <parentRef selectionName="Variables" selectionLabel="Variables">
+              <parentRef>
+                <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#/"/>
+              </parentRef>
+            </parentRef>
+            <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#//@processData/@variables[name='activity_type']"/>
+          </targetNode>
+        </inputMappingRules>
+        <inputMappingRules>
+          <expression exprStr="event.customer.r_object_id"/>
+          <targetNode>
+            <parentRef selectionName="Variables" selectionLabel="Variables">
+              <parentRef>
+                <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#/"/>
+              </parentRef>
+            </parentRef>
+            <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#//@processData/@variables[name='customer_obj_id']"/>
+          </targetNode>
+        </inputMappingRules>
+      </serviceBinding>
+    </action>
+    <condition exprStr=""/>
+  </eventConfigs>
+  <eventConfigs label="New vehicle purchased" description="">
+    <triggerType type="RELATED">
+      <refObject href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship#/"/>
+    </triggerType>
+    <action xsi:type="nsCommon:ServiceEventAction">
+      <serviceBinding>
+        <service runtimeModuleName="SyncInvokeService">
+          <configParams name="CHILD_PROCESS_URN" value="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process"/>
+        </service>
+        <inputMappingRules>
+          <expression exprStr="event.customer.first_name+' '+event.customer.last_name+' purchased a new vehicle: '+event.related_vehicles.vehicle.make+'-'+event.related_vehicles.vehicle.model"/>
+          <targetNode>
+            <parentRef selectionName="Variables" selectionLabel="Variables">
+              <parentRef>
+                <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#/"/>
+              </parentRef>
+            </parentRef>
+            <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#//@processData/@variables[name='activity_desc']"/>
+          </targetNode>
+        </inputMappingRules>
+        <inputMappingRules>
+          <expression exprStr="'New vehicle purchased'"/>
+          <targetNode>
+            <parentRef selectionName="Variables" selectionLabel="Variables">
+              <parentRef>
+                <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#/"/>
+              </parentRef>
+            </parentRef>
+            <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#//@processData/@variables[name='activity_type']"/>
+          </targetNode>
+        </inputMappingRules>
+        <inputMappingRules>
+          <expression exprStr="event.customer.r_object_id"/>
+          <targetNode>
+            <parentRef selectionName="Variables" selectionLabel="Variables">
+              <parentRef>
+                <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#/"/>
+              </parentRef>
+            </parentRef>
+            <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#//@processData/@variables[name='customer_obj_id']"/>
+          </targetNode>
+        </inputMappingRules>
+      </serviceBinding>
+    </action>
+    <condition exprStr=""/>
+  </eventConfigs>
+  <eventConfigs label="New policy" description="">
+    <triggerType type="RELATED">
+      <refObject href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_policy.relationship#/"/>
+    </triggerType>
+    <action xsi:type="nsCommon:ServiceEventAction">
+      <serviceBinding>
+        <service runtimeModuleName="SyncInvokeService">
+          <configParams name="CHILD_PROCESS_URN" value="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process"/>
+        </service>
+        <inputMappingRules>
+          <expression exprStr="event.customer.first_name+' '+event.customer.last_name+' has been approved for a new policy'"/>
+          <targetNode>
+            <parentRef selectionName="Variables" selectionLabel="Variables">
+              <parentRef>
+                <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#/"/>
+              </parentRef>
+            </parentRef>
+            <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#//@processData/@variables[name='activity_desc']"/>
+          </targetNode>
+        </inputMappingRules>
+        <inputMappingRules>
+          <expression exprStr="'New policy'"/>
+          <targetNode>
+            <parentRef selectionName="Variables" selectionLabel="Variables">
+              <parentRef>
+                <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#/"/>
+              </parentRef>
+            </parentRef>
+            <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#//@processData/@variables[name='activity_type']"/>
+          </targetNode>
+        </inputMappingRules>
+        <inputMappingRules>
+          <expression exprStr="event.customer.r_object_id"/>
+          <targetNode>
+            <parentRef selectionName="Variables" selectionLabel="Variables">
+              <parentRef>
+                <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#/"/>
+              </parentRef>
+            </parentRef>
+            <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#//@processData/@variables[name='customer_obj_id']"/>
+          </targetNode>
+        </inputMappingRules>
+      </serviceBinding>
+    </action>
+    <condition exprStr=""/>
+  </eventConfigs>
+  <accessControlPolicy>
+    <default href="urn:relyins:com.emc.xcp.artifact.permissionset:Artifacts/Permission Sets/demo_permission.permissionset#/"/>
+  </accessControlPolicy>
+  <defaultFolderPath exprStr="parameters.relyins.customers"/>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_create_customer" label="Create Customer" implCategoryId="com.emc.xcp.artifact.bo">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="birth_date" label="Birth date">
+      <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="bodily_injury" label="Bodily injury" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="city" label="City">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="collision" label="Collision" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="comprehensive" label="Comprehensive" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="customer_id" label="Customer ID">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="driver_license" label="Driver license">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="email" label="Email">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="first_name" label="First name">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="had_accident" label="Had accident">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="had_insurance_declined" label="Had insurance declined">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="had_license_revoked" label="Had license revoked">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="had_mental_impairments" label="Had mental impairments">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="had_moving_violation" label="Had moving violation">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="last_name" label="Last name">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="medical_payments" label="Medical payments" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="occupation" label="Occupation">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="phone" label="Phone">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="property_damage" label="Property damage" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="risk" label="Risk">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="ssn" label="SSN">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="state" label="State">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="street" label="Street">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="telematic_1" label="Telematic 1">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="telematic_2" label="Telematic 2">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="telematic_3" label="Telematic 3">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="telematic_4" label="Telematic 4">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="telematic_5" label="Telematic 5">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="vehicles_make" label="Vehicles Make" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="vehicles_model" label="Vehicles Model" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="zip" label="ZIP">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <primaryElement dataModel="/"/>
+    <actionType type="Create"/>
+  </dataActionContracts>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_update_customer" label="Update Customer" implCategoryId="com.emc.xcp.artifact.bo">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="birth_date" label="Birth date">
+      <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="bodily_injury" label="Bodily injury" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="city" label="City">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="collision" label="Collision" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="comprehensive" label="Comprehensive" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="customer_id" label="Customer ID">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="driver_license" label="Driver license">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="email" label="Email">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="first_name" label="First name">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="had_accident" label="Had accident">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="had_insurance_declined" label="Had insurance declined">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="had_license_revoked" label="Had license revoked">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="had_mental_impairments" label="Had mental impairments">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="had_moving_violation" label="Had moving violation">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="last_name" label="Last name">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="medical_payments" label="Medical payments" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="occupation" label="Occupation">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="phone" label="Phone">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="property_damage" label="Property damage" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="risk" label="Risk">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="ssn" label="SSN">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="state" label="State">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="street" label="Street">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="telematic_1" label="Telematic 1">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="telematic_2" label="Telematic 2">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="telematic_3" label="Telematic 3">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="telematic_4" label="Telematic 4">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="telematic_5" label="Telematic 5">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="vehicles_make" label="Vehicles Make" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="vehicles_model" label="Vehicles Model" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="zip" label="ZIP">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <primaryElement dataModel="/"/>
+    <actionType type="Update"/>
+  </dataActionContracts>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_delete_customer" label="Delete Customer" implCategoryId="com.emc.xcp.artifact.bo">
+    <primaryElement dataModel="/"/>
+    <actionType type="Delete"/>
+  </dataActionContracts>
+  <superType xsi:type="nsDatatypes:BusinessObject" href="urn:xcp:com.emc.xcp.artifact.bo:Artifacts/Business Objects/rootbo.businessobj#/"/>
+</nsDatatypes:BusinessObject>

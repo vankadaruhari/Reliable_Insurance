@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsPicklist:Picklist xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsPicklist="http://xcp.emc.com/picklist" urn="urn:relyins:com.emc.xcp.artifact.picklist:Artifacts/Picklists/activity_type.picklist" categoryId="com.emc.xcp.artifact.picklist" name="activity_type" label="Activity type">
+  <type xsi:type="nsAttributeDatatypes:StringType"/>
+  <entries label="New customer" value="New customer"/>
+  <entries label="Customer profile updated" value="Customer profile updated"/>
+  <entries label="New policy" value="New policy"/>
+  <entries label="New claim" value="New claim"/>
+  <entries label="New vehicle" value="New vehicle"/>
+</nsPicklist:Picklist>

@@ -1,0 +1,719 @@
+{
+  "padding" : "0",
+  "border" : false,
+  "pageTitle" : "${_UI_Page_relyins_vehicle_inventory_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "all_manufacturers",
+      "actionModel" : "relyins_all_manufacturers_outputs",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "input_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_vehicle_inventory_all_manufacturers_input_name_1",
+          "events" : ["filter_manuf_input.change" ]
+        } ],
+        "mapping" : {
+          "input_name" : ["filter_manuf_input" ]
+        }
+      } ],
+      "pageSize" : 10,
+      "actionType" : "datasource",
+      "autoLoad" : true,
+      "invokerEvents" : ["filter_manuf_input.change" ]
+    }, {
+      "xcpId" : "search_vehicle",
+      "actionModel" : "relyins_search_vehicle_outputs",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "input_make",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_vehicle_inventory_search_vehicle_input_make_1",
+          "events" : ["manufacturers_list.selectionchange" ]
+        } ],
+        "mapping" : {
+          "input_make" : ["manufacturers_list" ]
+        }
+      } ],
+      "pageSize" : 10,
+      "actionType" : "datasource",
+      "autoLoad" : true,
+      "invokerEvents" : ["manufacturers_list.selectionchange" ]
+    }, {
+      "xcpId" : "da_def_create_manufacturer_button",
+      "redirectStyle" : "current",
+      "showSuccessNotification" : true,
+      "showConfirmation" : false,
+      "actionType" : "create",
+      "actionModel" : "relyins_da_def_create_manufacturer",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "object_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_vehicle_inventory_da_def_create_manufacturer_object_name_1",
+          "events" : ["manuf_name.change" ]
+        } ],
+        "mapping" : {
+          "object_name" : ["manuf_name" ]
+        }
+      } ]
+    }, {
+      "xcpId" : "da_def_create_vehicle_button1",
+      "redirectStyle" : "current",
+      "showSuccessNotification" : true,
+      "showConfirmation" : false,
+      "actionType" : "create",
+      "actionModel" : "relyins_da_def_create_vehicle",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "make",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_vehicle_inventory_da_def_create_vehicle_make_1",
+          "events" : ["manuf_for_vehicle.change" ]
+        }, {
+          "propertyId" : "model",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_vehicle_inventory_da_def_create_vehicle_model_1",
+          "events" : ["model_input.change" ]
+        }, {
+          "propertyId" : "rating",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_vehicle_inventory_da_def_create_vehicle_rating_1",
+          "events" : ["rating_display.change" ]
+        }, {
+          "propertyId" : "year",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_vehicle_inventory_da_def_create_vehicle_year_1",
+          "events" : ["year_input.change" ]
+        }, {
+          "propertyId" : "object_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_vehicle_inventory_da_def_create_vehicle_object_name_1",
+          "events" : ["manuf_for_vehicle.change","model_input.change" ]
+        }, {
+          "propertyId" : "msrp",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_vehicle_inventory_da_def_create_vehicle_msrp_1",
+          "events" : ["msrp_input.change" ]
+        }, {
+          "propertyId" : "body_type",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_vehicle_inventory_da_def_create_vehicle_body_type_1",
+          "events" : ["body_type.change" ]
+        } ],
+        "mapping" : {
+          "make" : ["manuf_for_vehicle" ],
+          "model" : ["model_input" ],
+          "rating" : ["rating_display" ],
+          "year" : ["year_input" ],
+          "object_name" : ["manuf_for_vehicle","model_input" ],
+          "msrp" : ["msrp_input" ],
+          "body_type" : ["body_type" ]
+        }
+      } ]
+    } ]
+  }, {
+    "xcpId" : "column_box1",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox2",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "350",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "column_box",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_vehicle_inventory_column_box_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "black-box",
+        "items" : [ {
+          "xcpId" : "columnvbox",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "90",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "center",
+          "valign" : "middle",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "image",
+            "xtype" : "xcp_image",
+            "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Car.png",
+            "behavior" : false,
+            "width" : 80,
+            "height" : 80,
+            "isInternal" : true
+          } ]
+        }, {
+          "xcpId" : "columnvbox1",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "center",
+          "valign" : "middle",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "rich_text",
+            "xtype" : "xcp_rich_text",
+            "html" : "${_UI_Page_relyins_vehicle_inventory_rich_text_html}"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "xcpId" : "tab_group",
+    "xtype" : "xcp_tab_group",
+    "tabPosition" : "top",
+    "minWidth" : 450,
+    "items" : [ {
+      "xcpId" : "tab",
+      "xtype" : "xcp_tab",
+      "title" : "${_UI_Page_relyins_vehicle_inventory_tab_title}",
+      "items" : [ {
+        "xcpId" : "column_box3",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "items" : [ {
+          "xcpId" : "columnvbox5",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "820",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box2",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "grey-box-no-header",
+            "items" : [ {
+              "xcpId" : "columnvbox3",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "width" : "250",
+              "overflow_x" : "hidden",
+              "labelWidth" : 100,
+              "labelAlign" : "top",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "filter_manuf_input",
+                "xtype" : "xcp_text_input",
+                "fieldLabel" : "${_UI_Page_relyins_vehicle_inventory_filter_manuf_input_fieldLabel}",
+                "hstretch" : true,
+                "valueType" : "STRING"
+              }, {
+                "xcpId" : "manufacturers_list",
+                "xtype" : "xcp_results_list",
+                "typeName" : "relyins_manufacturer",
+                "modelName" : "relyins_all_manufacturers_outputs",
+                "storeId" : "all_manufacturers",
+                "pageSize" : 10,
+                "selectionModel" : false,
+                "columns" : [ {
+                  "xcpId" : "results_list_page_link_column",
+                  "xtype" : "xcp_results_list_page_link_column",
+                  "text" : "${_UI_Page_relyins_vehicle_inventory_results_list_page_link_column_text}",
+                  "dataIndex" : "object_name",
+                  "valueType" : "STRING",
+                  "isRepeating" : false,
+                  "sortable" : true,
+                  "menuDisabled" : false
+                } ]
+              } ]
+            }, {
+              "xcpId" : "columnvbox4",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "vehicles_list",
+                "xtype" : "xcp_results_list",
+                "typeName" : "relyins_vehicle",
+                "modelName" : "relyins_search_vehicle_outputs",
+                "storeId" : "search_vehicle",
+                "pageSize" : 10,
+                "selectionModel" : false,
+                "columns" : [ {
+                  "xcpId" : "results_list_page_link_column1",
+                  "xtype" : "xcp_results_list_page_link_column",
+                  "text" : "${_UI_Page_relyins_vehicle_inventory_results_list_page_link_column1_text}",
+                  "width" : 200,
+                  "expression" : [ {
+                    "propertyId" : "dataIndex",
+                    "etype" : "relyins_vehicle_inventory_results_list_page_link_column1_dataIndex_1",
+                    "events" : ["relyins_search_vehicle_outputs.change","relyins_search_vehicle_outputs.load" ]
+                  } ],
+                  "valueType" : "STRING",
+                  "isRepeating" : false,
+                  "sortable" : false,
+                  "menuDisabled" : true
+                }, {
+                  "xcpId" : "results_list_column1",
+                  "xtype" : "xcp_results_list_column",
+                  "text" : "${_UI_Page_relyins_vehicle_inventory_results_list_column1_text}",
+                  "width" : 80,
+                  "dataIndex" : "year",
+                  "valueType" : "INTEGER",
+                  "isRepeating" : false,
+                  "format" : {
+                    "xtype" : "xcp_integer_formatter",
+                    "decimalPrecision" : 0,
+                    "useThousandSeparator" : false,
+                    "separatorStyle" : "LOCALE",
+                    "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+                  },
+                  "sortable" : false,
+                  "menuDisabled" : true
+                }, {
+                  "xcpId" : "results_list_column",
+                  "xtype" : "xcp_results_list_column",
+                  "text" : "${_UI_Page_relyins_vehicle_inventory_results_list_column_text}",
+                  "dataIndex" : "rating",
+                  "valueType" : "HTML",
+                  "isRepeating" : false,
+                  "sortable" : false,
+                  "menuDisabled" : true
+                } ]
+              } ]
+            } ]
+          } ]
+        }, {
+          "xcpId" : "columnvbox6",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "300",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box4",
+            "xtype" : "xcp_column_box",
+            "title" : "${_UI_Page_relyins_vehicle_inventory_column_box4_title}",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "grey-box",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ {
+                "propertyId" : "hidden",
+                "setterFunName" : "setHidden",
+                "etype" : "relyins_vehicle_inventory_column_box4_hidden_1",
+                "events" : ["vehicles_list.selectionchange" ]
+              } ]
+            } ],
+            "items" : [ {
+              "xcpId" : "columnvbox7",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 80,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "value_display",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "",
+                "valueType" : "HTML",
+                "isRepeating" : false,
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "value",
+                    "setterFunName" : "setValue",
+                    "etype" : "relyins_vehicle_inventory_value_display_value_1",
+                    "events" : ["vehicles_list.selectionchange" ]
+                  } ]
+                } ]
+              }, {
+                "xcpId" : "value_display4",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_vehicle_inventory_value_display4_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "value",
+                    "setterFunName" : "setValue",
+                    "etype" : "relyins_vehicle_inventory_value_display4_value_1",
+                    "events" : ["vehicles_list.selectionchange" ]
+                  } ]
+                } ]
+              }, {
+                "xcpId" : "value_display1",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_vehicle_inventory_value_display1_fieldLabel}",
+                "valueType" : "INTEGER",
+                "isRepeating" : false,
+                "format" : {
+                  "xtype" : "xcp_integer_formatter",
+                  "decimalPrecision" : 0,
+                  "useThousandSeparator" : true,
+                  "separatorStyle" : "LOCALE",
+                  "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+                },
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "value",
+                    "setterFunName" : "setValue",
+                    "etype" : "relyins_vehicle_inventory_value_display1_value_1",
+                    "events" : ["vehicles_list.selectionchange" ]
+                  } ]
+                } ]
+              }, {
+                "xcpId" : "value_display2",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_vehicle_inventory_value_display2_fieldLabel}",
+                "valueType" : "HTML",
+                "isRepeating" : false,
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "value",
+                    "setterFunName" : "setValue",
+                    "etype" : "relyins_vehicle_inventory_value_display2_value_1",
+                    "events" : ["vehicles_list.selectionchange" ]
+                  } ]
+                } ]
+              }, {
+                "xcpId" : "value_display3",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_vehicle_inventory_value_display3_fieldLabel}",
+                "valueType" : "FLOAT",
+                "isRepeating" : false,
+                "format" : {
+                  "xtype" : "xcp_float_formatter",
+                  "decimalPrecision" : 2,
+                  "useThousandSeparator" : true,
+                  "separatorStyle" : "LOCALE",
+                  "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+                },
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "value",
+                    "setterFunName" : "setValue",
+                    "etype" : "relyins_vehicle_inventory_value_display3_value_1",
+                    "events" : ["vehicles_list.selectionchange" ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "tab1",
+      "xtype" : "xcp_tab",
+      "title" : "${_UI_Page_relyins_vehicle_inventory_tab1_title}",
+      "items" : [ {
+        "xcpId" : "column_box6",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "items" : [ {
+          "xcpId" : "columnvbox9",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "400",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box5",
+            "xtype" : "xcp_column_box",
+            "title" : "${_UI_Page_relyins_vehicle_inventory_column_box5_title}",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "grey-box",
+            "items" : [ {
+              "xcpId" : "columnvbox8",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 80,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "column_box8",
+                "xtype" : "xcp_column_box",
+                "collapsible" : false,
+                "collapsed" : false,
+                "collapseFirst" : true,
+                "border" : false,
+                "defaultMargins" : "5",
+                "layout" : "xcp_columnbox",
+                "cls" : "orange-button",
+                "items" : [ {
+                  "xcpId" : "columnvbox14",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "top",
+                  "halign" : "left",
+                  "valign" : "middle",
+                  "defaultMargins" : "5",
+                  "items" : [ {
+                    "xcpId" : "manuf_name",
+                    "xtype" : "xcp_text_input",
+                    "fieldLabel" : "${_UI_Page_relyins_vehicle_inventory_manuf_name_fieldLabel}",
+                    "hstretch" : true,
+                    "valueType" : "STRING"
+                  } ]
+                }, {
+                  "xcpId" : "columnvbox15",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "width" : "20",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "left",
+                  "valign" : "top",
+                  "defaultMargins" : "5"
+                }, {
+                  "xcpId" : "columnvbox13",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "center",
+                  "valign" : "middle",
+                  "defaultMargins" : "5",
+                  "items" : [ {
+                    "xcpId" : "button",
+                    "xtype" : "xcp_button",
+                    "text" : "${_UI_Page_relyins_vehicle_inventory_button_text}",
+                    "actionInstanceId" : "da_def_create_manufacturer_button"
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        }, {
+          "xcpId" : "columnvbox10",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "20",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5"
+        }, {
+          "xcpId" : "columnvbox11",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "450",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box7",
+            "xtype" : "xcp_column_box",
+            "title" : "${_UI_Page_relyins_vehicle_inventory_column_box7_title}",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "grey-box",
+            "items" : [ {
+              "xcpId" : "columnvbox12",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 90,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "manuf_for_vehicle",
+                "xtype" : "xcp_dropdown_list",
+                "fieldLabel" : "${_UI_Page_relyins_vehicle_inventory_manuf_for_vehicle_fieldLabel}",
+                "valueField" : "object_name",
+                "displayField" : "object_name",
+                "store" : "all_manufacturers",
+                "valueType" : "STRING"
+              }, {
+                "xcpId" : "model_input",
+                "xtype" : "xcp_text_input",
+                "fieldLabel" : "${_UI_Page_relyins_vehicle_inventory_model_input_fieldLabel}",
+                "hstretch" : true,
+                "valueType" : "STRING"
+              }, {
+                "xcpId" : "year_input",
+                "xtype" : "xcp_number_input",
+                "fieldLabel" : "${_UI_Page_relyins_vehicle_inventory_year_input_fieldLabel}",
+                "allowDecimals" : false,
+                "hideTrigger" : true,
+                "keyNavEnabled" : false,
+                "mouseWheelEnabled" : false,
+                "autoStripChars" : true,
+                "hstretch" : true,
+                "valueType" : "INTEGER"
+              }, {
+                "xcpId" : "body_type",
+                "xtype" : "xcp_dropdown_list",
+                "fieldLabel" : "${_UI_Page_relyins_vehicle_inventory_body_type_fieldLabel}",
+                "store" : "xcp.picklist.relyins_vehicle_body_type",
+                "valueType" : "STRING"
+              }, {
+                "xcpId" : "msrp_input",
+                "xtype" : "xcp_number_input",
+                "fieldLabel" : "${_UI_Page_relyins_vehicle_inventory_msrp_input_fieldLabel}",
+                "allowDecimals" : true,
+                "hideTrigger" : true,
+                "keyNavEnabled" : false,
+                "mouseWheelEnabled" : false,
+                "autoStripChars" : true,
+                "hstretch" : true,
+                "valueType" : "FLOAT"
+              }, {
+                "xcpId" : "rating_list",
+                "xtype" : "xcp_dropdown_list",
+                "fieldLabel" : "${_UI_Page_relyins_vehicle_inventory_rating_list_fieldLabel}",
+                "store" : "xcp.picklist.relyins_rating",
+                "valueType" : "HTML",
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "hidden",
+                    "setterFunName" : "setHidden",
+                    "etype" : "relyins_vehicle_inventory_rating_list_hidden_1",
+                    "events" : ["rating_display.change" ]
+                  } ]
+                } ]
+              }, {
+                "xcpId" : "rating_display",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_vehicle_inventory_rating_display_fieldLabel}",
+                "valueType" : "HTML",
+                "isRepeating" : false,
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "hidden",
+                    "setterFunName" : "setHidden",
+                    "etype" : "relyins_vehicle_inventory_rating_display_hidden_1",
+                    "events" : ["rating_list.change" ]
+                  }, {
+                    "propertyId" : "value",
+                    "setterFunName" : "setValue",
+                    "etype" : "relyins_vehicle_inventory_rating_display_value_1",
+                    "events" : ["rating_list.change" ]
+                  } ]
+                } ]
+              }, {
+                "xcpId" : "column_box9",
+                "xtype" : "xcp_column_box",
+                "collapsible" : false,
+                "collapsed" : false,
+                "collapseFirst" : true,
+                "border" : false,
+                "defaultMargins" : "5",
+                "layout" : "xcp_columnbox",
+                "cls" : "orange-button",
+                "items" : [ {
+                  "xcpId" : "columnvbox16",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "left",
+                  "valign" : "top",
+                  "defaultMargins" : "5",
+                  "items" : [ {
+                    "xcpId" : "button1",
+                    "xtype" : "xcp_button",
+                    "text" : "${_UI_Page_relyins_vehicle_inventory_button1_text}",
+                    "actionInstanceId" : "da_def_create_vehicle_button1"
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  } ]
+}

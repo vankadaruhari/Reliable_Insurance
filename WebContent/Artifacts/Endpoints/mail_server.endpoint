@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsEndpoint:EmailEndpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:nsEndpoint="http://xcp.emc.com/endpoint" urn="urn:relyins:com.emc.xcp.artifact.endpoint:Artifacts/Endpoints/mail_server.endpoint" categoryId="com.emc.xcp.artifact.endpoint" name="mail_server" label="Mail Server" hostname="xcpcs"/>

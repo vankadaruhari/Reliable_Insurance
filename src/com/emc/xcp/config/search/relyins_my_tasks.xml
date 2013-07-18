@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean class="com.emc.xcp.services.datasource.domain.TaskListQuery" id="relyins_my_tasks">
+  <property name="columns">
+    <list>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.first_name"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.last_name"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.street"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.city"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.zip"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.state"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="task.due_date"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="task.subject"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="task.creation_date"/>
+        <property name="sortable" value="true"/>
+      </bean>
+    </list>
+  </property>
+  <property name="expressionSet">
+    <bean class="com.emc.xcp.services.datasource.domain.expression.ExpressionSet">
+      <property name="expressions">
+        <list>
+          <bean class="com.emc.xcp.services.datasource.domain.expression.ValueListExpression">
+            <property name="caseSensitive" value="true"/>
+            <property name="fuzzy" value="false"/>
+            <property name="property" value="process.system_name"/>
+            <property name="repeated" value="false"/>
+            <property name="dataType" value="STRING"/>
+            <property name="operator" value="IN"/>
+            <property name="values">
+              <list>
+                <value>relyins_new_application</value>
+              </list>
+            </property>
+          </bean>
+        </list>
+      </property>
+      <property name="operator" value="AND"/>
+    </bean>
+  </property>
+  <property name="sorts">
+    <list>
+      <bean class="com.emc.xcp.services.datasource.domain.Sort">
+        <property name="ascending" value="false"/>
+        <property name="property" value="task.creation_date"/>
+      </bean>
+    </list>
+  </property>
+  <property name="taskListMapping" ref="relyins_my_taskstaskListMapping"/>
+  <property name="taskListScope" value="USER"/>
+</bean>
+
+<bean class="com.emc.xcp.services.datasource.domain.mapping.TaskListMapping" id="relyins_my_taskstaskListMapping">
+  <property name="packages">
+    <map>
+      <entry key="customer">
+        <bean class="com.emc.xcp.services.datasource.domain.mapping.ObjectType">
+          <property name="typeName" value="relyins_customer"/>
+          <property name="attributes">
+            <map>
+              <entry key="city">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                  <property name="persistentName" value="city"/>
+                </bean>
+              </entry>
+              <entry key="first_name">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                  <property name="persistentName" value="first_name"/>
+                </bean>
+              </entry>
+              <entry key="last_name">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                  <property name="persistentName" value="last_name"/>
+                </bean>
+              </entry>
+              <entry key="state">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                  <property name="persistentName" value="state"/>
+                </bean>
+              </entry>
+              <entry key="street">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                  <property name="persistentName" value="street"/>
+                </bean>
+              </entry>
+              <entry key="zip">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                  <property name="persistentName" value="zip"/>
+                </bean>
+              </entry>
+            </map>
+          </property>
+        </bean>
+      </entry>
+    </map>
+  </property>
+</bean>
+
+</beans>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realtime:RealTimeSearch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" xmlns:realtime="http://xcp.emc.com/search/realtime" urn="urn:relyins:com.emc.xcp.artifact.search.realtime:Artifacts/Real-time Queries/search_customer.realtime" categoryId="com.emc.xcp.artifact.search.realtime" name="search_customer" label="Search - Customer">
+  <datasource urn="urn:relyins:com.emc.xcp.artifact.search.realtime:Artifacts/Real-time Queries/search_customer.realtime" categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="search_customer" label="Search - Customer" implCategoryId="com.emc.xcp.artifact.search.realtime">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="input_last_name" label="Last name">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </outputs>
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="customer_id" label="Customer ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="first_name" label="First name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="last_name" label="Last name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="birth_date" label="Birth date">
+          <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="id" label="Object ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="r_object_type" label="Object type" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement>
+      <dataModel href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+    </primaryElement>
+  </datasource>
+  <inputParameters label="Last name" name="last_name">
+    <formInputs xsi:type="realtime:RealTimeStringFormInput" operator="com.emc.xcp.model.common.StringOperator:CONTAIN">
+      <contextSelection>
+        <parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='last_name']"/>
+      </contextSelection>
+    </formInputs>
+    <formInputs xsi:type="realtime:RealTimeStringFormInput" operator="com.emc.xcp.model.common.StringOperator:CONTAIN" isCaseInsensitive="true">
+      <contextSelection>
+        <parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='first_name']"/>
+      </contextSelection>
+    </formInputs>
+  </inputParameters>
+  <columns label="Customer ID">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='customer_id']"/>
+    </contextSelection>
+  </columns>
+  <columns label="First name">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='first_name']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Last name">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='last_name']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Birth date">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='birth_date']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Object ID">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_object_id']"/>
+    </contextSelection>
+  </columns>
+  <defaultSort ascending="true"/>
+  <dataType xsi:type="nsDatatypes:BusinessObject" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+  <resultOrientation>
+    <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+  </resultOrientation>
+</realtime:RealTimeSearch>

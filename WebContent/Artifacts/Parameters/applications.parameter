@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsAppParameter:AppParameter xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAppParameter="http://xcp2.emc.com/appconfiguration" urn="urn:relyins:com.emc.xcp.artifact.appparameter:Artifacts/Parameters/applications.parameter" categoryId="com.emc.xcp.artifact.appparameter" name="applications" label="Applications" value="/Reliable/Applications">
+  <type xsi:type="nsAppParameter:FolderPathAppParameterType"/>
+</nsAppParameter:AppParameter>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean class="com.emc.xcp.services.datasource.domain.RealTimeQuery" id="relyins_related_activities">
+  <property name="columns">
+    <list>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="child_recent_activity.activity_type"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="child_recent_activity.description"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="child_recent_activity.r_creation_date"/>
+        <property name="sortable" value="true"/>
+      </bean>
+    </list>
+  </property>
+  <property name="expressionSet">
+    <bean class="com.emc.xcp.services.datasource.domain.expression.ExpressionSet">
+      <property name="expressions">
+        <list>
+          <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+            <property name="caseSensitive" value="true"/>
+            <property name="exactMatch" value="false"/>
+            <property name="fuzzy" value="false"/>
+            <property name="property" value="parent_customer.id"/>
+            <property name="repeated" value="false"/>
+            <property name="value" value="urlparam{input_object_id}"/>
+            <property name="dataType" value="STRING"/>
+            <property name="operator" value="EQUAL"/>
+          </bean>
+        </list>
+      </property>
+      <property name="operator" value="AND"/>
+    </bean>
+  </property>
+  <property name="mapping" ref="relyins_related_activitiesmapping"/>
+  <property name="sorts">
+    <list>
+      <bean class="com.emc.xcp.services.datasource.domain.Sort">
+        <property name="ascending" value="false"/>
+        <property name="property" value="child_recent_activity.r_creation_date"/>
+      </bean>
+    </list>
+  </property>
+</bean>
+
+<bean class="com.emc.xcp.services.datasource.domain.mapping.RealTimeMapping" id="relyins_related_activitiesmapping">
+  <property name="rootType">
+    <bean class="com.emc.xcp.services.datasource.domain.mapping.ObjectType">
+      <property name="typeName" value="dm_relation"/>
+      <property name="constraintQualification">
+        <list>
+          <bean class="com.emc.xcp.services.datasource.domain.mapping.ConstraintQualification">
+            <property name="sourceAttribute" value="relation_name"/>
+            <property name="value" value="relyins_customer_recent_act"/>
+          </bean>
+        </list>
+      </property>
+      <property name="relations">
+        <map>
+          <entry key="child_recent_activity">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.Join">
+              <property name="joinQualification">
+                <list>
+                  <bean class="com.emc.xcp.services.datasource.domain.mapping.JoinQualification">
+                    <property name="sourceAttribute" value="child_id"/>
+                    <property name="targetAttribute" value="r_object_id"/>
+                  </bean>
+                </list>
+              </property>
+              <property name="relateTo">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.ObjectType">
+                  <property name="typeName" value="relyins_recent_activity"/>
+                  <property name="attributes">
+                    <map>
+                      <entry key="activity_type">
+                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                          <property name="persistentName" value="activity_type"/>
+                        </bean>
+                      </entry>
+                      <entry key="description">
+                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                          <property name="persistentName" value="description"/>
+                        </bean>
+                      </entry>
+                      <entry key="r_creation_date">
+                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                          <property name="persistentName" value="r_creation_date"/>
+                        </bean>
+                      </entry>
+                    </map>
+                  </property>
+                </bean>
+              </property>
+              <property name="relationType" value="MANY"/>
+            </bean>
+          </entry>
+          <entry key="parent_customer">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.Join">
+              <property name="joinQualification">
+                <list>
+                  <bean class="com.emc.xcp.services.datasource.domain.mapping.JoinQualification">
+                    <property name="sourceAttribute" value="parent_id"/>
+                    <property name="targetAttribute" value="r_object_id"/>
+                  </bean>
+                </list>
+              </property>
+              <property name="relateTo">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.ObjectType">
+                  <property name="typeName" value="relyins_customer"/>
+                  <property name="attributes">
+                    <map>
+                      <entry key="id">
+                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                          <property name="persistentName" value="r_object_id"/>
+                        </bean>
+                      </entry>
+                    </map>
+                  </property>
+                </bean>
+              </property>
+              <property name="relationType" value="MANY"/>
+            </bean>
+          </entry>
+        </map>
+      </property>
+    </bean>
+  </property>
+</bean>
+
+</beans>

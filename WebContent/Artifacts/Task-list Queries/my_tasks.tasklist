@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tasklist:TaskListSearch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:tasklist="http://xcp.emc.com/search/tasklist" urn="urn:relyins:com.emc.xcp.artifact.search.tasklist:Artifacts/Task-list Queries/my_tasks.tasklist" categoryId="com.emc.xcp.artifact.search.tasklist" name="my_tasks" label="My Tasks" origin="SPECIFIC_PROCESS">
+  <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="my_tasks" label="My Tasks" implCategoryId="com.emc.xcp.artifact.search.tasklist">
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </outputs>
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="packagescustomerfirst_name" label="First name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="packagescustomerlast_name" label="Last name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="packagescustomerstreet" label="Street">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="packagescustomercity" label="City">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="packagescustomerzip" label="ZIP">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="packagescustomerstate" label="State">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="task_due_date" label="Due Date">
+          <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="task_subject" label="Subject">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="task_creation_date" label="Creation Date" sortable="true">
+          <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="task_performer_name" label="Performer Name" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="task_state" label="State" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="workqueue_name" label="Work Queue Name" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="task_name" label="Task Name" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="process_system_name" label="Process System Name" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="activity_system_name" label="Activity System Name" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="is_rejectable" label="Is Rejectable" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="is_repeatable" label="Is Repeatable" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="is_delegable" label="Is Delegable" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement>
+      <dataModel href="urn:xcp:com.emc.xcp.artifact.task:Artifacts/Tasks/OOTBTask.task#/"/>
+    </primaryElement>
+  </datasource>
+  <columns label="First name">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="packages" selectionLabel="Packages">
+          <parentRef selectionName="task_list" selectionLabel="Task List"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='first_name']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Last name">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="packages" selectionLabel="Packages">
+          <parentRef selectionName="task_list" selectionLabel="Task List"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='last_name']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Street">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="packages" selectionLabel="Packages">
+          <parentRef selectionName="task_list" selectionLabel="Task List"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='street']"/>
+    </contextSelection>
+  </columns>
+  <columns label="City">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="packages" selectionLabel="Packages">
+          <parentRef selectionName="task_list" selectionLabel="Task List"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='city']"/>
+    </contextSelection>
+  </columns>
+  <columns label="ZIP">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="packages" selectionLabel="Packages">
+          <parentRef selectionName="task_list" selectionLabel="Task List"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='zip']"/>
+    </contextSelection>
+  </columns>
+  <columns label="State">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="packages" selectionLabel="Packages">
+          <parentRef selectionName="task_list" selectionLabel="Task List"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='state']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Due Date">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="task_list" selectionLabel="Task List"/>
+        <dataRef href="urn:xcp:com.emc.xcp.artifact.task:Artifacts/Tasks/OOTBTask.task#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.task:Artifacts/Tasks/OOTBTask.task#//@attributes.5"/>
+    </contextSelection>
+  </columns>
+  <columns label="Subject">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="task_list" selectionLabel="Task List"/>
+        <dataRef href="urn:xcp:com.emc.xcp.artifact.task:Artifacts/Tasks/OOTBTask.task#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.task:Artifacts/Tasks/OOTBTask.task#//@attributes.0"/>
+    </contextSelection>
+  </columns>
+  <columns label="Creation Date" sortable="true">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="task_list" selectionLabel="Task List"/>
+        <dataRef href="urn:xcp:com.emc.xcp.artifact.task:Artifacts/Tasks/OOTBTask.task#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.task:Artifacts/Tasks/OOTBTask.task#//@attributes.10"/>
+    </contextSelection>
+  </columns>
+  <defaultSort>
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="task_list" selectionLabel="Task List"/>
+        <dataRef href="urn:xcp:com.emc.xcp.artifact.task:Artifacts/Tasks/OOTBTask.task#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.task:Artifacts/Tasks/OOTBTask.task#//@attributes.10"/>
+    </contextSelection>
+  </defaultSort>
+  <processes href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/new_application.process#/"/>
+</tasklist:TaskListSearch>

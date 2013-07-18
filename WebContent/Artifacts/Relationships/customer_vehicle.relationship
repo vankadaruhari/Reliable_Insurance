@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsDatatypes:Relation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" urn="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_vehicle.relationship" categoryId="com.emc.xcp.artifact.relation" name="customer_vehicle" label="Customer-Vehicle" targetRoleName="vehicles" targetRoleLabel="Vehicles" fromCardinality="-1" subjectRoleName="customer" subjectRoleLabel="Customer" toCardinality="-1" bidirectional="true">
+  <from xsi:type="nsDatatypes:BusinessObject" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+  <to xsi:type="nsDatatypes:BusinessObject" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+  <qualifyingAttributes name="vin" label="VIN">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </qualifyingAttributes>
+  <qualifyingAttributes name="new_vehicle" label="New vehicle">
+    <type xsi:type="nsAttributeDatatypes:BooleanType"/>
+  </qualifyingAttributes>
+  <qualifyingAttributes name="license_plate" label="License plate">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </qualifyingAttributes>
+  <qualifyingAttributes name="mileage" label="Mileage">
+    <type xsi:type="nsAttributeDatatypes:IntegerType"/>
+  </qualifyingAttributes>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_relate_customer_vehicle_customer" label="Relate Customer-Vehicle Customer" implCategoryId="com.emc.xcp.artifact.relation">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="vin" label="VIN">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="new_vehicle" label="New vehicle">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="license_plate" label="License plate">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="mileage" label="Mileage">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <primaryElement dataModel="/"/>
+    <actionType xsi:type="nsDataserviceContract:RelateActionType" type="Relate">
+      <target href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+    </actionType>
+  </dataActionContracts>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_relate_customer_vehicle_vehicle" label="Relate Customer-Vehicle Vehicle" implCategoryId="com.emc.xcp.artifact.relation">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="vin" label="VIN">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="new_vehicle" label="New vehicle">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="license_plate" label="License plate">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="mileage" label="Mileage">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <primaryElement dataModel="/"/>
+    <actionType xsi:type="nsDataserviceContract:RelateActionType" type="Relate">
+      <target href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj#/"/>
+    </actionType>
+  </dataActionContracts>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_update_customer_vehicle" label="Update Customer-Vehicle" implCategoryId="com.emc.xcp.artifact.relation">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="id">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="vin" label="VIN">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="new_vehicle" label="New vehicle">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="license_plate" label="License plate">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="mileage" label="Mileage">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <primaryElement dataModel="/"/>
+    <actionType type="Update"/>
+  </dataActionContracts>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_delete_customer_vehicle" label="Delete Customer-Vehicle" implCategoryId="com.emc.xcp.artifact.relation">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="id">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <primaryElement dataModel="/"/>
+    <actionType type="Delete"/>
+  </dataActionContracts>
+</nsDatatypes:Relation>

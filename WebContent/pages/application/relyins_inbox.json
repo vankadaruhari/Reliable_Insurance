@@ -1,0 +1,304 @@
+{
+  "padding" : "0",
+  "border" : false,
+  "pageTitle" : "${_UI_Page_relyins_inbox_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "inbox",
+      "actionModel" : "relyins_inbox_outputs",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "input_first_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_inbox_inbox_input_first_name_1",
+          "events" : ["text_input.change" ]
+        }, {
+          "propertyId" : "input_make",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_inbox_inbox_input_make_1",
+          "events" : ["text_input1.change" ]
+        } ],
+        "mapping" : {
+          "input_first_name" : ["text_input" ],
+          "input_make" : ["text_input1" ]
+        }
+      } ],
+      "pageSize" : 10,
+      "actionType" : "datasource",
+      "autoLoad" : true
+    } ]
+  }, {
+    "xcpId" : "column_box1",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox3",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "520",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "column_box",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_inbox_column_box_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "black-box",
+        "items" : [ {
+          "xcpId" : "columnvbox",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "60",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "center",
+          "valign" : "middle",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "image",
+            "xtype" : "xcp_image",
+            "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Task.png",
+            "behavior" : false,
+            "width" : 48,
+            "height" : 48,
+            "isInternal" : true
+          } ]
+        }, {
+          "xcpId" : "columnvbox1",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "center",
+          "valign" : "middle",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "rich_text",
+            "xtype" : "xcp_rich_text",
+            "html" : "${_UI_Page_relyins_inbox_rich_text_html}"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "xcpId" : "value_display",
+    "xtype" : "xcp_value_display",
+    "fieldLabel" : "",
+    "valueType" : "STRING",
+    "isRepeating" : false
+  }, {
+    "xcpId" : "column_box2",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "cls" : "grey-box-no-header",
+    "items" : [ {
+      "xcpId" : "columnvbox2",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "column_box3",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "items" : [ {
+          "xcpId" : "columnvbox4",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "100%",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box4",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "items" : [ {
+              "xcpId" : "columnvbox5",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "width" : "100%",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "text_input",
+                "xtype" : "xcp_text_input",
+                "fieldLabel" : "${_UI_Page_relyins_inbox_text_input_fieldLabel}",
+                "hstretch" : true,
+                "valueType" : "STRING"
+              }, {
+                "xcpId" : "text_input1",
+                "xtype" : "xcp_text_input",
+                "fieldLabel" : "${_UI_Page_relyins_inbox_text_input1_fieldLabel}",
+                "hstretch" : true,
+                "valueType" : "STRING"
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box5",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "items" : [ {
+              "xcpId" : "columnhbox",
+              "xtype" : "xcp_columnhbox",
+              "orientation" : "Horizontal",
+              "width" : "100%",
+              "overflow_x" : "hidden",
+              "labelWidth" : 50,
+              "defaultMargins" : "5",
+              "labelAlign" : "left",
+              "halign" : "right",
+              "valign" : "top",
+              "items" : [ {
+                "xcpId" : "button",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_inbox_button_text}",
+                "actionInstanceId" : "inbox"
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "xcpId" : "results_list",
+        "xtype" : "xcp_results_list",
+        "typeName" : "xcp_task",
+        "modelName" : "relyins_inbox_outputs",
+        "storeId" : "inbox",
+        "pageSize" : 10,
+        "selectionModel" : false,
+        "columns" : [ {
+          "xcpId" : "results_list_page_link_column",
+          "xtype" : "xcp_results_list_page_link_column",
+          "text" : "${_UI_Page_relyins_inbox_results_list_page_link_column_text}",
+          "width" : 150,
+          "dataIndex" : "packagescustomercustomer_id",
+          "valueType" : "STRING",
+          "isRepeating" : false,
+          "sortable" : false,
+          "menuDisabled" : true
+        }, {
+          "xcpId" : "results_list_column",
+          "xtype" : "xcp_results_list_column",
+          "text" : "${_UI_Page_relyins_inbox_results_list_column_text}",
+          "width" : 300,
+          "expression" : [ {
+            "propertyId" : "dataIndex",
+            "etype" : "relyins_inbox_results_list_column_dataIndex_1",
+            "events" : ["relyins_inbox_outputs.change","relyins_inbox_outputs.load" ]
+          } ],
+          "valueType" : "HTML",
+          "isRepeating" : false,
+          "sortable" : false,
+          "menuDisabled" : true
+        }, {
+          "xcpId" : "results_list_column2",
+          "xtype" : "xcp_results_list_column",
+          "text" : "${_UI_Page_relyins_inbox_results_list_column2_text}",
+          "width" : 150,
+          "dataIndex" : "packagescustomerbirth_date",
+          "valueType" : "DATETIME",
+          "isRepeating" : false,
+          "format" : {
+            "xtype" : "xcp_datetime_formatter",
+            "dateFormat" : "short",
+            "timeFormat" : "short",
+            "dateStyle" : "date"
+          },
+          "sortable" : false,
+          "menuDisabled" : true
+        }, {
+          "xcpId" : "results_list_column3",
+          "xtype" : "xcp_results_list_column",
+          "text" : "${_UI_Page_relyins_inbox_results_list_column3_text}",
+          "width" : 150,
+          "dataIndex" : "packagescustomervehicleschild_vehiclemake",
+          "valueType" : "STRING",
+          "isRepeating" : true,
+          "repeatingAttributeFormat" : {
+            "xtype" : "xcp_repeating_attribute_formatter",
+            "separatorStyle" : "NEWLINE"
+          },
+          "sortable" : false,
+          "menuDisabled" : true
+        }, {
+          "xcpId" : "results_list_column4",
+          "xtype" : "xcp_results_list_column",
+          "text" : "${_UI_Page_relyins_inbox_results_list_column4_text}",
+          "width" : 150,
+          "dataIndex" : "packagescustomervehicleschild_vehiclemodel",
+          "valueType" : "STRING",
+          "isRepeating" : true,
+          "repeatingAttributeFormat" : {
+            "xtype" : "xcp_repeating_attribute_formatter",
+            "separatorStyle" : "NEWLINE"
+          },
+          "sortable" : false,
+          "menuDisabled" : true
+        }, {
+          "xcpId" : "results_list_column5",
+          "xtype" : "xcp_results_list_column",
+          "text" : "${_UI_Page_relyins_inbox_results_list_column5_text}",
+          "dataIndex" : "packagescustomervehiclesvin",
+          "valueType" : "STRING",
+          "isRepeating" : true,
+          "repeatingAttributeFormat" : {
+            "xtype" : "xcp_repeating_attribute_formatter",
+            "separatorStyle" : "NEWLINE"
+          },
+          "sortable" : false,
+          "menuDisabled" : true
+        } ]
+      } ]
+    } ]
+  } ]
+}

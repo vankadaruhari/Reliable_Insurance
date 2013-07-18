@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean class="com.emc.xcp.services.datasource.domain.RealTimeQuery" id="relyins_related_vehicles">
+  <property name="columns">
+    <list>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="child_vehicle.id"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="child_vehicle.make"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="child_vehicle.model"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="child_vehicle.year"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="child_vehicle.msrp"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="child_vehicle.rating"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="vin"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="license_plate"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="mileage"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="new_vehicle"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="child_vehicle.object_name"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="child_vehicle.body_type"/>
+        <property name="sortable" value="false"/>
+      </bean>
+    </list>
+  </property>
+  <property name="expressionSet">
+    <bean class="com.emc.xcp.services.datasource.domain.expression.ExpressionSet">
+      <property name="expressions">
+        <list>
+          <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+            <property name="caseSensitive" value="true"/>
+            <property name="exactMatch" value="false"/>
+            <property name="fuzzy" value="false"/>
+            <property name="property" value="parent_customer.id"/>
+            <property name="repeated" value="false"/>
+            <property name="value" value="urlparam{input_object_id}"/>
+            <property name="dataType" value="STRING"/>
+            <property name="operator" value="EQUAL"/>
+          </bean>
+        </list>
+      </property>
+      <property name="operator" value="AND"/>
+    </bean>
+  </property>
+  <property name="mapping" ref="relyins_related_vehiclesmapping"/>
+</bean>
+
+<bean class="com.emc.xcp.services.datasource.domain.mapping.RealTimeMapping" id="relyins_related_vehiclesmapping">
+  <property name="rootType">
+    <bean class="com.emc.xcp.services.datasource.domain.mapping.ObjectType">
+      <property name="typeName" value="relyins_customer_vehicle"/>
+      <property name="attributes">
+        <map>
+          <entry key="license_plate">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="license_plate"/>
+            </bean>
+          </entry>
+          <entry key="mileage">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="mileage"/>
+            </bean>
+          </entry>
+          <entry key="new_vehicle">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="new_vehicle"/>
+            </bean>
+          </entry>
+          <entry key="vin">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="vin"/>
+            </bean>
+          </entry>
+        </map>
+      </property>
+      <property name="constraintQualification">
+        <list>
+          <bean class="com.emc.xcp.services.datasource.domain.mapping.ConstraintQualification">
+            <property name="sourceAttribute" value="relation_name"/>
+            <property name="value" value="relyins_customer_vehicle"/>
+          </bean>
+        </list>
+      </property>
+      <property name="relations">
+        <map>
+          <entry key="child_vehicle">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.Join">
+              <property name="joinQualification">
+                <list>
+                  <bean class="com.emc.xcp.services.datasource.domain.mapping.JoinQualification">
+                    <property name="sourceAttribute" value="child_id"/>
+                    <property name="targetAttribute" value="r_object_id"/>
+                  </bean>
+                </list>
+              </property>
+              <property name="relateTo">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.ObjectType">
+                  <property name="typeName" value="relyins_vehicle"/>
+                  <property name="attributes">
+                    <map>
+                      <entry key="body_type">
+                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                          <property name="persistentName" value="body_type"/>
+                        </bean>
+                      </entry>
+                      <entry key="id">
+                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                          <property name="persistentName" value="r_object_id"/>
+                        </bean>
+                      </entry>
+                      <entry key="make">
+                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                          <property name="persistentName" value="make"/>
+                        </bean>
+                      </entry>
+                      <entry key="model">
+                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                          <property name="persistentName" value="model"/>
+                        </bean>
+                      </entry>
+                      <entry key="msrp">
+                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                          <property name="persistentName" value="msrp"/>
+                        </bean>
+                      </entry>
+                      <entry key="object_name">
+                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                          <property name="persistentName" value="object_name"/>
+                        </bean>
+                      </entry>
+                      <entry key="rating">
+                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                          <property name="persistentName" value="rating"/>
+                        </bean>
+                      </entry>
+                      <entry key="year">
+                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                          <property name="persistentName" value="year"/>
+                        </bean>
+                      </entry>
+                    </map>
+                  </property>
+                </bean>
+              </property>
+              <property name="relationType" value="MANY"/>
+            </bean>
+          </entry>
+          <entry key="parent_customer">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.Join">
+              <property name="joinQualification">
+                <list>
+                  <bean class="com.emc.xcp.services.datasource.domain.mapping.JoinQualification">
+                    <property name="sourceAttribute" value="parent_id"/>
+                    <property name="targetAttribute" value="r_object_id"/>
+                  </bean>
+                </list>
+              </property>
+              <property name="relateTo">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.ObjectType">
+                  <property name="typeName" value="relyins_customer"/>
+                  <property name="attributes">
+                    <map>
+                      <entry key="id">
+                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                          <property name="persistentName" value="r_object_id"/>
+                        </bean>
+                      </entry>
+                    </map>
+                  </property>
+                </bean>
+              </property>
+              <property name="relationType" value="MANY"/>
+            </bean>
+          </entry>
+        </map>
+      </property>
+    </bean>
+  </property>
+</bean>
+
+</beans>

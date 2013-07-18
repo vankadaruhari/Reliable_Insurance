@@ -1,0 +1,682 @@
+{
+  "padding" : "0",
+  "border" : false,
+  "pageTitle" : "${_UI_Page_relyins_new_application_ini_title}",
+  "xtype" : "xcp_form",
+  "modelImmutable" : true,
+  "models" : [ "relyins_new_application_initiate_template" ],
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "search_vehicle",
+      "actionModel" : "relyins_search_vehicle_outputs",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ],
+      "pageSize" : 10,
+      "actionType" : "datasource",
+      "autoLoad" : true
+    }, {
+      "xcpId" : "da_def_create_new_application_initiate_button",
+      "redirectStyle" : "application",
+      "showSuccessNotification" : true,
+      "showConfirmation" : false,
+      "actionType" : "create",
+      "redirectUrl" : "application/relyins_welcome_page",
+      "actionModel" : "relyins_da_def_create_new_application_initiate",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "processPackages.application_form.id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_application_form_id_1",
+          "events" : ["selector.change" ]
+        }, {
+          "propertyId" : "processVariables.license",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processVariables_license_1",
+          "events" : ["license_plate_input.change" ]
+        }, {
+          "propertyId" : "processVariables.mileage",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processVariables_mileage_1",
+          "events" : ["mileage_input.change" ]
+        }, {
+          "propertyId" : "processVariables.new_vehicle",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processVariables_new_vehicle_1",
+          "events" : ["new_vehicle.change" ]
+        }, {
+          "propertyId" : "processVariables.vin",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processVariables_vin_1",
+          "events" : ["vin_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.object_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_object_name_1",
+          "events" : ["first_name_input.change","last_name_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.birth_date",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_birth_date_1",
+          "events" : ["birth_date_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.city",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_city_1",
+          "events" : ["city_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.driver_license",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_driver_license_1",
+          "events" : ["license_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.email",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_email_1",
+          "events" : ["email_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.first_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_first_name_1",
+          "events" : ["first_name_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_accident",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_had_accident_1",
+          "events" : ["accident.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_insurance_declined",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_had_insurance_declined_1",
+          "events" : ["insurance.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_license_revoked",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_had_license_revoked_1",
+          "events" : ["license.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_mental_impairments",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_had_mental_impairments_1",
+          "events" : ["impairment.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_moving_violation",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_had_moving_violation_1",
+          "events" : ["violation.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.last_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_last_name_1",
+          "events" : ["last_name_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.occupation",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_occupation_1",
+          "events" : ["occupation_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.phone",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_phone_1",
+          "events" : ["phone_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.risk",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_risk_1"
+        }, {
+          "propertyId" : "processPackages.customer.ssn",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_ssn_1",
+          "events" : ["ssn_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.state",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_state_1",
+          "events" : ["state_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.street",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_street_1",
+          "events" : ["street_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.zip",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_customer_zip_1",
+          "events" : ["zip_input.change" ]
+        }, {
+          "propertyId" : "processPackages.vehicle.id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_processPackages_vehicle_id_1",
+          "events" : ["vehicles_list.selectionchange" ]
+        } ],
+        "mapping" : {
+          "processPackages.application_form.id" : ["selector" ],
+          "processVariables.license" : ["license_plate_input" ],
+          "processVariables.mileage" : ["mileage_input" ],
+          "processVariables.new_vehicle" : ["new_vehicle" ],
+          "processVariables.vin" : ["vin_input" ],
+          "processPackages.customer.object_name" : ["first_name_input","last_name_input" ],
+          "processPackages.customer.birth_date" : ["birth_date_input" ],
+          "processPackages.customer.city" : ["city_input" ],
+          "processPackages.customer.driver_license" : ["license_input" ],
+          "processPackages.customer.email" : ["email_input" ],
+          "processPackages.customer.first_name" : ["first_name_input" ],
+          "processPackages.customer.had_accident" : ["accident" ],
+          "processPackages.customer.had_insurance_declined" : ["insurance" ],
+          "processPackages.customer.had_license_revoked" : ["license" ],
+          "processPackages.customer.had_mental_impairments" : ["impairment" ],
+          "processPackages.customer.had_moving_violation" : ["violation" ],
+          "processPackages.customer.last_name" : ["last_name_input" ],
+          "processPackages.customer.occupation" : ["occupation_input" ],
+          "processPackages.customer.phone" : ["phone_input" ],
+          "processPackages.customer.ssn" : ["ssn_input" ],
+          "processPackages.customer.state" : ["state_input" ],
+          "processPackages.customer.street" : ["street_input" ],
+          "processPackages.customer.zip" : ["zip_input" ],
+          "processPackages.vehicle.id" : ["vehicles_list" ]
+        }
+      } ]
+    }, {
+      "xcpId" : "da_def_create_new_application_initiate_1_start_existing_customer",
+      "redirectStyle" : "application",
+      "showSuccessNotification" : true,
+      "showConfirmation" : false,
+      "actionType" : "create",
+      "redirectUrl" : "application/relyins_welcome_page",
+      "actionModel" : "relyins_da_def_create_new_application_initiate",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "processVariables.license",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_1_processVariables_license_1",
+          "events" : ["license_input.change" ]
+        }, {
+          "propertyId" : "processVariables.mileage",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_1_processVariables_mileage_1",
+          "events" : ["mileage_input.change" ]
+        }, {
+          "propertyId" : "processVariables.new_vehicle",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_1_processVariables_new_vehicle_1",
+          "events" : ["new_vehicle.change" ]
+        }, {
+          "propertyId" : "processVariables.vin",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_1_processVariables_vin_1",
+          "events" : ["vin_input.change" ]
+        }, {
+          "propertyId" : "processPackages.application_form.id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_1_processPackages_application_form_id_1",
+          "events" : ["selector.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_1_processPackages_customer_id_1",
+          "events" : ["selector1.change" ]
+        }, {
+          "propertyId" : "processPackages.vehicle.id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_ini_da_def_create_new_application_initiate_1_processPackages_vehicle_id_1",
+          "events" : ["vehicles_list.selectionchange" ]
+        } ],
+        "mapping" : {
+          "processVariables.license" : ["license_input" ],
+          "processVariables.mileage" : ["mileage_input" ],
+          "processVariables.new_vehicle" : ["new_vehicle" ],
+          "processVariables.vin" : ["vin_input" ],
+          "processPackages.application_form.id" : ["selector" ],
+          "processPackages.customer.id" : ["selector1" ],
+          "processPackages.vehicle.id" : ["vehicles_list" ]
+        }
+      } ]
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnhbox",
+      "xtype" : "xcp_columnhbox",
+      "orientation" : "Horizontal",
+      "overflow_x" : "hidden",
+      "labelWidth" : 50,
+      "defaultMargins" : "5",
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "items" : [ {
+        "xcpId" : "image",
+        "xtype" : "xcp_image",
+        "imageSource" : "urn:xcpcomm:com.emc.xcp.artifact.resource.image:Artifacts/Resources/process_32.png",
+        "behavior" : false,
+        "width" : 32,
+        "height" : 32,
+        "isInternal" : true
+      }, {
+        "xcpId" : "rich_text",
+        "xtype" : "xcp_rich_text",
+        "html" : "${_UI_Page_relyins_new_application_ini_rich_text_html}"
+      } ]
+    }, {
+      "xcpId" : "columnhbox1",
+      "xtype" : "xcp_columnhbox",
+      "orientation" : "Horizontal",
+      "overflow_x" : "hidden",
+      "labelWidth" : 50,
+      "defaultMargins" : "5",
+      "labelAlign" : "left",
+      "halign" : "right",
+      "valign" : "top",
+      "items" : [ {
+        "xcpId" : "start_existing_customer",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_relyins_new_application_ini_start_existing_customer_text}",
+        "actionInstanceId" : "da_def_create_new_application_initiate_1_start_existing_customer",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "hidden",
+            "setterFunName" : "setHidden",
+            "etype" : "relyins_new_application_ini_start_existing_customer_hidden_1",
+            "events" : ["new_customer.change" ]
+          } ]
+        } ]
+      }, {
+        "xcpId" : "button",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_relyins_new_application_ini_button_text}",
+        "actionInstanceId" : "da_def_create_new_application_initiate_button",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "hidden",
+            "setterFunName" : "setHidden",
+            "etype" : "relyins_new_application_ini_button_hidden_1",
+            "events" : ["new_customer.change" ]
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "xcpId" : "tab_group",
+    "xtype" : "xcp_tab_group",
+    "tabPosition" : "top",
+    "minWidth" : 450,
+    "items" : [ {
+      "xcpId" : "tab",
+      "xtype" : "xcp_tab",
+      "title" : "${_UI_Page_relyins_new_application_ini_tab_title}",
+      "items" : [ {
+        "xcpId" : "new_customer",
+        "xtype" : "xcp_checkbox",
+        "fieldLabel" : "${_UI_Page_relyins_new_application_ini_new_customer_fieldLabel}",
+        "valueType" : "BOOLEAN",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "value",
+            "setterFunName" : "setValue",
+            "etype" : "relyins_new_application_ini_new_customer_value_1"
+          } ]
+        } ]
+      }, {
+        "xcpId" : "column_box1",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "hidden",
+            "setterFunName" : "setHidden",
+            "etype" : "relyins_new_application_ini_column_box1_hidden_1",
+            "events" : ["new_customer.change" ]
+          } ]
+        } ],
+        "items" : [ {
+          "xcpId" : "columnvbox",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "first_name_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_first_name_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          }, {
+            "xcpId" : "last_name_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_last_name_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          }, {
+            "xcpId" : "birth_date_input",
+            "xtype" : "xcp_date_time_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_birth_date_input_fieldLabel}",
+            "hstretch" : true,
+            "format" : {
+              "xtype" : "xcp_datetime_formatter",
+              "dateFormat" : "short",
+              "timeFormat" : "short",
+              "dateStyle" : "date"
+            },
+            "valueType" : "DATETIME"
+          }, {
+            "xcpId" : "street_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_street_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          }, {
+            "xcpId" : "city_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_city_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          }, {
+            "xcpId" : "zip_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_zip_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          }, {
+            "xcpId" : "state_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_state_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          } ]
+        }, {
+          "xcpId" : "columnvbox2",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "license_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_license_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          }, {
+            "xcpId" : "ssn_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_ssn_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          }, {
+            "xcpId" : "phone_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_phone_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          }, {
+            "xcpId" : "email_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_email_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          }, {
+            "xcpId" : "occupation_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_occupation_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          } ]
+        }, {
+          "xcpId" : "columnvbox1",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "insurance",
+            "xtype" : "xcp_checkbox",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_insurance_fieldLabel}",
+            "valueType" : "BOOLEAN"
+          }, {
+            "xcpId" : "impairment",
+            "xtype" : "xcp_checkbox",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_impairment_fieldLabel}",
+            "valueType" : "BOOLEAN"
+          }, {
+            "xcpId" : "license",
+            "xtype" : "xcp_checkbox",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_license_fieldLabel}",
+            "valueType" : "BOOLEAN"
+          }, {
+            "xcpId" : "violation",
+            "xtype" : "xcp_checkbox",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_violation_fieldLabel}",
+            "valueType" : "BOOLEAN"
+          }, {
+            "xcpId" : "accident",
+            "xtype" : "xcp_checkbox",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_accident_fieldLabel}",
+            "valueType" : "BOOLEAN"
+          } ]
+        } ]
+      }, {
+        "xcpId" : "column_box3",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "hidden",
+            "setterFunName" : "setHidden",
+            "etype" : "relyins_new_application_ini_column_box3_hidden_1",
+            "events" : ["new_customer.change" ]
+          } ]
+        } ],
+        "items" : [ {
+          "xcpId" : "columnvbox5",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "selector1",
+            "xtype" : "xcp_selector",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_selector1_fieldLabel}",
+            "hstretch" : true,
+            "mandatory" : false,
+            "objectType" : "relyins_customer",
+            "displayField" : "customer_id",
+            "fromRepository" : true,
+            "fromFileSystem" : false,
+            "actionFlowId" : "relyins_select_customer",
+            "name" : "relyins_new_application_initiate_template@processPackages.customer.id"
+          } ]
+        }, {
+          "xcpId" : "columnvbox6",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5"
+        } ]
+      } ]
+    }, {
+      "xcpId" : "tab1",
+      "xtype" : "xcp_tab",
+      "title" : "${_UI_Page_relyins_new_application_ini_tab1_title}",
+      "items" : [ {
+        "xcpId" : "column_box2",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "items" : [ {
+          "xcpId" : "columnvbox3",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "vehicles_list",
+            "xtype" : "xcp_results_list",
+            "typeName" : "relyins_vehicle",
+            "modelName" : "relyins_search_vehicle_outputs",
+            "storeId" : "search_vehicle",
+            "pageSize" : 10,
+            "selectionModel" : false,
+            "columns" : [ {
+              "xcpId" : "results_list_page_link_column",
+              "xtype" : "xcp_results_list_page_link_column",
+              "text" : "${_UI_Page_relyins_new_application_ini_results_list_page_link_column_text}",
+              "width" : 150,
+              "dataIndex" : "make",
+              "valueType" : "STRING",
+              "isRepeating" : false,
+              "sortable" : false,
+              "menuDisabled" : true
+            }, {
+              "xcpId" : "results_list_column",
+              "xtype" : "xcp_results_list_column",
+              "text" : "${_UI_Page_relyins_new_application_ini_results_list_column_text}",
+              "width" : 150,
+              "dataIndex" : "model",
+              "valueType" : "STRING",
+              "isRepeating" : false,
+              "sortable" : true,
+              "menuDisabled" : false
+            }, {
+              "xcpId" : "results_list_column1",
+              "xtype" : "xcp_results_list_column",
+              "text" : "${_UI_Page_relyins_new_application_ini_results_list_column1_text}",
+              "width" : 150,
+              "dataIndex" : "rating",
+              "valueType" : "xcp.picklist.relyins_rating",
+              "isRepeating" : false,
+              "sortable" : false,
+              "menuDisabled" : true
+            }, {
+              "xcpId" : "results_list_column2",
+              "xtype" : "xcp_results_list_column",
+              "text" : "${_UI_Page_relyins_new_application_ini_results_list_column2_text}",
+              "dataIndex" : "year",
+              "valueType" : "INTEGER",
+              "isRepeating" : false,
+              "format" : {
+                "xtype" : "xcp_integer_formatter",
+                "decimalPrecision" : 0,
+                "useThousandSeparator" : false,
+                "separatorStyle" : "LOCALE",
+                "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+              },
+              "sortable" : false,
+              "menuDisabled" : true
+            } ]
+          } ]
+        }, {
+          "xcpId" : "columnvbox4",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "license_plate_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_license_plate_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          }, {
+            "xcpId" : "mileage_input",
+            "xtype" : "xcp_number_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_mileage_input_fieldLabel}",
+            "allowDecimals" : false,
+            "hideTrigger" : true,
+            "keyNavEnabled" : false,
+            "mouseWheelEnabled" : false,
+            "autoStripChars" : true,
+            "hstretch" : true,
+            "valueType" : "INTEGER"
+          }, {
+            "xcpId" : "new_vehicle",
+            "xtype" : "xcp_checkbox",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_new_vehicle_fieldLabel}",
+            "valueType" : "BOOLEAN"
+          }, {
+            "xcpId" : "vin_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_ini_vin_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "tab2",
+      "xtype" : "xcp_tab",
+      "title" : "${_UI_Page_relyins_new_application_ini_tab2_title}",
+      "items" : [ {
+        "xcpId" : "selector",
+        "xtype" : "xcp_selector",
+        "fieldLabel" : "${_UI_Page_relyins_new_application_ini_selector_fieldLabel}",
+        "hstretch" : true,
+        "mandatory" : false,
+        "objectType" : "relyins_application_form",
+        "displayField" : "object_name",
+        "fromRepository" : true,
+        "fromFileSystem" : false,
+        "actionFlowId" : "relyins_select_application",
+        "name" : "relyins_new_application_initiate_template@processPackages.application_form.id"
+      } ]
+    } ]
+  } ]
+}

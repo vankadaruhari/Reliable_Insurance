@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realtime:RealTimeSearch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" xmlns:nsPicklist="http://xcp.emc.com/picklist" xmlns:realtime="http://xcp.emc.com/search/realtime" urn="urn:relyins:com.emc.xcp.artifact.search.realtime:Artifacts/Real-time Queries/related_activities.realtime" categoryId="com.emc.xcp.artifact.search.realtime" name="related_activities" label="Related activities">
+  <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="related_activities" label="Related activities" implCategoryId="com.emc.xcp.artifact.search.realtime">
+    <inputs xsi:type="nsDataserviceContract:IdElement" name="input_object_id" label="Object ID">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </outputs>
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="child_recent_activityactivity_type" label="Activity type">
+          <attributeType xsi:type="nsPicklist:PickListType">
+            <pickList href="urn:relyins:com.emc.xcp.artifact.picklist:Artifacts/Picklists/activity_type.picklist#/"/>
+          </attributeType>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="child_recent_activitydescription" label="Description">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="child_recent_activityr_creation_date" label="Created on" sortable="true">
+          <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:IdElement" name="id" label="Object ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement>
+      <dataModel href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_recent_act.relationship#/"/>
+    </primaryElement>
+  </datasource>
+  <columns label="Activity type">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="recent_activities" selectionLabel="Recent Activities" repeating="true" useNamePreferred="true">
+          <parentRef>
+            <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+          </parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_recent_act.relationship#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#//@attributes[name='activity_type']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Description">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="recent_activities" selectionLabel="Recent Activities" repeating="true" useNamePreferred="true">
+          <parentRef>
+            <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+          </parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_recent_act.relationship#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#//@attributes[name='description']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Created on" sortable="true">
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="recent_activities" selectionLabel="Recent Activities" repeating="true" useNamePreferred="true">
+          <parentRef>
+            <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+          </parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_recent_act.relationship#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_creation_date']"/>
+    </contextSelection>
+  </columns>
+  <defaultSort>
+    <contextSelection>
+      <parentRef>
+        <parentRef selectionName="recent_activities" selectionLabel="Recent Activities" useNamePreferred="true">
+          <parentRef>
+            <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+          </parentRef>
+          <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_recent_act.relationship#/"/>
+        </parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_creation_date']"/>
+    </contextSelection>
+  </defaultSort>
+  <dataType xsi:type="nsDatatypes:BusinessObject" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+  <resultOrientation selectionName="recent_activities" selectionLabel="Recent Activities" repeating="true" useNamePreferred="true">
+    <parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+    </parentRef>
+    <dataRef href="urn:relyins:com.emc.xcp.artifact.relation:Artifacts/Relationships/customer_recent_act.relationship#/"/>
+  </resultOrientation>
+</realtime:RealTimeSearch>

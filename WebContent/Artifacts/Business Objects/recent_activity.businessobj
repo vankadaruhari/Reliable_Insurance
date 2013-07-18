@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsDatatypes:BusinessObject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" xmlns:nsPicklist="http://xcp.emc.com/picklist" urn="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/recent_activity.businessobj" categoryId="com.emc.xcp.artifact.bo" name="recent_activity" label="Recent Activity">
+  <attributes name="description" label="Description">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="512"/>
+  </attributes>
+  <attributes name="activity_type" label="Activity type">
+    <type xsi:type="nsPicklist:PickListType">
+      <pickList href="urn:relyins:com.emc.xcp.artifact.picklist:Artifacts/Picklists/activity_type.picklist#/"/>
+    </type>
+  </attributes>
+  <accessControlPolicy>
+    <default href="urn:relyins:com.emc.xcp.artifact.permissionset:Artifacts/Permission Sets/demo_permission.permissionset#/"/>
+  </accessControlPolicy>
+  <defaultFolderPath exprStr="parameters.relyins.recent_activities_l"/>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_create_recent_activity" label="Create Recent Activity" implCategoryId="com.emc.xcp.artifact.bo">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="activity_type" label="Activity type">
+      <attributeType xsi:type="nsPicklist:PickListType">
+        <pickList href="urn:relyins:com.emc.xcp.artifact.picklist:Artifacts/Picklists/activity_type.picklist#/"/>
+      </attributeType>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="description" label="Description">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <primaryElement dataModel="/"/>
+    <actionType type="Create"/>
+  </dataActionContracts>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_update_recent_activity" label="Update Recent Activity" implCategoryId="com.emc.xcp.artifact.bo">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="activity_type" label="Activity type">
+      <attributeType xsi:type="nsPicklist:PickListType">
+        <pickList href="urn:relyins:com.emc.xcp.artifact.picklist:Artifacts/Picklists/activity_type.picklist#/"/>
+      </attributeType>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="description" label="Description">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <primaryElement dataModel="/"/>
+    <actionType type="Update"/>
+  </dataActionContracts>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_delete_recent_activity" label="Delete Recent Activity" implCategoryId="com.emc.xcp.artifact.bo">
+    <primaryElement dataModel="/"/>
+    <actionType type="Delete"/>
+  </dataActionContracts>
+  <superType xsi:type="nsDatatypes:BusinessObject" href="urn:xcp:com.emc.xcp.artifact.bo:Artifacts/Business Objects/rootbo.businessobj#/"/>
+</nsDatatypes:BusinessObject>

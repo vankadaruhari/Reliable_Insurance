@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionflow:ActionFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionflow="http://www.emc.com/xcp2/2010/actionflow" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" urn="urn:relyins:com.emc.xcp.artifact.actionFlow:Artifacts/Action Flows/new_application_r_3.actionflow" categoryId="com.emc.xcp.artifact.actionFlow" name="new_application_r_3" label="Delegate task Review application (New application) " initialState="//@states[id='viewState_usergroup_selection']">
+  <inputs xsi:type="nsDataserviceContract:StructureElement" name="processVariables" label="Variables">
+    <elements xsi:type="nsDataserviceContract:AttributeElement" name="license" label="license">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </elements>
+    <elements xsi:type="nsDataserviceContract:AttributeElement" name="mileage" label="mileage">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </elements>
+    <elements xsi:type="nsDataserviceContract:AttributeElement" name="new_vehicle" label="new_vehicle">
+      <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+    </elements>
+    <elements xsi:type="nsDataserviceContract:AttributeElement" name="vin" label="vin">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </elements>
+  </inputs>
+  <inputs xsi:type="nsDataserviceContract:StructureElement" name="processPackages" label="Packages">
+    <elements xsi:type="nsDataserviceContract:StructureElement" name="application_form" label="application_form">
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="object_name" label="Name">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="id" label="Object Id">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+    </elements>
+    <elements xsi:type="nsDataserviceContract:StructureElement" name="customer" label="customer">
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="object_name" label="Name">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="birth_date" label="Birth date">
+        <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="bodily_injury" label="Bodily injury" repeating="true">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="city" label="City">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="collision" label="Collision" repeating="true">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="comprehensive" label="Comprehensive" repeating="true">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="customer_id" label="Customer ID">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="driver_license" label="Driver license">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="email" label="Email">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="first_name" label="First name">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="had_accident" label="Had accident">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="had_insurance_declined" label="Had insurance declined">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="had_license_revoked" label="Had license revoked">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="had_mental_impairments" label="Had mental impairments">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="had_moving_violation" label="Had moving violation">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="last_name" label="Last name">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="medical_payments" label="Medical payments" repeating="true">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="occupation" label="Occupation">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="phone" label="Phone">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="property_damage" label="Property damage" repeating="true">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="risk" label="Risk">
+        <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="ssn" label="SSN">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="state" label="State">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="street" label="Street">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="telematic_1" label="Telematic 1">
+        <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="telematic_2" label="Telematic 2">
+        <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="telematic_3" label="Telematic 3">
+        <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="telematic_4" label="Telematic 4">
+        <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="telematic_5" label="Telematic 5">
+        <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="vehicles_make" label="Vehicles Make" repeating="true">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="vehicles_model" label="Vehicles Model" repeating="true">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="zip" label="ZIP">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="id" label="Object Id">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+    </elements>
+    <elements xsi:type="nsDataserviceContract:StructureElement" name="policy" label="policy">
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="object_name" label="Name">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="approval" label="Approval">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="bodily_injury" label="Bodily injury">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="collision" label="Collision">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="comprehensive" label="Comprehensive">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="deductible" label="Deductible">
+        <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="description" label="Description">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="medical_payments" label="Medical payments">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="monthly_payment" label="Monthly payment">
+        <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="monthly_payment_float" label="Monthly Payment Float">
+        <attributeType xsi:type="nsAttributeDatatypes:FloatType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="property_damage" label="Property damage">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="total_coverage" label="Total coverage">
+        <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="id" label="Object Id">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+    </elements>
+    <elements xsi:type="nsDataserviceContract:StructureElement" name="vehicle" label="vehicle">
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="object_name" label="Name">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="body_type" label="Body Type">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="make" label="Make">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="model" label="Model">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="msrp" label="MSRP">
+        <attributeType xsi:type="nsAttributeDatatypes:FloatType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="rating" label="Rating">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="year" label="Year">
+        <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+      </elements>
+      <elements xsi:type="nsDataserviceContract:AttributeElement" name="id" label="Object Id">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+      </elements>
+    </elements>
+  </inputs>
+  <inputs xsi:type="nsDataserviceContract:AttributeElement" name="attachments" label="Attachments" repeating="true">
+    <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+  </inputs>
+  <inputs xsi:type="nsDataserviceContract:AttributeElement" name="id" label="id">
+    <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+  </inputs>
+  <primaryElement>
+    <dataModel href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/new_application.process#//@activities[name='Review%20application']/@taskContract"/>
+  </primaryElement>
+  <dataActions categoryId="com.emc.xcp.artifact.dataservice.dataaction" name="da_actionflow_" label="da_actionflow_">
+    <inputMappings name="processVariables">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="processVariables.license">
+      <expression exprStr="actionflow.Inputs.processVariables.license"/>
+    </inputMappings>
+    <inputMappings name="processVariables.mileage">
+      <expression exprStr="actionflow.Inputs.processVariables.mileage"/>
+    </inputMappings>
+    <inputMappings name="processVariables.new_vehicle">
+      <expression exprStr="actionflow.Inputs.processVariables.new_vehicle"/>
+    </inputMappings>
+    <inputMappings name="processVariables.vin">
+      <expression exprStr="actionflow.Inputs.processVariables.vin"/>
+    </inputMappings>
+    <inputMappings name="processPackages">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="processPackages.application_form">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="processPackages.application_form.object_name">
+      <expression exprStr="actionflow.Inputs.processPackages.application_form.object_name"/>
+    </inputMappings>
+    <inputMappings name="processPackages.application_form.id">
+      <expression exprStr="actionflow.Inputs.processPackages.application_form.id"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.object_name">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.object_name"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.birth_date">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.birth_date"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.bodily_injury">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.bodily_injury"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.city">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.city"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.collision">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.collision"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.comprehensive">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.comprehensive"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.customer_id">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.customer_id"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.driver_license">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.driver_license"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.email">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.email"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.first_name">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.first_name"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.had_accident">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.had_accident"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.had_insurance_declined">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.had_insurance_declined"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.had_license_revoked">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.had_license_revoked"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.had_mental_impairments">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.had_mental_impairments"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.had_moving_violation">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.had_moving_violation"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.last_name">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.last_name"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.medical_payments">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.medical_payments"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.occupation">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.occupation"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.phone">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.phone"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.property_damage">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.property_damage"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.risk">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.risk"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.ssn">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.ssn"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.state">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.state"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.street">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.street"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.telematic_1">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.telematic_1"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.telematic_2">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.telematic_2"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.telematic_3">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.telematic_3"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.telematic_4">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.telematic_4"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.telematic_5">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.telematic_5"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.vehicles_make">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.vehicles_make"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.vehicles_model">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.vehicles_model"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.zip">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.zip"/>
+    </inputMappings>
+    <inputMappings name="processPackages.customer.id">
+      <expression exprStr="actionflow.Inputs.processPackages.customer.id"/>
+    </inputMappings>
+    <inputMappings name="processPackages.policy">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="processPackages.policy.object_name">
+      <expression exprStr="actionflow.Inputs.processPackages.policy.object_name"/>
+    </inputMappings>
+    <inputMappings name="processPackages.policy.approval">
+      <expression exprStr="actionflow.Inputs.processPackages.policy.approval"/>
+    </inputMappings>
+    <inputMappings name="processPackages.policy.bodily_injury">
+      <expression exprStr="actionflow.Inputs.processPackages.policy.bodily_injury"/>
+    </inputMappings>
+    <inputMappings name="processPackages.policy.collision">
+      <expression exprStr="actionflow.Inputs.processPackages.policy.collision"/>
+    </inputMappings>
+    <inputMappings name="processPackages.policy.comprehensive">
+      <expression exprStr="actionflow.Inputs.processPackages.policy.comprehensive"/>
+    </inputMappings>
+    <inputMappings name="processPackages.policy.deductible">
+      <expression exprStr="actionflow.Inputs.processPackages.policy.deductible"/>
+    </inputMappings>
+    <inputMappings name="processPackages.policy.description">
+      <expression exprStr="actionflow.Inputs.processPackages.policy.description"/>
+    </inputMappings>
+    <inputMappings name="processPackages.policy.medical_payments">
+      <expression exprStr="actionflow.Inputs.processPackages.policy.medical_payments"/>
+    </inputMappings>
+    <inputMappings name="processPackages.policy.monthly_payment">
+      <expression exprStr="actionflow.Inputs.processPackages.policy.monthly_payment"/>
+    </inputMappings>
+    <inputMappings name="processPackages.policy.monthly_payment_float">
+      <expression exprStr="actionflow.Inputs.processPackages.policy.monthly_payment_float"/>
+    </inputMappings>
+    <inputMappings name="processPackages.policy.property_damage">
+      <expression exprStr="actionflow.Inputs.processPackages.policy.property_damage"/>
+    </inputMappings>
+    <inputMappings name="processPackages.policy.total_coverage">
+      <expression exprStr="actionflow.Inputs.processPackages.policy.total_coverage"/>
+    </inputMappings>
+    <inputMappings name="processPackages.policy.id">
+      <expression exprStr="actionflow.Inputs.processPackages.policy.id"/>
+    </inputMappings>
+    <inputMappings name="processPackages.vehicle">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="processPackages.vehicle.object_name">
+      <expression exprStr="actionflow.Inputs.processPackages.vehicle.object_name"/>
+    </inputMappings>
+    <inputMappings name="processPackages.vehicle.body_type">
+      <expression exprStr="actionflow.Inputs.processPackages.vehicle.body_type"/>
+    </inputMappings>
+    <inputMappings name="processPackages.vehicle.make">
+      <expression exprStr="actionflow.Inputs.processPackages.vehicle.make"/>
+    </inputMappings>
+    <inputMappings name="processPackages.vehicle.model">
+      <expression exprStr="actionflow.Inputs.processPackages.vehicle.model"/>
+    </inputMappings>
+    <inputMappings name="processPackages.vehicle.msrp">
+      <expression exprStr="actionflow.Inputs.processPackages.vehicle.msrp"/>
+    </inputMappings>
+    <inputMappings name="processPackages.vehicle.rating">
+      <expression exprStr="actionflow.Inputs.processPackages.vehicle.rating"/>
+    </inputMappings>
+    <inputMappings name="processPackages.vehicle.year">
+      <expression exprStr="actionflow.Inputs.processPackages.vehicle.year"/>
+    </inputMappings>
+    <inputMappings name="processPackages.vehicle.id">
+      <expression exprStr="actionflow.Inputs.processPackages.vehicle.id"/>
+    </inputMappings>
+    <inputMappings name="attachments">
+      <expression exprStr="actionflow.Inputs.attachments"/>
+    </inputMappings>
+    <inputMappings name="id">
+      <expression exprStr="actionflow.Inputs.id"/>
+    </inputMappings>
+    <inputMappings name="userName">
+      <expression exprStr="actionflow.steps.usergroup_selection.widgets.username_dropdown_list.value"/>
+    </inputMappings>
+    <contract xsi:type="nsDataserviceContract:DataActionContract" href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/new_application.process#//@activities[name='Review%20application']/@taskContract/@dataServiceContracts[name='da_def_delegate_new_application_manual_task']"/>
+  </dataActions>
+  <states xsi:type="actionflow:EndState" id="success"/>
+  <states xsi:type="actionflow:EndState" id="error"/>
+  <states xsi:type="actionflow:ActionState" id="finish" dataAction="//@dataActions[name='da_actionflow_']">
+    <transitions on="success" to="//@states[id='success']"/>
+    <transitions on="error" to="//@states[id='error']"/>
+  </states>
+  <states xsi:type="actionflow:EndState" id="cancel"/>
+  <states xsi:type="actionflow:ViewState" id="viewState_usergroup_selection">
+    <transitions on="cancel" to="//@states[id='cancel']"/>
+    <transitions on="finish" to="//@states[id='finish']"/>
+    <step href="urn:xcp:com.emc.xcp.artifact.uistep:Artifacts/UI Steps/usergroup_selection.uistep#/"/>
+  </states>
+</actionflow:ActionFlow>

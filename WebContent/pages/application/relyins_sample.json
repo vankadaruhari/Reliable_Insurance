@@ -1,0 +1,467 @@
+{
+  "padding" : "0",
+  "border" : false,
+  "pageTitle" : "${_UI_Page_relyins_sample_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xcpId" : "column_box5",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox1",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "300",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "column_box",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_sample_column_box_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "grey-box",
+        "items" : [ {
+          "xcpId" : "columnvbox",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box4",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "green-button",
+            "items" : [ {
+              "xcpId" : "columnvbox7",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "button3",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_sample_button3_text}",
+                "action" : {
+                  "redirectStyle" : "current"
+                }
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box2",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "items" : [ {
+              "xcpId" : "columnvbox3",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "button1",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_sample_button1_text}",
+                "action" : {
+                  "redirectStyle" : "current"
+                }
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box1",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "red-button",
+            "items" : [ {
+              "xcpId" : "columnvbox2",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "button",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_sample_button_text}",
+                "action" : {
+                  "redirectStyle" : "current"
+                }
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box3",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "black-button",
+            "items" : [ {
+              "xcpId" : "columnvbox5",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "button2",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_sample_button2_text}",
+                "action" : {
+                  "redirectStyle" : "current"
+                }
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "columnvbox6",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "300",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "column_box6",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_sample_column_box6_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "black-box",
+        "items" : [ {
+          "xcpId" : "columnvbox4",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box7",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "green-button",
+            "items" : [ {
+              "xcpId" : "columnvbox8",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "button4",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_sample_button4_text}",
+                "action" : {
+                  "redirectStyle" : "current"
+                }
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box9",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "items" : [ {
+              "xcpId" : "columnvbox12",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "button5",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_sample_button5_text}",
+                "action" : {
+                  "redirectStyle" : "current"
+                }
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box10",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "red-button",
+            "items" : [ {
+              "xcpId" : "columnvbox14",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "button6",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_sample_button6_text}",
+                "action" : {
+                  "redirectStyle" : "current"
+                }
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box8",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "black-button",
+            "items" : [ {
+              "xcpId" : "columnvbox10",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "button7",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_sample_button7_text}",
+                "action" : {
+                  "redirectStyle" : "current"
+                }
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "columnvbox9",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "300",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "column_box11",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_sample_column_box11_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "orange-box",
+        "items" : [ {
+          "xcpId" : "columnvbox11",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box13",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "green-button",
+            "items" : [ {
+              "xcpId" : "columnvbox16",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "button11",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_sample_button11_text}",
+                "action" : {
+                  "redirectStyle" : "current"
+                }
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box15",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "items" : [ {
+              "xcpId" : "columnvbox20",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "button10",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_sample_button10_text}",
+                "action" : {
+                  "redirectStyle" : "current"
+                }
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box14",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "red-button",
+            "items" : [ {
+              "xcpId" : "columnvbox18",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "button9",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_sample_button9_text}",
+                "action" : {
+                  "redirectStyle" : "current"
+                }
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box12",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "black-button",
+            "items" : [ {
+              "xcpId" : "columnvbox13",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "button8",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_sample_button8_text}",
+                "action" : {
+                  "redirectStyle" : "current"
+                }
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  } ]
+}

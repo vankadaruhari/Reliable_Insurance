@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsPermissionSet:PermissionSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsApprole="http://xcp2.emc.com/approle" xmlns:nsPermissionSet="http://xcp.emc.com/permissionset" urn="urn:relyins:com.emc.xcp.artifact.permissionset:Artifacts/Permission Sets/demo_permission.permissionset" categoryId="com.emc.xcp.artifact.permissionset" name="demo_permission" label="Demo-Permission">
+  <permissions permissionLevel="Administrate">
+    <member xsi:type="nsApprole:AppRole" href="urn:relyins:com.emc.xcp.artifact.approle:Artifacts/Roles/agent.role#/"/>
+  </permissions>
+  <permissions permissionLevel="Administrate">
+    <member xsi:type="nsApprole:AppRole" href="urn:relyins:com.emc.xcp.artifact.approle:Artifacts/Roles/approver.role#/"/>
+  </permissions>
+  <permissions permissionLevel="Administrate">
+    <member xsi:type="nsApprole:AppRole" href="urn:relyins:com.emc.xcp.artifact.approle:Artifacts/Roles/manager.role#/"/>
+  </permissions>
+</nsPermissionSet:PermissionSet>

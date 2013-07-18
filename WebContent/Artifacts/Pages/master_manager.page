@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uitemplate:Page xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uitemplate="http://www.emc.com/xcp2/2010/uitemplate" urn="urn:relyins:com.emc.xcp.artifact.page:Artifacts/Pages/master_manager.page" categoryId="com.emc.xcp.artifact.page" name="master_manager" label="Master Manager" templateType="application_master" isRoleVersion="true">
+  <title exprStr="appmaster_defpage"/>
+  <rootContainer widgetEntry="//@widgetMap[key='root']">
+    <properties name="xcpId" value="root" entry="//@rootContainer/@propertyMap.0"/>
+    <propertyMap key="xcpId" value="//@rootContainer/@properties.0"/>
+    <children componentDefinitionId="xcp_page" parent="//@rootContainer" widgetEntry="//@widgetMap[key='page']">
+      <properties name="cls" value="xcp-content-area" entry="//@rootContainer/@children.0/@propertyMap.0"/>
+      <properties name="margin" value="10 10 10 10" entry="//@rootContainer/@children.0/@propertyMap.1"/>
+      <properties name="xcpId" value="page" entry="//@rootContainer/@children.0/@propertyMap.2"/>
+      <propertyMap key="cls" value="//@rootContainer/@children.0/@properties.0"/>
+      <propertyMap key="margin" value="//@rootContainer/@children.0/@properties.1"/>
+      <propertyMap key="xcpId" value="//@rootContainer/@children.0/@properties.2"/>
+    </children>
+  </rootContainer>
+  <widgetMap key="root" value="//@rootContainer"/>
+  <widgetMap key="page" value="//@rootContainer/@children.0"/>
+  <appRoles href="urn:relyins:com.emc.xcp.artifact.approle:Artifacts/Roles/manager.role#/"/>
+  <defaultUITemplate xsi:type="uitemplate:Page" href="urn:relyins:com.emc.xcp.artifact.page:Artifacts/Pages/application_master.page#/"/>
+</uitemplate:Page>

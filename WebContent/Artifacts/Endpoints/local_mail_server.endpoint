@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsEndpoint:EmailEndpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:nsEndpoint="http://xcp.emc.com/endpoint" urn="urn:relyins:com.emc.xcp.artifact.endpoint:Artifacts/Endpoints/local_mail_server.endpoint" categoryId="com.emc.xcp.artifact.endpoint" name="local_mail_server" label="Local Mail Server" hostname="xcpcs" username="dmadmin" password="DM_ENCR_TEXT_V2=AAAAECX1H4oWe7Ru/9FZLLOo3VSlKgtps8e56PM0Um1P4RcYpbDgqdU9fPF9QFdjn7eydEyPT80B1pphNdLj/vQ6Aug="/>

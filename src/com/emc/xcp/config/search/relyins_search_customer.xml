@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean class="com.emc.xcp.services.datasource.domain.RealTimeQuery" id="relyins_search_customer">
+  <property name="columns">
+    <list>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="customer_id"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="first_name"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="last_name"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="birth_date"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="id"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="r_object_type"/>
+        <property name="sortable" value="false"/>
+      </bean>
+    </list>
+  </property>
+  <property name="expressionSet">
+    <bean class="com.emc.xcp.services.datasource.domain.expression.ExpressionSet">
+      <property name="expressions">
+        <list>
+          <bean class="com.emc.xcp.services.datasource.domain.expression.ExpressionSet">
+            <property name="expressions">
+              <list>
+                <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+                  <property name="caseSensitive" value="true"/>
+                  <property name="exactMatch" value="false"/>
+                  <property name="fuzzy" value="false"/>
+                  <property name="property" value="last_name"/>
+                  <property name="repeated" value="false"/>
+                  <property name="value" value="urlparam{input_last_name}"/>
+                  <property name="dataType" value="STRING"/>
+                  <property name="operator" value="CONTAINS"/>
+                </bean>
+                <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+                  <property name="caseSensitive" value="false"/>
+                  <property name="exactMatch" value="false"/>
+                  <property name="fuzzy" value="false"/>
+                  <property name="property" value="first_name"/>
+                  <property name="repeated" value="false"/>
+                  <property name="value" value="urlparam{input_last_name}"/>
+                  <property name="dataType" value="STRING"/>
+                  <property name="operator" value="CONTAINS"/>
+                </bean>
+              </list>
+            </property>
+            <property name="operator" value="OR"/>
+          </bean>
+        </list>
+      </property>
+      <property name="operator" value="AND"/>
+    </bean>
+  </property>
+  <property name="mapping" ref="relyins_search_customermapping"/>
+</bean>
+
+<bean class="com.emc.xcp.services.datasource.domain.mapping.RealTimeMapping" id="relyins_search_customermapping">
+  <property name="rootType">
+    <bean class="com.emc.xcp.services.datasource.domain.mapping.ObjectType">
+      <property name="typeName" value="relyins_customer"/>
+      <property name="attributes">
+        <map>
+          <entry key="birth_date">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="birth_date"/>
+            </bean>
+          </entry>
+          <entry key="customer_id">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="customer_id"/>
+            </bean>
+          </entry>
+          <entry key="first_name">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="first_name"/>
+            </bean>
+          </entry>
+          <entry key="id">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="r_object_id"/>
+            </bean>
+          </entry>
+          <entry key="last_name">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="last_name"/>
+            </bean>
+          </entry>
+          <entry key="r_object_type">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="r_object_type"/>
+            </bean>
+          </entry>
+        </map>
+      </property>
+    </bean>
+  </property>
+</bean>
+
+</beans>

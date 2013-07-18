@@ -1,0 +1,12 @@
+{
+  "padding" : "0",
+  "border" : false,
+  "pageTitle" : "${_UI_Page_relyins_master_manager_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xcpId" : "page",
+    "xtype" : "xcp_page",
+    "cls" : "xcp-content-area",
+    "margin" : "10 10 10 10"
+  } ]
+}

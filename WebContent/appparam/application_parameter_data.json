@@ -1,0 +1,32 @@
+{
+"relyins":{
+"applications":{
+"label": "${_UI_AppParameterrelyins_applications_label}",
+"description": ""
+},
+"recent_activities_l":{
+"label": "${_UI_AppParameterrelyins_recent_activities_l_label}",
+"description": ""
+},
+"vehicles":{
+"label": "${_UI_AppParameterrelyins_vehicles_label}",
+"description": ""
+},
+"customers":{
+"label": "${_UI_AppParameterrelyins_customers_label}",
+"description": ""
+},
+"manufacturers":{
+"label": "${_UI_AppParameterrelyins_manufacturers_label}",
+"description": ""
+},
+"policies":{
+"label": "${_UI_AppParameterrelyins_policies_label}",
+"description": ""
+},
+"default_location":{
+"label": "${_UI_AppParameterrelyins_default_location_label}",
+"description": ""
+}
+}
+}

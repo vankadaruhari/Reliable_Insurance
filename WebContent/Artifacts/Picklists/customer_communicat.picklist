@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsPicklist:Picklist xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsPicklist="http://xcp.emc.com/picklist" urn="urn:relyins:com.emc.xcp.artifact.picklist:Artifacts/Picklists/customer_communicat.picklist" categoryId="com.emc.xcp.artifact.picklist" name="customer_communicat" label="Customer communication templates">
+  <type xsi:type="nsAttributeDatatypes:StringType"/>
+  <entries label="Birthday card" value="Birthday card"/>
+  <entries label="New vehicle added to policy" value="New vehicle added to policy"/>
+  <entries label="Policy statement" value="Policy statement"/>
+  <entries label="Telematic" value="Telematic"/>
+</nsPicklist:Picklist>

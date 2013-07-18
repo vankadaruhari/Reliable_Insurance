@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean class="com.emc.xcp.services.datasource.domain.SearchQuery" id="relyins_facets_customer">
+  <property name="columns">
+    <list>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="last_name"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="first_name"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="ssn"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="street"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="zip"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="city"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="state"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="id"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="r_object_type"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="summary"/>
+        <property name="sortable" value="false"/>
+      </bean>
+    </list>
+  </property>
+  <property name="expressionSet">
+    <bean class="com.emc.xcp.services.datasource.domain.expression.ExpressionSet">
+      <property name="expressions">
+        <list>
+          <bean class="com.emc.xcp.services.datasource.domain.expression.FullTextExpression">
+            <property name="caseSensitive" value="false"/>
+            <property name="fuzzy" value="false"/>
+            <property name="repeated" value="false"/>
+            <property name="value" value="urlparam{q}"/>
+          </bean>
+        </list>
+      </property>
+      <property name="operator" value="AND"/>
+    </bean>
+  </property>
+  <property name="facets">
+    <list>
+      <bean class="com.emc.xcp.services.datasource.domain.Facet">
+        <property name="id" value="facet_city"/>
+        <property name="property" value="city"/>
+        <property name="sort" value="FREQUENCY"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Facet">
+        <property name="id" value="facet_vehicles_make"/>
+        <property name="property" value="vehicles_make"/>
+        <property name="sort" value="FREQUENCY"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Facet">
+        <property name="id" value="facet_vehicles_model"/>
+        <property name="property" value="vehicles_model"/>
+        <property name="sort" value="FREQUENCY"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Facet">
+        <property name="groupby" value="range"/>
+        <property name="id" value="facet_risk"/>
+        <property name="property" value="risk"/>
+        <property name="properties">
+          <map>
+            <entry key="range">
+              <value>0:20,20:60,60:100</value>
+            </entry>
+          </map>
+        </property>
+        <property name="sort" value="NONE"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Facet">
+        <property name="id" value="facet_had_accident"/>
+        <property name="property" value="had_accident"/>
+        <property name="sort" value="FREQUENCY"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Facet">
+        <property name="id" value="facet_had_insurance_decli"/>
+        <property name="property" value="had_insurance_declined"/>
+        <property name="sort" value="FREQUENCY"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Facet">
+        <property name="id" value="facet_had_license_revoked"/>
+        <property name="property" value="had_license_revoked"/>
+        <property name="sort" value="FREQUENCY"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Facet">
+        <property name="id" value="facet_had_mental_impairme"/>
+        <property name="property" value="had_mental_impairments"/>
+        <property name="sort" value="FREQUENCY"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Facet">
+        <property name="id" value="facet_had_moving_violatio"/>
+        <property name="property" value="had_moving_violation"/>
+        <property name="sort" value="FREQUENCY"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Facet">
+        <property name="id" value="facet_collision"/>
+        <property name="property" value="collision"/>
+        <property name="sort" value="FREQUENCY"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Facet">
+        <property name="id" value="facet_comprehensive"/>
+        <property name="property" value="comprehensive"/>
+        <property name="sort" value="FREQUENCY"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Facet">
+        <property name="id" value="facet_medical_payments"/>
+        <property name="property" value="medical_payments"/>
+        <property name="sort" value="FREQUENCY"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Facet">
+        <property name="id" value="facet_property_damage"/>
+        <property name="property" value="property_damage"/>
+        <property name="sort" value="FREQUENCY"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Facet">
+        <property name="id" value="facet_bodily_injury"/>
+        <property name="property" value="bodily_injury"/>
+        <property name="sort" value="FREQUENCY"/>
+      </bean>
+    </list>
+  </property>
+  <property name="mapping" ref="relyins_facets_customermapping"/>
+</bean>
+
+<bean class="com.emc.xcp.services.datasource.domain.mapping.RealTimeMapping" id="relyins_facets_customermapping">
+  <property name="rootType">
+    <bean class="com.emc.xcp.services.datasource.domain.mapping.ObjectType">
+      <property name="typeName" value="relyins_customer"/>
+      <property name="attributes">
+        <map>
+          <entry key="bodily_injury">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="bodily_injury"/>
+            </bean>
+          </entry>
+          <entry key="city">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="city"/>
+            </bean>
+          </entry>
+          <entry key="collision">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="collision"/>
+            </bean>
+          </entry>
+          <entry key="comprehensive">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="comprehensive"/>
+            </bean>
+          </entry>
+          <entry key="first_name">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="first_name"/>
+            </bean>
+          </entry>
+          <entry key="had_accident">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="had_accident"/>
+            </bean>
+          </entry>
+          <entry key="had_insurance_declined">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="had_insurance_declined"/>
+            </bean>
+          </entry>
+          <entry key="had_license_revoked">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="had_license_revoked"/>
+            </bean>
+          </entry>
+          <entry key="had_mental_impairments">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="had_mental_impairments"/>
+            </bean>
+          </entry>
+          <entry key="had_moving_violation">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="had_moving_violation"/>
+            </bean>
+          </entry>
+          <entry key="id">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="r_object_id"/>
+            </bean>
+          </entry>
+          <entry key="last_name">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="last_name"/>
+            </bean>
+          </entry>
+          <entry key="medical_payments">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="medical_payments"/>
+            </bean>
+          </entry>
+          <entry key="property_damage">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="property_damage"/>
+            </bean>
+          </entry>
+          <entry key="r_object_type">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="r_object_type"/>
+            </bean>
+          </entry>
+          <entry key="risk">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="risk"/>
+            </bean>
+          </entry>
+          <entry key="ssn">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="ssn"/>
+            </bean>
+          </entry>
+          <entry key="state">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="state"/>
+            </bean>
+          </entry>
+          <entry key="street">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="street"/>
+            </bean>
+          </entry>
+          <entry key="vehicles_make">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="vehicles_make"/>
+            </bean>
+          </entry>
+          <entry key="vehicles_model">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="vehicles_model"/>
+            </bean>
+          </entry>
+          <entry key="zip">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="zip"/>
+            </bean>
+          </entry>
+        </map>
+      </property>
+    </bean>
+  </property>
+</bean>
+
+</beans>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsDatatypes:BusinessObject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" urn="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/manufacturer.businessobj" categoryId="com.emc.xcp.artifact.bo" name="manufacturer" label="Manufacturer">
+  <accessControlPolicy>
+    <default href="urn:relyins:com.emc.xcp.artifact.permissionset:Artifacts/Permission Sets/demo_permission.permissionset#/"/>
+  </accessControlPolicy>
+  <defaultFolderPath exprStr="parameters.relyins.manufacturers"/>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_create_manufacturer" label="Create Manufacturer" implCategoryId="com.emc.xcp.artifact.bo">
+    <primaryElement dataModel="/"/>
+    <actionType type="Create"/>
+  </dataActionContracts>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_update_manufacturer" label="Update Manufacturer" implCategoryId="com.emc.xcp.artifact.bo">
+    <primaryElement dataModel="/"/>
+    <actionType type="Update"/>
+  </dataActionContracts>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_delete_manufacturer" label="Delete Manufacturer" implCategoryId="com.emc.xcp.artifact.bo">
+    <primaryElement dataModel="/"/>
+    <actionType type="Delete"/>
+  </dataActionContracts>
+  <superType xsi:type="nsDatatypes:BusinessObject" href="urn:xcp:com.emc.xcp.artifact.bo:Artifacts/Business Objects/rootbo.businessobj#/"/>
+</nsDatatypes:BusinessObject>

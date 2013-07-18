@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rtappconfig:RuntimeAppConfig xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rtappconfig="http://www.emc.com/xcp2/2010/rtappconfig" urn="urn:relyins:com.emc.xcp.artifact.rtappconfig:Artifacts/Runtime App Configurations/runtimeappconfig.rtappconfig" categoryId="com.emc.xcp.artifact.rtappconfig" name="RuntimeAppConfig" label="RuntimeAppConfig">
+  <defaultHomePage href="urn:relyins:com.emc.xcp.artifact.page:Artifacts/Pages/welcome_page.page#/"/>
+  <customTheme name="Reliable Theme" path="C:\xCP Designer\Applications\Reliable_Insurance\Reliable_Insurance\lib\rely.Reliable-1.1.jar" cssFile="reliable.scss"/>
+  <appTitle exprStr="Reliable Insurance"/>
+</rtappconfig:RuntimeAppConfig>

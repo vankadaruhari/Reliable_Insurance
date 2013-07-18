@@ -1,0 +1,177 @@
+{
+"_xcpMemberTypes":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "user",
+"label": "${_UI_PickList__xcpMemberTypes_user}"
+},
+{
+"value": "group",
+"label": "${_UI_PickList__xcpMemberTypes_group}"
+}]
+},
+"xcp_taskwqflagpicklist":{
+"model": "xcp.picklist.models.IntegerModel",
+"data": [{
+"value": 1,
+"label": "${_UI_PickList_xcp_taskwqflagpicklist_1}"
+},
+{
+"value": 0,
+"label": "${_UI_PickList_xcp_taskwqflagpicklist_0}"
+}]
+},
+"relyins_customer_communicat":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "Birthday card",
+"label": "${_UI_PickList_relyins_customer_communicat_Birthday_card}"
+},
+{
+"value": "New vehicle added to policy",
+"label": "${_UI_PickList_relyins_customer_communicat_New_vehicle_added_to_policy}"
+},
+{
+"value": "Policy statement",
+"label": "${_UI_PickList_relyins_customer_communicat_Policy_statement}"
+},
+{
+"value": "Telematic",
+"label": "${_UI_PickList_relyins_customer_communicat_Telematic}"
+}]
+},
+"xcp_task_state":{
+"model": "xcp.picklist.models.IntegerModel",
+"data": [{
+"value": 0,
+"label": "${_UI_PickList_xcp_task_state_0}"
+},
+{
+"value": 1,
+"label": "${_UI_PickList_xcp_task_state_1}"
+},
+{
+"value": 2,
+"label": "${_UI_PickList_xcp_task_state_2}"
+},
+{
+"value": 3,
+"label": "${_UI_PickList_xcp_task_state_3}"
+},
+{
+"value": 4,
+"label": "${_UI_PickList_xcp_task_state_4}"
+},
+{
+"value": 5,
+"label": "${_UI_PickList_xcp_task_state_5}"
+},
+{
+"value": 6,
+"label": "${_UI_PickList_xcp_task_state_6}"
+},
+{
+"value": 7,
+"label": "${_UI_PickList_xcp_task_state_7}"
+}]
+},
+"relyins_rating":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "<img src=\"Artifacts\/Resources\/Poor.png\" height=\"18\"\/>",
+"label": "${_UI_PickList_relyins_rating_<img_src_"Artifacts/Resources/Poor.png"_height_"18"/>}"
+},
+{
+"value": "<img src=\"Artifacts\/Resources\/Weak.png\" height=\"18\"\/>",
+"label": "${_UI_PickList_relyins_rating_<img_src_"Artifacts/Resources/Weak.png"_height_"18"/>}"
+},
+{
+"value": "<img src=\"Artifacts\/Resources\/Marginal.png\" height=\"18\"\/>",
+"label": "${_UI_PickList_relyins_rating_<img_src_"Artifacts/Resources/Marginal.png"_height_"18"/>}"
+},
+{
+"value": "<img src=\"Artifacts\/Resources\/Acceptable.png\" height=\"18\"\/>",
+"label": "${_UI_PickList_relyins_rating_<img_src_"Artifacts/Resources/Acceptable.png"_height_"18"/>}"
+},
+{
+"value": "<img src=\"Artifacts\/Resources\/Good.png\" height=\"18\"\/>",
+"label": "${_UI_PickList_relyins_rating_<img_src_"Artifacts/Resources/Good.png"_height_"18"/>}"
+}]
+},
+"xcp_taskstatuspiclkist":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "dormant",
+"label": "${_UI_PickList_xcp_taskstatuspiclkist_dormant}"
+},
+{
+"value": "acquired",
+"label": "${_UI_PickList_xcp_taskstatuspiclkist_acquired}"
+},
+{
+"value": "ready",
+"label": "${_UI_PickList_xcp_taskstatuspiclkist_ready}"
+},
+{
+"value": "paused",
+"label": "${_UI_PickList_xcp_taskstatuspiclkist_paused}"
+}]
+},
+"xcp_wq_view_filter":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "SHOW_ALL_TASKS",
+"label": "${_UI_PickList_xcp_wq_view_filter_SHOW_ALL_TASKS}"
+},
+{
+"value": "SHOW_PROCESSOR_ELIGIBLE_AND_OWNED_TASKS",
+"label": "${_UI_PickList_xcp_wq_view_filter_SHOW_PROCESSOR_ELIGIBLE_AND_OWNED_TASKS}"
+},
+{
+"value": "SHOW_UNASSIGNED_TASKS",
+"label": "${_UI_PickList_xcp_wq_view_filter_SHOW_UNASSIGNED_TASKS}"
+},
+{
+"value": "SHOW_PROCESSOR_ELIGIBLE_TASKS",
+"label": "${_UI_PickList_xcp_wq_view_filter_SHOW_PROCESSOR_ELIGIBLE_TASKS}"
+}]
+},
+"relyins_vehicle_body_type":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "Coupe",
+"label": "${_UI_PickList_relyins_vehicle_body_type_Coupe}"
+},
+{
+"value": "Sedan",
+"label": "${_UI_PickList_relyins_vehicle_body_type_Sedan}"
+},
+{
+"value": "SUV",
+"label": "${_UI_PickList_relyins_vehicle_body_type_SUV}"
+}]
+},
+"relyins_activity_type":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "New customer",
+"label": "${_UI_PickList_relyins_activity_type_New_customer}"
+},
+{
+"value": "Customer profile updated",
+"label": "${_UI_PickList_relyins_activity_type_Customer_profile_updated}"
+},
+{
+"value": "New policy",
+"label": "${_UI_PickList_relyins_activity_type_New_policy}"
+},
+{
+"value": "New claim",
+"label": "${_UI_PickList_relyins_activity_type_New_claim}"
+},
+{
+"value": "New vehicle",
+"label": "${_UI_PickList_relyins_activity_type_New_vehicle}"
+}]
+}
+}

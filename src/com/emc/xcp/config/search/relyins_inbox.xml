@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean class="com.emc.xcp.services.datasource.domain.TaskListQuery" id="relyins_inbox">
+  <property name="columns">
+    <list>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.customer_id"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.first_name"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.last_name"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.birth_date"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.vehicles.child_vehicle.make"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.vehicles.child_vehicle.model"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.vehicles.vin"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.street"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.state"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.zip"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="packages.customer.city"/>
+        <property name="sortable" value="false"/>
+      </bean>
+    </list>
+  </property>
+  <property name="expressionSet">
+    <bean class="com.emc.xcp.services.datasource.domain.expression.ExpressionSet">
+      <property name="expressions">
+        <list>
+          <bean class="com.emc.xcp.services.datasource.domain.expression.ExpressionSet">
+            <property name="expressions">
+              <list>
+                <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+                  <property name="caseSensitive" value="true"/>
+                  <property name="exactMatch" value="false"/>
+                  <property name="fuzzy" value="false"/>
+                  <property name="property" value="packages.customer.first_name"/>
+                  <property name="repeated" value="false"/>
+                  <property name="value" value="urlparam{input_first_name}"/>
+                  <property name="dataType" value="STRING"/>
+                  <property name="operator" value="BEGINS_WITH"/>
+                </bean>
+                <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+                  <property name="caseSensitive" value="true"/>
+                  <property name="exactMatch" value="false"/>
+                  <property name="fuzzy" value="false"/>
+                  <property name="property" value="packages.customer.last_name"/>
+                  <property name="repeated" value="false"/>
+                  <property name="value" value="urlparam{input_first_name}"/>
+                  <property name="dataType" value="STRING"/>
+                  <property name="operator" value="BEGINS_WITH"/>
+                </bean>
+              </list>
+            </property>
+            <property name="operator" value="OR"/>
+          </bean>
+          <bean class="com.emc.xcp.services.datasource.domain.expression.ExpressionSet">
+            <property name="expressions">
+              <list>
+                <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+                  <property name="caseSensitive" value="true"/>
+                  <property name="exactMatch" value="false"/>
+                  <property name="fuzzy" value="false"/>
+                  <property name="property" value="packages.customer.vehicles.child_vehicle.make"/>
+                  <property name="repeated" value="false"/>
+                  <property name="value" value="urlparam{input_make}"/>
+                  <property name="dataType" value="STRING"/>
+                  <property name="operator" value="BEGINS_WITH"/>
+                </bean>
+                <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+                  <property name="caseSensitive" value="true"/>
+                  <property name="exactMatch" value="false"/>
+                  <property name="fuzzy" value="false"/>
+                  <property name="property" value="packages.customer.vehicles.child_vehicle.model"/>
+                  <property name="repeated" value="false"/>
+                  <property name="value" value="urlparam{input_make}"/>
+                  <property name="dataType" value="STRING"/>
+                  <property name="operator" value="BEGINS_WITH"/>
+                </bean>
+                <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+                  <property name="caseSensitive" value="true"/>
+                  <property name="exactMatch" value="false"/>
+                  <property name="fuzzy" value="false"/>
+                  <property name="property" value="packages.customer.vehicles.vin"/>
+                  <property name="repeated" value="false"/>
+                  <property name="value" value="urlparam{input_make}"/>
+                  <property name="dataType" value="STRING"/>
+                  <property name="operator" value="BEGINS_WITH"/>
+                </bean>
+              </list>
+            </property>
+            <property name="operator" value="OR"/>
+          </bean>
+          <bean class="com.emc.xcp.services.datasource.domain.expression.ValueListExpression">
+            <property name="caseSensitive" value="true"/>
+            <property name="fuzzy" value="false"/>
+            <property name="property" value="process.system_name"/>
+            <property name="repeated" value="false"/>
+            <property name="dataType" value="STRING"/>
+            <property name="operator" value="IN"/>
+            <property name="values">
+              <list>
+                <value>relyins_new_application</value>
+              </list>
+            </property>
+          </bean>
+          <bean class="com.emc.xcp.services.datasource.domain.expression.ExpressionSet">
+            <property name="expressions">
+              <list>
+                <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+                  <property name="caseSensitive" value="true"/>
+                  <property name="exactMatch" value="false"/>
+                  <property name="fuzzy" value="false"/>
+                  <property name="property" value="packages.customer.first_name"/>
+                  <property name="repeated" value="false"/>
+                  <property name="value" value="urlparam{input_first_name}"/>
+                  <property name="dataType" value="STRING"/>
+                  <property name="operator" value="BEGINS_WITH"/>
+                </bean>
+                <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+                  <property name="caseSensitive" value="true"/>
+                  <property name="exactMatch" value="false"/>
+                  <property name="fuzzy" value="false"/>
+                  <property name="property" value="packages.customer.last_name"/>
+                  <property name="repeated" value="false"/>
+                  <property name="value" value="urlparam{input_first_name}"/>
+                  <property name="dataType" value="STRING"/>
+                  <property name="operator" value="BEGINS_WITH"/>
+                </bean>
+              </list>
+            </property>
+            <property name="operator" value="OR"/>
+          </bean>
+          <bean class="com.emc.xcp.services.datasource.domain.expression.ExpressionSet">
+            <property name="expressions">
+              <list>
+                <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+                  <property name="caseSensitive" value="true"/>
+                  <property name="exactMatch" value="false"/>
+                  <property name="fuzzy" value="false"/>
+                  <property name="property" value="packages.customer.vehicles.child_vehicle.make"/>
+                  <property name="repeated" value="false"/>
+                  <property name="value" value="urlparam{input_make}"/>
+                  <property name="dataType" value="STRING"/>
+                  <property name="operator" value="BEGINS_WITH"/>
+                </bean>
+                <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+                  <property name="caseSensitive" value="true"/>
+                  <property name="exactMatch" value="false"/>
+                  <property name="fuzzy" value="false"/>
+                  <property name="property" value="packages.customer.vehicles.child_vehicle.model"/>
+                  <property name="repeated" value="false"/>
+                  <property name="value" value="urlparam{input_make}"/>
+                  <property name="dataType" value="STRING"/>
+                  <property name="operator" value="BEGINS_WITH"/>
+                </bean>
+                <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+                  <property name="caseSensitive" value="true"/>
+                  <property name="exactMatch" value="false"/>
+                  <property name="fuzzy" value="false"/>
+                  <property name="property" value="packages.customer.vehicles.vin"/>
+                  <property name="repeated" value="false"/>
+                  <property name="value" value="urlparam{input_make}"/>
+                  <property name="dataType" value="STRING"/>
+                  <property name="operator" value="BEGINS_WITH"/>
+                </bean>
+              </list>
+            </property>
+            <property name="operator" value="OR"/>
+          </bean>
+        </list>
+      </property>
+      <property name="operator" value="AND"/>
+    </bean>
+  </property>
+  <property name="taskListMapping" ref="relyins_inboxtaskListMapping"/>
+  <property name="taskListScope" value="USER"/>
+</bean>
+
+<bean class="com.emc.xcp.services.datasource.domain.mapping.TaskListMapping" id="relyins_inboxtaskListMapping">
+  <property name="packages">
+    <map>
+      <entry key="customer">
+        <bean class="com.emc.xcp.services.datasource.domain.mapping.ObjectType">
+          <property name="typeName" value="relyins_customer"/>
+          <property name="attributes">
+            <map>
+              <entry key="birth_date">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                  <property name="persistentName" value="birth_date"/>
+                </bean>
+              </entry>
+              <entry key="city">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                  <property name="persistentName" value="city"/>
+                </bean>
+              </entry>
+              <entry key="customer_id">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                  <property name="persistentName" value="customer_id"/>
+                </bean>
+              </entry>
+              <entry key="first_name">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                  <property name="persistentName" value="first_name"/>
+                </bean>
+              </entry>
+              <entry key="last_name">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                  <property name="persistentName" value="last_name"/>
+                </bean>
+              </entry>
+              <entry key="state">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                  <property name="persistentName" value="state"/>
+                </bean>
+              </entry>
+              <entry key="street">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                  <property name="persistentName" value="street"/>
+                </bean>
+              </entry>
+              <entry key="zip">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                  <property name="persistentName" value="zip"/>
+                </bean>
+              </entry>
+            </map>
+          </property>
+          <property name="relations">
+            <map>
+              <entry key="vehicles">
+                <bean class="com.emc.xcp.services.datasource.domain.mapping.Join">
+                  <property name="joinQualification">
+                    <list>
+                      <bean class="com.emc.xcp.services.datasource.domain.mapping.JoinQualification">
+                        <property name="sourceAttribute" value="r_object_id"/>
+                        <property name="targetAttribute" value="parent_id"/>
+                      </bean>
+                    </list>
+                  </property>
+                  <property name="relateTo">
+                    <bean class="com.emc.xcp.services.datasource.domain.mapping.ObjectType">
+                      <property name="typeName" value="relyins_customer_vehicle"/>
+                      <property name="attributes">
+                        <map>
+                          <entry key="vin">
+                            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                              <property name="persistentName" value="vin"/>
+                            </bean>
+                          </entry>
+                        </map>
+                      </property>
+                      <property name="constraintQualification">
+                        <list>
+                          <bean class="com.emc.xcp.services.datasource.domain.mapping.ConstraintQualification">
+                            <property name="sourceAttribute" value="relation_name"/>
+                            <property name="value" value="relyins_customer_vehicle"/>
+                          </bean>
+                        </list>
+                      </property>
+                      <property name="relations">
+                        <map>
+                          <entry key="child_vehicle">
+                            <bean class="com.emc.xcp.services.datasource.domain.mapping.Join">
+                              <property name="joinQualification">
+                                <list>
+                                  <bean class="com.emc.xcp.services.datasource.domain.mapping.JoinQualification">
+                                    <property name="sourceAttribute" value="child_id"/>
+                                    <property name="targetAttribute" value="r_object_id"/>
+                                  </bean>
+                                </list>
+                              </property>
+                              <property name="relateTo">
+                                <bean class="com.emc.xcp.services.datasource.domain.mapping.ObjectType">
+                                  <property name="typeName" value="relyins_vehicle"/>
+                                  <property name="attributes">
+                                    <map>
+                                      <entry key="make">
+                                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                                          <property name="persistentName" value="make"/>
+                                        </bean>
+                                      </entry>
+                                      <entry key="model">
+                                        <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+                                          <property name="persistentName" value="model"/>
+                                        </bean>
+                                      </entry>
+                                    </map>
+                                  </property>
+                                </bean>
+                              </property>
+                              <property name="relationType" value="MANY"/>
+                            </bean>
+                          </entry>
+                        </map>
+                      </property>
+                    </bean>
+                  </property>
+                  <property name="relationType" value="MANY"/>
+                </bean>
+              </entry>
+            </map>
+          </property>
+        </bean>
+      </entry>
+    </map>
+  </property>
+</bean>
+
+</beans>

@@ -1,0 +1,360 @@
+{
+  "padding" : "0",
+  "border" : false,
+  "pageTitle" : "${_UI_Page_relyins_customer_communicat_title}",
+  "xtype" : "xcp_form",
+  "modelImmutable" : true,
+  "models" : [ "relyins_customer" ],
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "da_def_invoke_stateless_processsend_telematic_emai_initiate_button",
+      "redirectStyle" : "current",
+      "actionType" : "create",
+      "autoLoad" : "true",
+      "pageSize" : "10",
+      "outputType" : "Array",
+      "showConfirmation" : false,
+      "showSuccessNotification" : false,
+      "actionModel" : "relyins_da_def_invoke_stateless_processsend_telematic_emai_initiate",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "from",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_customer_communicat_da_def_invoke_stateless_processsend_telematic_emai_initiate_from_1"
+        }, {
+          "propertyId" : "to",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_customer_communicat_da_def_invoke_stateless_processsend_telematic_emai_initiate_to_1"
+        } ],
+        "mapping" : {
+        }
+      } ]
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "400",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "column_box1",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_customer_communicat_column_box1_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "black-box",
+        "items" : [ {
+          "xcpId" : "columnvbox2",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "center",
+          "valign" : "middle",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box4",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "items" : [ {
+              "xcpId" : "columnvbox9",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "width" : "140",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "center",
+              "valign" : "middle",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "image",
+                "xtype" : "xcp_image",
+                "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Dosciences logo.png",
+                "behavior" : false,
+                "width" : 100,
+                "height" : 100,
+                "isInternal" : true
+              } ]
+            }, {
+              "xcpId" : "columnvbox10",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "top",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "template_list",
+                "xtype" : "xcp_dropdown_list",
+                "fieldLabel" : "${_UI_Page_relyins_customer_communicat_template_list_fieldLabel}",
+                "store" : "xcp.picklist.relyins_customer_communicat",
+                "valueType" : "STRING"
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "xcpId" : "value_display1",
+        "xtype" : "xcp_value_display",
+        "fieldLabel" : "",
+        "valueType" : "STRING",
+        "isRepeating" : false
+      }, {
+        "xcpId" : "column_box3",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_customer_communicat_column_box3_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "grey-box",
+        "items" : [ {
+          "xcpId" : "columnvbox7",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "140",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "center",
+          "valign" : "middle",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "image1",
+            "xtype" : "xcp_image",
+            "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Customer_Orange.png",
+            "behavior" : false,
+            "width" : 48,
+            "height" : 48,
+            "isInternal" : true
+          } ]
+        }, {
+          "xcpId" : "columnvbox8",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 80,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "customer_id",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "${_UI_Page_relyins_customer_communicat_customer_id_fieldLabel}",
+            "valueType" : "STRING",
+            "isRepeating" : false,
+            "name" : "relyins_customer@customer_id"
+          }, {
+            "xcpId" : "first_name",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "${_UI_Page_relyins_customer_communicat_first_name_fieldLabel}",
+            "valueType" : "STRING",
+            "isRepeating" : false,
+            "name" : "relyins_customer@first_name"
+          }, {
+            "xcpId" : "last_name",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "${_UI_Page_relyins_customer_communicat_last_name_fieldLabel}",
+            "valueType" : "STRING",
+            "isRepeating" : false,
+            "name" : "relyins_customer@last_name"
+          }, {
+            "xcpId" : "birth_date",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "${_UI_Page_relyins_customer_communicat_birth_date_fieldLabel}",
+            "valueType" : "DATETIME",
+            "isRepeating" : false,
+            "format" : {
+              "xtype" : "xcp_datetime_formatter",
+              "dateFormat" : "short",
+              "timeFormat" : "short",
+              "dateStyle" : "datetime"
+            },
+            "name" : "relyins_customer@birth_date"
+          }, {
+            "xcpId" : "street",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "${_UI_Page_relyins_customer_communicat_street_fieldLabel}",
+            "valueType" : "STRING",
+            "isRepeating" : false,
+            "name" : "relyins_customer@street"
+          }, {
+            "xcpId" : "city",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "${_UI_Page_relyins_customer_communicat_city_fieldLabel}",
+            "valueType" : "STRING",
+            "isRepeating" : false,
+            "name" : "relyins_customer@city"
+          }, {
+            "xcpId" : "zip",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "${_UI_Page_relyins_customer_communicat_zip_fieldLabel}",
+            "valueType" : "STRING",
+            "isRepeating" : false,
+            "name" : "relyins_customer@zip"
+          }, {
+            "xcpId" : "state",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "${_UI_Page_relyins_customer_communicat_state_fieldLabel}",
+            "valueType" : "STRING",
+            "isRepeating" : false,
+            "name" : "relyins_customer@state"
+          }, {
+            "xcpId" : "email",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "${_UI_Page_relyins_customer_communicat_email_fieldLabel}",
+            "valueType" : "STRING",
+            "isRepeating" : false,
+            "name" : "relyins_customer@email"
+          }, {
+            "xcpId" : "phone",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "${_UI_Page_relyins_customer_communicat_phone_fieldLabel}",
+            "valueType" : "STRING",
+            "isRepeating" : false,
+            "name" : "relyins_customer@phone"
+          }, {
+            "xcpId" : "value_display3",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "",
+            "valueType" : "STRING",
+            "isRepeating" : false
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "columnvbox1",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "10",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5"
+    }, {
+      "xcpId" : "columnvbox4",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "column_box2",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_customer_communicat_column_box2_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "grey-box",
+        "items" : [ {
+          "xcpId" : "columnvbox3",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "center",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "value_display",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "",
+            "valueType" : "HTML",
+            "isRepeating" : false,
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ {
+                "propertyId" : "hidden",
+                "setterFunName" : "setHidden",
+                "etype" : "relyins_customer_communicat_value_display_hidden_1",
+                "events" : ["template_list.change" ]
+              }, {
+                "propertyId" : "value",
+                "setterFunName" : "setValue",
+                "etype" : "relyins_customer_communicat_value_display_value_1"
+              } ]
+            } ]
+          }, {
+            "xcpId" : "image2",
+            "xtype" : "xcp_image",
+            "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Email Template Telematic.png",
+            "behavior" : false,
+            "width" : 600,
+            "height" : 386,
+            "isInternal" : true,
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ {
+                "propertyId" : "hidden",
+                "setterFunName" : "setHidden",
+                "etype" : "relyins_customer_communicat_image2_hidden_1",
+                "events" : ["template_list.change" ]
+              } ]
+            } ]
+          }, {
+            "xcpId" : "value_display2",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "",
+            "valueType" : "STRING",
+            "isRepeating" : false
+          }, {
+            "xcpId" : "button",
+            "xtype" : "xcp_button",
+            "text" : "${_UI_Page_relyins_customer_communicat_button_text}",
+            "actionInstanceId" : "da_def_invoke_stateless_processsend_telematic_emai_initiate_button",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ {
+                "propertyId" : "hidden",
+                "setterFunName" : "setHidden",
+                "etype" : "relyins_customer_communicat_button_hidden_1",
+                "events" : ["template_list.change" ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  } ]
+}

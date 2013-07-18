@@ -1,0 +1,273 @@
+{
+  "padding" : "0",
+  "border" : false,
+  "pageTitle" : "${_UI_Page_relyins_edit_customer_title}",
+  "xtype" : "xcp_form",
+  "modelImmutable" : true,
+  "models" : [ "relyins_customer" ],
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "da_def_update_customer_button",
+      "defaultConfirmationPrompt" : "Are you sure you want to update the item?",
+      "showConfirmation" : true,
+      "redirectStyle" : "current",
+      "showSuccessNotification" : true,
+      "actionType" : "update",
+      "actionModel" : "relyins_da_def_update_customer",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "last_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_last_name_1",
+          "events" : ["last_name.change" ]
+        }, {
+          "propertyId" : "risk",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_risk_1",
+          "events" : ["risk.change" ]
+        }, {
+          "propertyId" : "street",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_street_1",
+          "events" : ["street.change" ]
+        }, {
+          "propertyId" : "zip",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_zip_1",
+          "events" : ["zip.change" ]
+        }, {
+          "propertyId" : "birth_date",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_birth_date_1",
+          "events" : ["birth_date.change" ]
+        }, {
+          "propertyId" : "city",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_city_1",
+          "events" : ["city.change" ]
+        }, {
+          "propertyId" : "occupation",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_occupation_1",
+          "events" : ["occupation.change" ]
+        }, {
+          "propertyId" : "customer_id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_customer_id_1",
+          "events" : ["customer_id.change" ]
+        }, {
+          "propertyId" : "first_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_first_name_1",
+          "events" : ["first_name.change" ]
+        }, {
+          "propertyId" : "driver_license",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_driver_license_1",
+          "events" : ["driver_license.change" ]
+        }, {
+          "propertyId" : "email",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_email_1",
+          "events" : ["email.change" ]
+        }, {
+          "propertyId" : "state",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_state_1",
+          "events" : ["state.change" ]
+        }, {
+          "propertyId" : "phone",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_phone_1",
+          "events" : ["phone.change" ]
+        }, {
+          "propertyId" : "ssn",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_ssn_1",
+          "events" : ["ssn.change" ]
+        }, {
+          "propertyId" : "id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_edit_customer_da_def_update_customer_id_1",
+          "events" : ["relyins_customer.change","relyins_customer.load" ]
+        } ],
+        "mapping" : {
+          "last_name" : ["last_name" ],
+          "risk" : ["risk" ],
+          "street" : ["street" ],
+          "zip" : ["zip" ],
+          "birth_date" : ["birth_date" ],
+          "city" : ["city" ],
+          "occupation" : ["occupation" ],
+          "customer_id" : ["customer_id" ],
+          "first_name" : ["first_name" ],
+          "driver_license" : ["driver_license" ],
+          "email" : ["email" ],
+          "state" : ["state" ],
+          "phone" : ["phone" ],
+          "ssn" : ["ssn" ]
+        }
+      } ]
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "100%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "birth_date",
+        "xtype" : "xcp_date_time_input",
+        "fieldLabel" : "${_UI_Page_relyins_edit_customer_birth_date_fieldLabel}",
+        "hstretch" : true,
+        "format" : {
+          "xtype" : "xcp_datetime_formatter",
+          "dateFormat" : "short",
+          "timeFormat" : "short",
+          "dateStyle" : "datetime"
+        },
+        "valueType" : "DATETIME",
+        "name" : "relyins_customer@birth_date"
+      }, {
+        "xcpId" : "city",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_relyins_edit_customer_city_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "relyins_customer@city"
+      }, {
+        "xcpId" : "customer_id",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_relyins_edit_customer_customer_id_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "relyins_customer@customer_id"
+      }, {
+        "xcpId" : "driver_license",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_relyins_edit_customer_driver_license_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "relyins_customer@driver_license"
+      }, {
+        "xcpId" : "email",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_relyins_edit_customer_email_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "relyins_customer@email"
+      }, {
+        "xcpId" : "first_name",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_relyins_edit_customer_first_name_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "relyins_customer@first_name"
+      }, {
+        "xcpId" : "last_name",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_relyins_edit_customer_last_name_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "relyins_customer@last_name"
+      }, {
+        "xcpId" : "occupation",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_relyins_edit_customer_occupation_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "relyins_customer@occupation"
+      }, {
+        "xcpId" : "phone",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_relyins_edit_customer_phone_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "relyins_customer@phone"
+      }, {
+        "xcpId" : "risk",
+        "xtype" : "xcp_number_input",
+        "fieldLabel" : "${_UI_Page_relyins_edit_customer_risk_fieldLabel}",
+        "allowDecimals" : false,
+        "hideTrigger" : true,
+        "keyNavEnabled" : false,
+        "mouseWheelEnabled" : false,
+        "autoStripChars" : true,
+        "hstretch" : true,
+        "valueType" : "INTEGER",
+        "name" : "relyins_customer@risk"
+      }, {
+        "xcpId" : "ssn",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_relyins_edit_customer_ssn_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "relyins_customer@ssn"
+      }, {
+        "xcpId" : "state",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_relyins_edit_customer_state_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "relyins_customer@state"
+      }, {
+        "xcpId" : "street",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_relyins_edit_customer_street_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "relyins_customer@street"
+      }, {
+        "xcpId" : "zip",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_relyins_edit_customer_zip_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "relyins_customer@zip"
+      } ]
+    } ]
+  }, {
+    "xcpId" : "column_box1",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnhbox",
+      "xtype" : "xcp_columnhbox",
+      "orientation" : "Horizontal",
+      "width" : "100%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 50,
+      "defaultMargins" : "5",
+      "labelAlign" : "left",
+      "halign" : "right",
+      "valign" : "top",
+      "items" : [ {
+        "xcpId" : "button",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_relyins_edit_customer_button_text}",
+        "actionInstanceId" : "da_def_update_customer_button"
+      } ]
+    } ]
+  } ]
+}

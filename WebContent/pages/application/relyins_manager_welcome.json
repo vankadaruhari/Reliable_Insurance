@@ -1,0 +1,632 @@
+{
+  "padding" : "0",
+  "border" : false,
+  "pageTitle" : "${_UI_Page_relyins_manager_welcome_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "report_manager_top__initiate_staless_ds",
+      "actionModel" : "relyins_report_manager_top__initiate_staless_ds_outputs",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ],
+      "pageSize" : 10,
+      "actionType" : "datasource",
+      "autoLoad" : true
+    }, {
+      "xcpId" : "report_manager_perf_initiate_staless_ds",
+      "actionModel" : "relyins_report_manager_perf_initiate_staless_ds_outputs",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ],
+      "actionType" : "datasource",
+      "autoLoad" : true
+    }, {
+      "xcpId" : "report_manager_ag_2_initiate_staless_ds",
+      "actionModel" : "relyins_report_manager_ag_2_initiate_staless_ds_outputs",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "agent_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_manager_welcome_report_manager_ag_2_initiate_staless_ds_agent_name_1",
+          "events" : ["agent_list.selectionchange" ]
+        } ],
+        "mapping" : {
+          "agent_name" : ["agent_list" ]
+        }
+      } ],
+      "actionType" : "datasource",
+      "autoLoad" : false,
+      "invokerEvents" : ["agent_list.selectionchange" ]
+    }, {
+      "xcpId" : "report_manager_cust_initiate_staless_ds",
+      "actionModel" : "relyins_report_manager_cust_initiate_staless_ds_outputs",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ],
+      "actionType" : "datasource",
+      "autoLoad" : true
+    }, {
+      "xcpId" : "report_manager_ag_1_initiate_staless_ds",
+      "actionModel" : "relyins_report_manager_ag_1_initiate_staless_ds_outputs",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "agent_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_manager_welcome_report_manager_ag_1_initiate_staless_ds_agent_name_1",
+          "events" : ["agent_list.selectionchange" ]
+        } ],
+        "mapping" : {
+          "agent_name" : ["agent_list" ]
+        }
+      } ],
+      "actionType" : "datasource",
+      "autoLoad" : false,
+      "invokerEvents" : ["agent_list.selectionchange" ]
+    } ]
+  }, {
+    "xcpId" : "column_box2",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox7",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "435",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5 2 5 2",
+      "items" : [ {
+        "xcpId" : "column_box4",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_manager_welcome_column_box4_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "black-box",
+        "items" : [ {
+          "xcpId" : "columnvbox5",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_line_chart1",
+            "xtype" : "xcp_column_line_chart",
+            "reportType" : "column",
+            "reportId" : "2",
+            "timeGranularity" : "DAILY",
+            "modelName" : "relyins_report_manager_perf_initiate_staless_ds_outputs",
+            "xAxisFields" : [ "quarters" ],
+            "xAxisSelectedFields" : [ "quarters" ],
+            "yAxisFields" : [ "performance", "plan" ],
+            "yAxisSelectedFields" : [ "performance", "plan" ],
+            "xAxisFieldsNames" : [ "quarters" ],
+            "xAxisSelectedFieldsNames" : [ "quarters" ],
+            "yAxisFieldsNames" : [ "performance", "plan" ],
+            "yAxisSelectedFieldsNames" : [ "performance", "plan" ],
+            "xAxisLabel" : "${_UI_Page_relyins_manager_welcome_column_line_chart1_xAxisLabel}",
+            "xAxisAllLabels" : [ "Quarters" ],
+            "yAxisTypeList" : "column",
+            "yAxisLabel" : "${_UI_Page_relyins_manager_welcome_column_line_chart1_yAxisLabel}",
+            "yAxisAllLabels" : [ "Performance", "Plan" ],
+            "storeId" : "report_manager_perf_initiate_staless_ds",
+            "sortingFieldName" : "none",
+            "sortingOrder" : "desc",
+            "legendDisplay" : "true",
+            "yAxisSelectedTypes" : [ "column", "column" ],
+            "yAxisAllTypes" : [ "column", "column" ],
+            "dotTypeList" : "circle",
+            "lineSmooth" : "true",
+            "lineFill" : "false",
+            "hasFormatSection" : true,
+            "appNamespace" : "relyins",
+            "yAxisSelectedLabels" : [ "${_UI_Page_relyins_manager_welcome_column_line_chart1_yAxisSelectedLabels_0}", "${_UI_Page_relyins_manager_welcome_column_line_chart1_yAxisSelectedLabels_1}" ],
+            "slaColorList" : "#363636",
+            "timeFilter" : 1,
+            "HOURLY" : 1,
+            "DAILY" : 1,
+            "WEEKLY" : 1,
+            "MONTHLY" : 1,
+            "QUATERLY" : 1,
+            "YEARLY" : 1,
+            "fieldLabel" : "${_UI_Page_relyins_manager_welcome_column_line_chart1_fieldLabel}",
+            "xAxisFieldsValueType" : [ "STRING" ],
+            "yAxisFieldsValueType" : [ "FLOAT", "FLOAT" ],
+            "performance_format" : {
+              "xtype" : "xcp_float_formatter",
+              "decimalPrecision" : 2,
+              "useThousandSeparator" : true,
+              "separatorStyle" : "LOCALE",
+              "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+            },
+            "plan_format" : {
+              "xtype" : "xcp_float_formatter",
+              "decimalPrecision" : 2,
+              "useThousandSeparator" : true,
+              "separatorStyle" : "LOCALE",
+              "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+            },
+            "slaForegroundColor" : "#FFFFFF"
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "columnvbox2",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "435",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5 2 5 2",
+      "items" : [ {
+        "xcpId" : "column_box3",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_manager_welcome_column_box3_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "black-box",
+        "items" : [ {
+          "xcpId" : "columnvbox4",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_line_chart",
+            "xtype" : "xcp_column_line_chart",
+            "reportType" : "column",
+            "reportId" : "2",
+            "timeGranularity" : "QUATERLY",
+            "modelName" : "relyins_report_manager_cust_initiate_staless_ds_outputs",
+            "xAxisFields" : [ "labels" ],
+            "xAxisSelectedFields" : [ "labels" ],
+            "yAxisFields" : [ "data" ],
+            "yAxisSelectedFields" : [ "data" ],
+            "xAxisFieldsNames" : [ "labels" ],
+            "xAxisSelectedFieldsNames" : [ "labels" ],
+            "yAxisFieldsNames" : [ "data" ],
+            "yAxisSelectedFieldsNames" : [ "data" ],
+            "xAxisLabel" : "${_UI_Page_relyins_manager_welcome_column_line_chart_xAxisLabel}",
+            "xAxisAllLabels" : [ "Weeks" ],
+            "yAxisTypeList" : "column",
+            "yAxisLabel" : "${_UI_Page_relyins_manager_welcome_column_line_chart_yAxisLabel}",
+            "yAxisAllLabels" : [ "# of customers" ],
+            "storeId" : "report_manager_cust_initiate_staless_ds",
+            "sortingFieldName" : "none",
+            "sortingOrder" : "desc",
+            "legendDisplay" : "true",
+            "yAxisSelectedTypes" : [ "line" ],
+            "yAxisAllTypes" : [ "line" ],
+            "dotTypeList" : "circle",
+            "lineDotTypeAll" : [ "circle" ],
+            "lineDotTypeSelected" : [ "circle" ],
+            "lineSmoothAll" : [ "true" ],
+            "lineSmoothSelected" : [ "true" ],
+            "lineSmooth" : "true",
+            "lineFillAll" : [ "false" ],
+            "lineFillSelected" : [ "false" ],
+            "lineFill" : "false",
+            "hasFormatSection" : true,
+            "appNamespace" : "relyins",
+            "yAxisSelectedLabels" : [ "${_UI_Page_relyins_manager_welcome_column_line_chart_yAxisSelectedLabels_0}" ],
+            "slaColorList" : "#363636",
+            "timeFilter" : 1,
+            "HOURLY" : 1,
+            "DAILY" : 1,
+            "WEEKLY" : 1,
+            "MONTHLY" : 1,
+            "QUATERLY" : 1,
+            "YEARLY" : 1,
+            "fieldLabel" : "${_UI_Page_relyins_manager_welcome_column_line_chart_fieldLabel}",
+            "xAxisFieldsValueType" : [ "STRING" ],
+            "yAxisFieldsValueType" : [ "INTEGER" ],
+            "data_format" : {
+              "xtype" : "xcp_integer_formatter",
+              "decimalPrecision" : 0,
+              "useThousandSeparator" : true,
+              "separatorStyle" : "LOCALE",
+              "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+            },
+            "slaForegroundColor" : "#FFFFFF"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "xcpId" : "column_box5",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox6",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "300",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5 2 5 2",
+      "items" : [ {
+        "xcpId" : "column_box6",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_manager_welcome_column_box6_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "black-box",
+        "items" : [ {
+          "xcpId" : "columnvbox9",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "agent_list",
+            "xtype" : "xcp_results_list",
+            "typeName" : "relyins_report_manager_top__initiate",
+            "modelName" : "relyins_report_manager_top__initiate_staless_ds_outputs",
+            "storeId" : "report_manager_top__initiate_staless_ds",
+            "pageSize" : 10,
+            "selectionModel" : false,
+            "columns" : [ {
+              "xcpId" : "results_list_page_link_column",
+              "xtype" : "xcp_results_list_page_link_column",
+              "text" : "${_UI_Page_relyins_manager_welcome_results_list_page_link_column_text}",
+              "width" : 80,
+              "dataIndex" : "agents",
+              "valueType" : "STRING",
+              "isRepeating" : false,
+              "sortable" : false,
+              "menuDisabled" : true
+            }, {
+              "xcpId" : "results_list_column",
+              "xtype" : "xcp_results_list_column",
+              "text" : "${_UI_Page_relyins_manager_welcome_results_list_column_text}",
+              "width" : 80,
+              "dataIndex" : "new_customers",
+              "valueType" : "INTEGER",
+              "isRepeating" : false,
+              "format" : {
+                "xtype" : "xcp_integer_formatter",
+                "decimalPrecision" : 0,
+                "useThousandSeparator" : true,
+                "separatorStyle" : "LOCALE",
+                "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+              },
+              "sortable" : false,
+              "menuDisabled" : true
+            }, {
+              "xcpId" : "results_list_column1",
+              "xtype" : "xcp_results_list_column",
+              "text" : "${_UI_Page_relyins_manager_welcome_results_list_column1_text}",
+              "dataIndex" : "new_policies",
+              "valueType" : "INTEGER",
+              "isRepeating" : false,
+              "format" : {
+                "xtype" : "xcp_integer_formatter",
+                "decimalPrecision" : 0,
+                "useThousandSeparator" : true,
+                "separatorStyle" : "LOCALE",
+                "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+              },
+              "sortable" : false,
+              "menuDisabled" : true
+            } ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "columnvbox8",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "285",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "column_box",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_manager_welcome_column_box_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "black-box",
+        "items" : [ {
+          "xcpId" : "columnvbox",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5 2 5 2",
+          "items" : [ {
+            "xcpId" : "value_display1",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "",
+            "valueType" : "STRING",
+            "isRepeating" : false
+          }, {
+            "xcpId" : "rich_text",
+            "xtype" : "xcp_rich_text",
+            "html" : "${_UI_Page_relyins_manager_welcome_rich_text_html}",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ {
+                "propertyId" : "hidden",
+                "setterFunName" : "setHidden",
+                "etype" : "relyins_manager_welcome_rich_text_hidden_1",
+                "events" : ["agent_list.selectionchange" ]
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box7",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ {
+                "propertyId" : "hidden",
+                "setterFunName" : "setHidden",
+                "etype" : "relyins_manager_welcome_column_box7_hidden_1",
+                "events" : ["agent_list.selectionchange" ]
+              } ]
+            } ],
+            "items" : [ {
+              "xcpId" : "columnvbox10",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "0 0 0 0",
+              "items" : [ {
+                "xcpId" : "pie_chart",
+                "xtype" : "xcp_pie_chart",
+                "reportType" : "pie",
+                "reportId" : "2",
+                "timeGranularity" : "DAILY",
+                "modelName" : "relyins_report_manager_ag_1_initiate_staless_ds_outputs",
+                "xAxisFields" : [ "categories" ],
+                "xAxisSelectedFields" : [ "categories" ],
+                "yAxisFields" : [ "customers" ],
+                "yAxisSelectedFields" : [ "customers" ],
+                "xAxisFieldsNames" : [ "categories" ],
+                "xAxisSelectedFieldsNames" : [ "categories" ],
+                "yAxisFieldsNames" : [ "customers" ],
+                "yAxisSelectedFieldsNames" : [ "customers" ],
+                "xAxisLabel" : "categories",
+                "xAxisAllLabels" : [ "categories" ],
+                "yAxisAllLabels" : [ "Customers" ],
+                "storeId" : "report_manager_ag_1_initiate_staless_ds",
+                "sortingFieldName" : "none",
+                "sortingOrder" : "desc",
+                "legendDisplay" : "false",
+                "appNamespace" : "relyins",
+                "yAxisSelectedLabels" : [ "${_UI_Page_relyins_manager_welcome_pie_chart_yAxisSelectedLabels_0}" ],
+                "yAxisTypeList" : "pie",
+                "yAxisSelectedTypes" : [ "donut" ],
+                "yAxisAllTypes" : [ "donut" ],
+                "timeFilter" : 1,
+                "HOURLY" : 1,
+                "DAILY" : 1,
+                "WEEKLY" : 1,
+                "MONTHLY" : 1,
+                "QUATERLY" : 1,
+                "YEARLY" : 1,
+                "fieldLabel" : "${_UI_Page_relyins_manager_welcome_pie_chart_fieldLabel}",
+                "valueType" : "STRING",
+                "xAxisFieldsValueType" : [ "STRING" ],
+                "yAxisFieldsValueType" : [ "INTEGER" ],
+                "inputActionModel" : "true",
+                "customers_format" : {
+                  "xtype" : "xcp_integer_formatter",
+                  "decimalPrecision" : 0,
+                  "useThousandSeparator" : true,
+                  "separatorStyle" : "LOCALE",
+                  "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+                }
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "columnvbox1",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "285",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5 2 5 2",
+      "items" : [ {
+        "xcpId" : "column_box1",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_manager_welcome_column_box1_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "black-box",
+        "items" : [ {
+          "xcpId" : "columnvbox3",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "value_display",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "",
+            "valueType" : "STRING",
+            "isRepeating" : false
+          }, {
+            "xcpId" : "rich_text1",
+            "xtype" : "xcp_rich_text",
+            "html" : "${_UI_Page_relyins_manager_welcome_rich_text1_html}",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ {
+                "propertyId" : "hidden",
+                "setterFunName" : "setHidden",
+                "etype" : "relyins_manager_welcome_rich_text1_hidden_1",
+                "events" : ["agent_list.selectionchange" ]
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box8",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ {
+                "propertyId" : "hidden",
+                "setterFunName" : "setHidden",
+                "etype" : "relyins_manager_welcome_column_box8_hidden_1",
+                "events" : ["agent_list.selectionchange" ]
+              } ]
+            } ],
+            "items" : [ {
+              "xcpId" : "columnvbox11",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "0 0 0 0",
+              "items" : [ {
+                "xcpId" : "pie_chart1",
+                "xtype" : "xcp_pie_chart",
+                "reportType" : "pie",
+                "reportId" : "2",
+                "timeGranularity" : "DAILY",
+                "modelName" : "relyins_report_manager_ag_2_initiate_staless_ds_outputs",
+                "xAxisFields" : [ "categories" ],
+                "xAxisSelectedFields" : [ "categories" ],
+                "yAxisFields" : [ "policies" ],
+                "yAxisSelectedFields" : [ "policies" ],
+                "xAxisFieldsNames" : [ "categories" ],
+                "xAxisSelectedFieldsNames" : [ "categories" ],
+                "yAxisFieldsNames" : [ "policies" ],
+                "yAxisSelectedFieldsNames" : [ "policies" ],
+                "xAxisLabel" : "categories",
+                "xAxisAllLabels" : [ "categories" ],
+                "yAxisAllLabels" : [ "Policies" ],
+                "storeId" : "report_manager_ag_2_initiate_staless_ds",
+                "sortingFieldName" : "none",
+                "sortingOrder" : "desc",
+                "legendDisplay" : "false",
+                "appNamespace" : "relyins",
+                "yAxisSelectedLabels" : [ "${_UI_Page_relyins_manager_welcome_pie_chart1_yAxisSelectedLabels_0}" ],
+                "yAxisTypeList" : "pie",
+                "yAxisSelectedTypes" : [ "donut" ],
+                "yAxisAllTypes" : [ "donut" ],
+                "timeFilter" : 1,
+                "HOURLY" : 1,
+                "DAILY" : 1,
+                "WEEKLY" : 1,
+                "MONTHLY" : 1,
+                "QUATERLY" : 1,
+                "YEARLY" : 1,
+                "fieldLabel" : "${_UI_Page_relyins_manager_welcome_pie_chart1_fieldLabel}",
+                "valueType" : "STRING",
+                "xAxisFieldsValueType" : [ "STRING" ],
+                "yAxisFieldsValueType" : [ "INTEGER" ],
+                "inputActionModel" : "true",
+                "policies_format" : {
+                  "xtype" : "xcp_integer_formatter",
+                  "decimalPrecision" : 0,
+                  "useThousandSeparator" : true,
+                  "separatorStyle" : "LOCALE",
+                  "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+                }
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  } ]
+}

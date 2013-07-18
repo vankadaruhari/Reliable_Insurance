@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fulltext:FullTextSearch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fulltext="http://xcp.emc.com/search/fulltext" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" urn="urn:relyins:com.emc.xcp.artifact.search.fulltext:Artifacts/Full-text Queries/facets_customer.fulltext" categoryId="com.emc.xcp.artifact.search.fulltext" name="facets_customer" label="Facets - Customer" summaryColumn="true">
+  <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="facets_customer" label="Facets - Customer" implCategoryId="com.emc.xcp.artifact.search.fulltext">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="q" label="Full-Text">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </outputs>
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="last_name" label="Last name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="first_name" label="First name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="ssn" label="SSN">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="street" label="Street">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="zip" label="ZIP">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="city" label="City">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="state" label="State">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="id" label="Object ID" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="r_object_type" label="Object type" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="summary" label="Summary" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="matchingterms" label="MatchingTerms" repeating="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement>
+      <dataModel href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+    </primaryElement>
+    <facets name="facet_city" label="City">
+      <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='city']/@type"/>
+      </facetType>
+    </facets>
+    <facets name="facet_vehicles_make" label="Vehicle Make">
+      <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='vehicles_make']/@type"/>
+      </facetType>
+    </facets>
+    <facets name="facet_vehicles_model" label="Vehicle Model">
+      <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
+        <attributeType xsi:type="nsAttributeDatatypes:StringType" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='vehicles_model']/@type"/>
+      </facetType>
+    </facets>
+    <facets name="facet_risk" label="Risk assessment">
+      <facetType xsi:type="nsDataserviceContract:EnumTypeFacet">
+        <type xsi:type="nsAttributeDatatypes:IntegerType"/>
+        <entries value="0:20" label="Low"/>
+        <entries value="20:60" label="Medium"/>
+        <entries value="60:100" label="High"/>
+      </facetType>
+    </facets>
+    <facets name="facet_had_accident" label="Had accident">
+      <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='had_accident']/@type"/>
+      </facetType>
+    </facets>
+    <facets name="facet_had_insurance_decli" label="Had insurance declined">
+      <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='had_insurance_declined']/@type"/>
+      </facetType>
+    </facets>
+    <facets name="facet_had_license_revoked" label="Had license revoked">
+      <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='had_license_revoked']/@type"/>
+      </facetType>
+    </facets>
+    <facets name="facet_had_mental_impairme" label="Had impairments">
+      <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='had_mental_impairments']/@type"/>
+      </facetType>
+    </facets>
+    <facets name="facet_had_moving_violatio" label="Had moving violation">
+      <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='had_moving_violation']/@type"/>
+      </facetType>
+    </facets>
+    <facets name="facet_collision" label="Covered for collision">
+      <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='collision']/@type"/>
+      </facetType>
+    </facets>
+    <facets name="facet_comprehensive" label="Covered for comprehensive">
+      <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='comprehensive']/@type"/>
+      </facetType>
+    </facets>
+    <facets name="facet_medical_payments" label="Covered for medical payments">
+      <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='medical_payments']/@type"/>
+      </facetType>
+    </facets>
+    <facets name="facet_property_damage" label="Covered for property damage">
+      <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='property_damage']/@type"/>
+      </facetType>
+    </facets>
+    <facets name="facet_bodily_injury" label="Covered for bodily injury">
+      <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
+        <attributeType xsi:type="nsAttributeDatatypes:BooleanType" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='bodily_injury']/@type"/>
+      </facetType>
+    </facets>
+  </datasource>
+  <columns label="Last name">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='last_name']"/>
+    </contextSelection>
+  </columns>
+  <columns label="First name">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='first_name']"/>
+    </contextSelection>
+  </columns>
+  <columns label="SSN">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='ssn']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Street">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='street']"/>
+    </contextSelection>
+  </columns>
+  <columns label="ZIP">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='zip']"/>
+    </contextSelection>
+  </columns>
+  <columns label="City">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='city']"/>
+    </contextSelection>
+  </columns>
+  <columns label="State">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='state']"/>
+    </contextSelection>
+  </columns>
+  <defaultSort ascending="true"/>
+  <dataType xsi:type="nsDatatypes:BusinessObject" href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+  <filters xsi:type="fulltext:StringFilter" name="city" label="City" orderBy="FREQUENCY">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='city']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:StringGroupBy"/>
+  </filters>
+  <filters xsi:type="fulltext:StringFilter" name="vehicles_make" label="Vehicle Make" orderBy="FREQUENCY">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='vehicles_make']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:StringGroupBy"/>
+  </filters>
+  <filters xsi:type="fulltext:StringFilter" name="vehicles_model" label="Vehicle Model" orderBy="FREQUENCY">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='vehicles_model']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:StringGroupBy"/>
+  </filters>
+  <filters xsi:type="fulltext:IntegerFilter" name="risk" label="Risk assessment" distinctValues="false">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='risk']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:IntegerGroupBy">
+      <ranges label="Low" max="20" min="0"/>
+      <ranges label="Medium" max="60" min="20"/>
+      <ranges label="High" max="100" min="60"/>
+    </groupBy>
+  </filters>
+  <filters xsi:type="fulltext:BooleanFilter" name="had_accident" label="Had accident" orderBy="FREQUENCY">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='had_accident']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:BooleanGroupBy"/>
+  </filters>
+  <filters xsi:type="fulltext:BooleanFilter" name="had_insurance_decli" label="Had insurance declined" orderBy="FREQUENCY">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='had_insurance_declined']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:BooleanGroupBy"/>
+  </filters>
+  <filters xsi:type="fulltext:BooleanFilter" name="had_license_revoked" label="Had license revoked" orderBy="FREQUENCY">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='had_license_revoked']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:BooleanGroupBy"/>
+  </filters>
+  <filters xsi:type="fulltext:BooleanFilter" name="had_mental_impairme" label="Had impairments" orderBy="FREQUENCY">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='had_mental_impairments']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:BooleanGroupBy"/>
+  </filters>
+  <filters xsi:type="fulltext:BooleanFilter" name="had_moving_violatio" label="Had moving violation" orderBy="FREQUENCY">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='had_moving_violation']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:BooleanGroupBy"/>
+  </filters>
+  <filters xsi:type="fulltext:BooleanFilter" name="collision" label="Covered for collision" orderBy="FREQUENCY">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='collision']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:BooleanGroupBy"/>
+  </filters>
+  <filters xsi:type="fulltext:BooleanFilter" name="comprehensive" label="Covered for comprehensive" orderBy="FREQUENCY">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='comprehensive']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:BooleanGroupBy"/>
+  </filters>
+  <filters xsi:type="fulltext:BooleanFilter" name="medical_payments" label="Covered for medical payments" orderBy="FREQUENCY">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='medical_payments']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:BooleanGroupBy"/>
+  </filters>
+  <filters xsi:type="fulltext:BooleanFilter" name="property_damage" label="Covered for property damage" orderBy="FREQUENCY">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='property_damage']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:BooleanGroupBy"/>
+  </filters>
+  <filters xsi:type="fulltext:BooleanFilter" name="bodily_injury" label="Covered for bodily injury" orderBy="FREQUENCY">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/customer.businessobj#//@attributes[name='bodily_injury']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:BooleanGroupBy"/>
+  </filters>
+</fulltext:FullTextSearch>

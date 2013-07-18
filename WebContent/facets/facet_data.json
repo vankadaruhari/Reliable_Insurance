@@ -1,0 +1,118 @@
+{
+relyins_facets_customer:{
+facet_city:{
+label: "${_UI_Facet_relyins_facets_customer_facet_city_facet_city}"
+}
+,
+facet_vehicles_make:{
+label: "${_UI_Facet_relyins_facets_customer_facet_vehicles_make_facet_vehicles_make}"
+}
+,
+facet_vehicles_model:{
+label: "${_UI_Facet_relyins_facets_customer_facet_vehicles_model_facet_vehicles_model}"
+}
+,
+facet_risk:{
+label: "${_UI_Facet_relyins_facets_customer_facet_risk_facet_risk}",
+
+values:{
+"0:20":"${_UI_Facet_relyins_facets_customer_facet_risk_0_20}",
+
+"20:60":"${_UI_Facet_relyins_facets_customer_facet_risk_20_60}",
+
+"60:100":"${_UI_Facet_relyins_facets_customer_facet_risk_60_100}"
+}
+}
+,
+facet_had_accident:{
+label: "${_UI_Facet_relyins_facets_customer_facet_had_accident_facet_had_accident}",
+
+values:{
+"true":"${_UI_Facet_relyins_facets_customer_facet_had_accident_true}",
+"false":"${_UI_Facet_relyins_facets_customer_facet_had_accident_false}"
+}
+}
+,
+facet_had_insurance_decli:{
+label: "${_UI_Facet_relyins_facets_customer_facet_had_insurance_decli_facet_had_insurance_decli}",
+
+values:{
+"true":"${_UI_Facet_relyins_facets_customer_facet_had_insurance_decli_true}",
+"false":"${_UI_Facet_relyins_facets_customer_facet_had_insurance_decli_false}"
+}
+}
+,
+facet_had_license_revoked:{
+label: "${_UI_Facet_relyins_facets_customer_facet_had_license_revoked_facet_had_license_revoked}",
+
+values:{
+"true":"${_UI_Facet_relyins_facets_customer_facet_had_license_revoked_true}",
+"false":"${_UI_Facet_relyins_facets_customer_facet_had_license_revoked_false}"
+}
+}
+,
+facet_had_mental_impairme:{
+label: "${_UI_Facet_relyins_facets_customer_facet_had_mental_impairme_facet_had_mental_impairme}",
+
+values:{
+"true":"${_UI_Facet_relyins_facets_customer_facet_had_mental_impairme_true}",
+"false":"${_UI_Facet_relyins_facets_customer_facet_had_mental_impairme_false}"
+}
+}
+,
+facet_had_moving_violatio:{
+label: "${_UI_Facet_relyins_facets_customer_facet_had_moving_violatio_facet_had_moving_violatio}",
+
+values:{
+"true":"${_UI_Facet_relyins_facets_customer_facet_had_moving_violatio_true}",
+"false":"${_UI_Facet_relyins_facets_customer_facet_had_moving_violatio_false}"
+}
+}
+,
+facet_collision:{
+label: "${_UI_Facet_relyins_facets_customer_facet_collision_facet_collision}",
+
+values:{
+"true":"${_UI_Facet_relyins_facets_customer_facet_collision_true}",
+"false":"${_UI_Facet_relyins_facets_customer_facet_collision_false}"
+}
+}
+,
+facet_comprehensive:{
+label: "${_UI_Facet_relyins_facets_customer_facet_comprehensive_facet_comprehensive}",
+
+values:{
+"true":"${_UI_Facet_relyins_facets_customer_facet_comprehensive_true}",
+"false":"${_UI_Facet_relyins_facets_customer_facet_comprehensive_false}"
+}
+}
+,
+facet_medical_payments:{
+label: "${_UI_Facet_relyins_facets_customer_facet_medical_payments_facet_medical_payments}",
+
+values:{
+"true":"${_UI_Facet_relyins_facets_customer_facet_medical_payments_true}",
+"false":"${_UI_Facet_relyins_facets_customer_facet_medical_payments_false}"
+}
+}
+,
+facet_property_damage:{
+label: "${_UI_Facet_relyins_facets_customer_facet_property_damage_facet_property_damage}",
+
+values:{
+"true":"${_UI_Facet_relyins_facets_customer_facet_property_damage_true}",
+"false":"${_UI_Facet_relyins_facets_customer_facet_property_damage_false}"
+}
+}
+,
+facet_bodily_injury:{
+label: "${_UI_Facet_relyins_facets_customer_facet_bodily_injury_facet_bodily_injury}",
+
+values:{
+"true":"${_UI_Facet_relyins_facets_customer_facet_bodily_injury_true}",
+"false":"${_UI_Facet_relyins_facets_customer_facet_bodily_injury_false}"
+}
+}
+
+}
+}

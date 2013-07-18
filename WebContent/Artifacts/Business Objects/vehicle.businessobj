@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsDatatypes:BusinessObject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsCommon="http://xcp.emc.com/common" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" xmlns:nsPicklist="http://xcp.emc.com/picklist" urn="urn:relyins:com.emc.xcp.artifact.bo:Artifacts/Business Objects/vehicle.businessobj" categoryId="com.emc.xcp.artifact.bo" name="vehicle" label="Vehicle">
+  <attributes name="make" label="Make">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </attributes>
+  <attributes name="model" label="Model">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="64"/>
+  </attributes>
+  <attributes name="rating" label="Rating">
+    <type xsi:type="nsPicklist:PickListType">
+      <pickList href="urn:rely:com.emc.xcp.artifact.picklist:Artifacts/Picklists/rating.picklist#/"/>
+    </type>
+  </attributes>
+  <attributes name="year" label="Year">
+    <type xsi:type="nsAttributeDatatypes:IntegerType"/>
+  </attributes>
+  <attributes name="msrp" label="MSRP">
+    <type xsi:type="nsAttributeDatatypes:FloatType"/>
+  </attributes>
+  <attributes name="body_type" label="Body Type">
+    <type xsi:type="nsPicklist:PickListType">
+      <pickList href="urn:relyins:com.emc.xcp.artifact.picklist:Artifacts/Picklists/vehicle_body_type.picklist#/"/>
+    </type>
+  </attributes>
+  <eventConfigs label="New vehicle" description="">
+    <triggerType/>
+    <action xsi:type="nsCommon:ServiceEventAction">
+      <serviceBinding>
+        <service runtimeModuleName="SyncInvokeService">
+          <configParams name="CHILD_PROCESS_URN" value="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process"/>
+        </service>
+        <inputMappingRules>
+          <expression exprStr="'The vehicle inventory has been updated: '+event.vehicle.make+'-'+event.vehicle.model+' added'"/>
+          <targetNode>
+            <parentRef selectionName="Variables" selectionLabel="Variables">
+              <parentRef>
+                <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#/"/>
+              </parentRef>
+            </parentRef>
+            <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#//@processData/@variables[name='activity_desc']"/>
+          </targetNode>
+        </inputMappingRules>
+        <inputMappingRules>
+          <expression exprStr="'New vehicle'"/>
+          <targetNode>
+            <parentRef selectionName="Variables" selectionLabel="Variables">
+              <parentRef>
+                <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#/"/>
+              </parentRef>
+            </parentRef>
+            <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#//@processData/@variables[name='activity_type']"/>
+          </targetNode>
+        </inputMappingRules>
+        <inputMappingRules>
+          <expression exprStr="'none'"/>
+          <targetNode>
+            <parentRef selectionName="Variables" selectionLabel="Variables">
+              <parentRef>
+                <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#/"/>
+              </parentRef>
+            </parentRef>
+            <dataRef href="urn:relyins:com.emc.ide.artifact.process:Artifacts/Processes/create_recent_activ.process#//@processData/@variables[name='customer_obj_id']"/>
+          </targetNode>
+        </inputMappingRules>
+      </serviceBinding>
+    </action>
+    <condition exprStr=""/>
+  </eventConfigs>
+  <accessControlPolicy>
+    <default href="urn:relyins:com.emc.xcp.artifact.permissionset:Artifacts/Permission Sets/demo_permission.permissionset#/"/>
+  </accessControlPolicy>
+  <defaultFolderPath exprStr="parameters.relyins.vehicles"/>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_create_vehicle" label="Create Vehicle" implCategoryId="com.emc.xcp.artifact.bo">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="body_type" label="Body Type">
+      <attributeType xsi:type="nsPicklist:PickListType">
+        <pickList href="urn:relyins:com.emc.xcp.artifact.picklist:Artifacts/Picklists/vehicle_body_type.picklist#/"/>
+      </attributeType>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="make" label="Make">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="model" label="Model">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="msrp" label="MSRP">
+      <attributeType xsi:type="nsAttributeDatatypes:FloatType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="rating" label="Rating">
+      <attributeType xsi:type="nsPicklist:PickListType">
+        <pickList href="urn:rely:com.emc.xcp.artifact.picklist:Artifacts/Picklists/rating.picklist#/"/>
+      </attributeType>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="year" label="Year">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <primaryElement dataModel="/"/>
+    <actionType type="Create"/>
+  </dataActionContracts>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_update_vehicle" label="Update Vehicle" implCategoryId="com.emc.xcp.artifact.bo">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="body_type" label="Body Type">
+      <attributeType xsi:type="nsPicklist:PickListType">
+        <pickList href="urn:relyins:com.emc.xcp.artifact.picklist:Artifacts/Picklists/vehicle_body_type.picklist#/"/>
+      </attributeType>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="make" label="Make">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="model" label="Model">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="msrp" label="MSRP">
+      <attributeType xsi:type="nsAttributeDatatypes:FloatType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="rating" label="Rating">
+      <attributeType xsi:type="nsPicklist:PickListType">
+        <pickList href="urn:rely:com.emc.xcp.artifact.picklist:Artifacts/Picklists/rating.picklist#/"/>
+      </attributeType>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="year" label="Year">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </inputs>
+    <primaryElement dataModel="/"/>
+    <actionType type="Update"/>
+  </dataActionContracts>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_delete_vehicle" label="Delete Vehicle" implCategoryId="com.emc.xcp.artifact.bo">
+    <primaryElement dataModel="/"/>
+    <actionType type="Delete"/>
+  </dataActionContracts>
+  <superType xsi:type="nsDatatypes:BusinessObject" href="urn:xcp:com.emc.xcp.artifact.bo:Artifacts/Business Objects/rootbo.businessobj#/"/>
+</nsDatatypes:BusinessObject>

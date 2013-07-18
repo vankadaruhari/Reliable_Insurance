@@ -1,0 +1,175 @@
+{
+  "padding" : "10 10 5 10",
+  "border" : false,
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "search_vehicle",
+      "actionModel" : "relyins_search_vehicle_outputs",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "input_make",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_add_a_vehicle_step__search_vehicle_input_make_1",
+          "events" : ["text_input.change" ]
+        } ],
+        "mapping" : {
+          "input_make" : ["text_input" ]
+        }
+      } ],
+      "pageSize" : 10,
+      "actionType" : "datasource",
+      "autoLoad" : false
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "100%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "column_box1",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "items" : [ {
+          "xcpId" : "columnvbox1",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "100%",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "text_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_UIStep_relyins_add_a_vehicle_step__text_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          } ]
+        } ]
+      }, {
+        "xcpId" : "column_box2",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "items" : [ {
+          "xcpId" : "columnhbox",
+          "xtype" : "xcp_columnhbox",
+          "orientation" : "Horizontal",
+          "width" : "100%",
+          "overflow_x" : "hidden",
+          "labelWidth" : 50,
+          "defaultMargins" : "5",
+          "labelAlign" : "left",
+          "halign" : "right",
+          "valign" : "top",
+          "items" : [ {
+            "xcpId" : "button",
+            "xtype" : "xcp_button",
+            "text" : "${_UI_UIStep_relyins_add_a_vehicle_step__button_text}",
+            "actionInstanceId" : "search_vehicle"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "xcpId" : "results_list",
+    "xtype" : "xcp_results_list",
+    "typeName" : "relyins_vehicle",
+    "modelName" : "relyins_search_vehicle_outputs",
+    "storeId" : "search_vehicle",
+    "pageSize" : 10,
+    "selectionModel" : false,
+    "columns" : [ {
+      "xcpId" : "results_list_page_link_column",
+      "xtype" : "xcp_results_list_page_link_column",
+      "text" : "${_UI_UIStep_relyins_add_a_vehicle_step__results_list_page_link_column_text}",
+      "width" : 150,
+      "dataIndex" : "make",
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : true
+    }, {
+      "xcpId" : "results_list_column",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_UIStep_relyins_add_a_vehicle_step__results_list_column_text}",
+      "width" : 150,
+      "dataIndex" : "model",
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : true,
+      "menuDisabled" : false
+    }, {
+      "xcpId" : "results_list_column1",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_UIStep_relyins_add_a_vehicle_step__results_list_column1_text}",
+      "width" : 150,
+      "dataIndex" : "rating",
+      "valueType" : "xcp.picklist.relyins_rating",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : true
+    }, {
+      "xcpId" : "results_list_column2",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_UIStep_relyins_add_a_vehicle_step__results_list_column2_text}",
+      "width" : 150,
+      "dataIndex" : "year",
+      "valueType" : "INTEGER",
+      "isRepeating" : false,
+      "format" : {
+        "xtype" : "xcp_integer_formatter",
+        "decimalPrecision" : 0,
+        "useThousandSeparator" : false,
+        "separatorStyle" : "LOCALE",
+        "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+      },
+      "sortable" : false,
+      "menuDisabled" : true
+    }, {
+      "xcpId" : "results_list_column3",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_UIStep_relyins_add_a_vehicle_step__results_list_column3_text}",
+      "dataIndex" : "msrp",
+      "valueType" : "FLOAT",
+      "isRepeating" : false,
+      "format" : {
+        "xtype" : "xcp_float_formatter",
+        "decimalPrecision" : 2,
+        "useThousandSeparator" : true,
+        "separatorStyle" : "LOCALE",
+        "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+      },
+      "sortable" : false,
+      "menuDisabled" : true
+    } ]
+  } ]
+}

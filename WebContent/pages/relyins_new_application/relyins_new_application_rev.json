@@ -1,0 +1,1734 @@
+{
+  "padding" : "0",
+  "border" : false,
+  "pageTitle" : "${_UI_Page_relyins_new_application_rev_title}",
+  "xtype" : "xcp_form",
+  "modelImmutable" : true,
+  "models" : [ "relyins_new_application_review_application" ],
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "da_def_invoke_stateless_processupdate_risk_assessm_initiate_button",
+      "redirectStyle" : "current",
+      "actionType" : "create",
+      "autoLoad" : "true",
+      "pageSize" : "10",
+      "outputType" : "Array",
+      "showConfirmation" : false,
+      "showSuccessNotification" : false,
+      "actionModel" : "relyins_da_def_invoke_stateless_processupdate_risk_assessm_initiate",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "customer_id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_invoke_stateless_processupdate_risk_assessm_initiate_customer_id_1",
+          "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+        } ],
+        "mapping" : {
+        }
+      } ]
+    }, {
+      "xcpId" : "da_def_update_new_application_manual_task_button1",
+      "defaultConfirmationPrompt" : "Are you sure you want to update this task?",
+      "showConfirmation" : false,
+      "redirectStyle" : "current",
+      "showSuccessNotification" : true,
+      "actionType" : "xcp_update_task",
+      "actionModel" : "relyins_da_def_update_new_application_manual_task",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "processPackages.customer.id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_customer_id_1",
+          "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+        }, {
+          "propertyId" : "processPackages.policy.id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_policy_id_1",
+          "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+        }, {
+          "propertyId" : "id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_id_1",
+          "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+        }, {
+          "propertyId" : "processPackages.policy.bodily_injury",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_policy_bodily_injury_1",
+          "events" : ["body_policy.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.property_damage",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_policy_property_damage_1",
+          "events" : ["property_policy.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.medical_payments",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_policy_medical_payments_1",
+          "events" : ["medical_policy.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.comprehensive",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_policy_comprehensive_1",
+          "events" : ["comprehensive_policy.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.collision",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_policy_collision_1",
+          "events" : ["collision_policy.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.street",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_customer_street_1",
+          "events" : ["street_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.city",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_customer_city_1",
+          "events" : ["city_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.zip",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_customer_zip_1",
+          "events" : ["zip_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.state",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_customer_state_1",
+          "events" : ["state_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_insurance_declined",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_customer_had_insurance_declined_1",
+          "events" : ["insurance_declined.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_mental_impairments",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_customer_had_mental_impairments_1",
+          "events" : ["physical_impairment.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_license_revoked",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_customer_had_license_revoked_1",
+          "events" : ["license_revoked.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_moving_violation",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_customer_had_moving_violation_1",
+          "events" : ["moving_violation.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_accident",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_customer_had_accident_1",
+          "events" : ["accident.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.deductible",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_policy_deductible_1",
+          "events" : ["deductible_input.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.total_coverage",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_policy_total_coverage_1",
+          "events" : ["coverage_input.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.monthly_payment_float",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_da_def_update_new_application_manual_task_processPackages_policy_monthly_payment_float_1",
+          "events" : ["payment_input.change" ]
+        } ],
+        "mapping" : {
+          "processPackages.policy.bodily_injury" : ["body_policy" ],
+          "processPackages.policy.property_damage" : ["property_policy" ],
+          "processPackages.policy.medical_payments" : ["medical_policy" ],
+          "processPackages.policy.comprehensive" : ["comprehensive_policy" ],
+          "processPackages.policy.collision" : ["collision_policy" ],
+          "processPackages.customer.street" : ["street_input" ],
+          "processPackages.customer.city" : ["city_input" ],
+          "processPackages.customer.zip" : ["zip_input" ],
+          "processPackages.customer.state" : ["state_input" ],
+          "processPackages.customer.had_insurance_declined" : ["insurance_declined" ],
+          "processPackages.customer.had_mental_impairments" : ["physical_impairment" ],
+          "processPackages.customer.had_license_revoked" : ["license_revoked" ],
+          "processPackages.customer.had_moving_violation" : ["moving_violation" ],
+          "processPackages.customer.had_accident" : ["accident" ],
+          "processPackages.policy.deductible" : ["deductible_input" ],
+          "processPackages.policy.total_coverage" : ["coverage_input" ],
+          "processPackages.policy.monthly_payment_float" : ["payment_input" ]
+        }
+      } ]
+    }, {
+      "xcpId" : "new_application_r_2_1_button2",
+      "defaultConfirmationPrompt" : "Are you sure you want to complete this task?",
+      "showConfirmation" : false,
+      "redirectStyle" : "application",
+      "showSuccessNotification" : true,
+      "actionType" : "xcp_complete_task",
+      "redirectUrl" : "application/relyins_welcome_page",
+      "actionModel" : "relyins_da_def_complete_new_application_manual_task",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "processPackages.customer.city",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_customer_city_1",
+          "events" : ["city_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_accident",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_customer_had_accident_1",
+          "events" : ["accident.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_insurance_declined",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_customer_had_insurance_declined_1",
+          "events" : ["insurance_declined.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_license_revoked",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_customer_had_license_revoked_1",
+          "events" : ["license_revoked.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_mental_impairments",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_customer_had_mental_impairments_1",
+          "events" : ["physical_impairment.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.had_moving_violation",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_customer_had_moving_violation_1",
+          "events" : ["moving_violation.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.state",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_customer_state_1",
+          "events" : ["state_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.street",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_customer_street_1",
+          "events" : ["street_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.zip",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_customer_zip_1",
+          "events" : ["zip_input.change" ]
+        }, {
+          "propertyId" : "processPackages.customer.id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_customer_id_1",
+          "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+        }, {
+          "propertyId" : "processPackages.policy.bodily_injury",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_policy_bodily_injury_1",
+          "events" : ["body_policy.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.collision",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_policy_collision_1",
+          "events" : ["collision_policy.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.comprehensive",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_policy_comprehensive_1",
+          "events" : ["comprehensive_policy.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.deductible",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_policy_deductible_1",
+          "events" : ["deductible_input.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.medical_payments",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_policy_medical_payments_1",
+          "events" : ["medical_policy.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.monthly_payment_float",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_policy_monthly_payment_float_1",
+          "events" : ["payment_input.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.property_damage",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_policy_property_damage_1",
+          "events" : ["property_policy.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.total_coverage",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_policy_total_coverage_1",
+          "events" : ["coverage_input.change" ]
+        }, {
+          "propertyId" : "processPackages.policy.id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_processPackages_policy_id_1",
+          "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+        }, {
+          "propertyId" : "id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_new_application_rev_new_application_r_2_1_id_1",
+          "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+        } ],
+        "mapping" : {
+          "processPackages.customer.city" : ["city_input" ],
+          "processPackages.customer.had_accident" : ["accident" ],
+          "processPackages.customer.had_insurance_declined" : ["insurance_declined" ],
+          "processPackages.customer.had_license_revoked" : ["license_revoked" ],
+          "processPackages.customer.had_mental_impairments" : ["physical_impairment" ],
+          "processPackages.customer.had_moving_violation" : ["moving_violation" ],
+          "processPackages.customer.state" : ["state_input" ],
+          "processPackages.customer.street" : ["street_input" ],
+          "processPackages.customer.zip" : ["zip_input" ],
+          "processPackages.policy.bodily_injury" : ["body_policy" ],
+          "processPackages.policy.collision" : ["collision_policy" ],
+          "processPackages.policy.comprehensive" : ["comprehensive_policy" ],
+          "processPackages.policy.deductible" : ["deductible_input" ],
+          "processPackages.policy.medical_payments" : ["medical_policy" ],
+          "processPackages.policy.monthly_payment_float" : ["payment_input" ],
+          "processPackages.policy.property_damage" : ["property_policy" ],
+          "processPackages.policy.total_coverage" : ["coverage_input" ]
+        }
+      } ]
+    } ]
+  }, {
+    "xcpId" : "column_box22",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox23",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5 5 5 5",
+      "items" : [ {
+        "xcpId" : "column_box3",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_new_application_rev_column_box3_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "black-box",
+        "items" : [ {
+          "xcpId" : "columnvbox",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "80",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "center",
+          "valign" : "middle",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "image",
+            "xtype" : "xcp_image",
+            "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Task.png",
+            "behavior" : false,
+            "width" : 48,
+            "height" : 48,
+            "isInternal" : true
+          } ]
+        }, {
+          "xcpId" : "columnvbox3",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "440",
+          "overflow_x" : "hidden",
+          "labelWidth" : 100,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "state",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "",
+            "valueType" : "HTML",
+            "isRepeating" : false,
+            "store" : "xcp.picklist.xcp_task_state",
+            "name" : "relyins_new_application_review_application@executionData.currenttask.task_subject",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ {
+                "propertyId" : "value",
+                "setterFunName" : "setValue",
+                "etype" : "relyins_new_application_rev_state_value_1",
+                "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+              } ]
+            } ]
+          }, {
+            "xcpId" : "received_date",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_rev_received_date_fieldLabel}",
+            "valueType" : "DATETIME",
+            "isRepeating" : false,
+            "format" : {
+              "xtype" : "xcp_datetime_formatter",
+              "dateFormat" : "short",
+              "timeFormat" : "short",
+              "dateStyle" : "datetime"
+            },
+            "name" : "relyins_new_application_review_application@executionData.currenttask.received_date"
+          }, {
+            "xcpId" : "performer",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_rev_performer_fieldLabel}",
+            "valueType" : "STRING",
+            "isRepeating" : false,
+            "name" : "relyins_new_application_review_application@executionData.currenttask.performer"
+          }, {
+            "xcpId" : "due_date",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "${_UI_Page_relyins_new_application_rev_due_date_fieldLabel}",
+            "valueType" : "DATETIME",
+            "isRepeating" : false,
+            "format" : {
+              "xtype" : "xcp_datetime_formatter",
+              "dateFormat" : "short",
+              "timeFormat" : "short",
+              "dateStyle" : "date"
+            },
+            "name" : "relyins_new_application_review_application@executionData.currenttask.due_date"
+          } ]
+        }, {
+          "xcpId" : "columnvbox5",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "20",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5"
+        }, {
+          "xcpId" : "columnhbox2",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "520",
+          "overflow_x" : "hidden",
+          "labelWidth" : 100,
+          "labelAlign" : "left",
+          "halign" : "center",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "instructions",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "",
+            "valueType" : "HTML",
+            "isRepeating" : false,
+            "name" : "relyins_new_application_review_application@executionData.currenttask.instructions",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ {
+                "propertyId" : "value",
+                "setterFunName" : "setValue",
+                "etype" : "relyins_new_application_rev_instructions_value_1",
+                "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box12",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "items" : [ {
+              "xcpId" : "columnvbox22",
+              "xtype" : "xcp_columnhbox",
+              "orientation" : "Horizontal",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "defaultMargins" : "5",
+              "labelAlign" : "left",
+              "halign" : "center",
+              "valign" : "middle",
+              "items" : [ {
+                "xcpId" : "button1",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_new_application_rev_button1_text}",
+                "actionInstanceId" : "da_def_update_new_application_manual_task_button1"
+              }, {
+                "xcpId" : "button2",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_new_application_rev_button2_text}",
+                "actionInstanceId" : "new_application_r_2_1_button2"
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "xcpId" : "tab_group",
+    "xtype" : "xcp_tab_group",
+    "tabPosition" : "top",
+    "minWidth" : 450,
+    "items" : [ {
+      "xcpId" : "tab3",
+      "xtype" : "xcp_tab",
+      "title" : "${_UI_Page_relyins_new_application_rev_tab3_title}",
+      "items" : [ {
+        "xcpId" : "column_box4",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "items" : [ {
+          "xcpId" : "columnvbox11",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "520",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box7",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "grey-box-no-header",
+            "items" : [ {
+              "xcpId" : "columnvbox37",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "width" : "120",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "rich_text1",
+                "xtype" : "xcp_rich_text",
+                "html" : "${_UI_Page_relyins_new_application_rev_rich_text1_html}"
+              }, {
+                "xcpId" : "image10",
+                "xtype" : "xcp_image",
+                "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Policy orange2.png",
+                "behavior" : false,
+                "width" : 100,
+                "height" : 100,
+                "isInternal" : true
+              } ]
+            }, {
+              "xcpId" : "columnvbox15",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "column_box5",
+                "xtype" : "xcp_column_box",
+                "collapsible" : false,
+                "collapsed" : false,
+                "collapseFirst" : true,
+                "border" : false,
+                "defaultMargins" : "5",
+                "layout" : "xcp_columnbox",
+                "cls" : "grey-box-no-header",
+                "items" : [ {
+                  "xcpId" : "columnvbox8",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 120,
+                  "labelAlign" : "left",
+                  "halign" : "left",
+                  "valign" : "top",
+                  "defaultMargins" : "5",
+                  "items" : [ {
+                    "xcpId" : "body_policy",
+                    "xtype" : "xcp_checkbox",
+                    "fieldLabel" : "${_UI_Page_relyins_new_application_rev_body_policy_fieldLabel}",
+                    "valueType" : "BOOLEAN",
+                    "name" : "relyins_new_application_review_application@processPackages.policy.bodily_injury"
+                  }, {
+                    "xcpId" : "property_policy",
+                    "xtype" : "xcp_checkbox",
+                    "fieldLabel" : "${_UI_Page_relyins_new_application_rev_property_policy_fieldLabel}",
+                    "valueType" : "BOOLEAN",
+                    "name" : "relyins_new_application_review_application@processPackages.policy.property_damage"
+                  }, {
+                    "xcpId" : "medical_policy",
+                    "xtype" : "xcp_checkbox",
+                    "fieldLabel" : "${_UI_Page_relyins_new_application_rev_medical_policy_fieldLabel}",
+                    "valueType" : "BOOLEAN",
+                    "name" : "relyins_new_application_review_application@processPackages.policy.medical_payments"
+                  } ]
+                }, {
+                  "xcpId" : "columnvbox9",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "left",
+                  "valign" : "top",
+                  "defaultMargins" : "5",
+                  "items" : [ {
+                    "xcpId" : "comprehensive_policy",
+                    "xtype" : "xcp_checkbox",
+                    "fieldLabel" : "${_UI_Page_relyins_new_application_rev_comprehensive_policy_fieldLabel}",
+                    "valueType" : "BOOLEAN",
+                    "name" : "relyins_new_application_review_application@processPackages.policy.comprehensive"
+                  }, {
+                    "xcpId" : "collision_policy",
+                    "xtype" : "xcp_checkbox",
+                    "fieldLabel" : "${_UI_Page_relyins_new_application_rev_collision_policy_fieldLabel}",
+                    "valueType" : "BOOLEAN",
+                    "name" : "relyins_new_application_review_application@processPackages.policy.collision"
+                  } ]
+                } ]
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box19",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "grey-box-no-header",
+            "items" : [ {
+              "xcpId" : "columnvbox38",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "width" : "120",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "rich_text6",
+                "xtype" : "xcp_rich_text",
+                "html" : "${_UI_Page_relyins_new_application_rev_rich_text6_html}"
+              }, {
+                "xcpId" : "image9",
+                "xtype" : "xcp_image",
+                "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Wheel.png",
+                "behavior" : false,
+                "width" : 100,
+                "height" : 100,
+                "isInternal" : true
+              } ]
+            }, {
+              "xcpId" : "columnvbox34",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "column_box20",
+                "xtype" : "xcp_column_box",
+                "collapsible" : false,
+                "collapsed" : false,
+                "collapseFirst" : true,
+                "border" : false,
+                "defaultMargins" : "5",
+                "layout" : "xcp_columnbox",
+                "items" : [ {
+                  "xcpId" : "columnvbox35",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "left",
+                  "valign" : "top",
+                  "defaultMargins" : "5",
+                  "items" : [ {
+                    "xcpId" : "insurance_declined",
+                    "xtype" : "xcp_checkbox",
+                    "fieldLabel" : "${_UI_Page_relyins_new_application_rev_insurance_declined_fieldLabel}",
+                    "valueType" : "BOOLEAN",
+                    "name" : "relyins_new_application_review_application@processPackages.customer.had_insurance_declined"
+                  }, {
+                    "xcpId" : "physical_impairment",
+                    "xtype" : "xcp_checkbox",
+                    "fieldLabel" : "${_UI_Page_relyins_new_application_rev_physical_impairment_fieldLabel}",
+                    "valueType" : "BOOLEAN",
+                    "name" : "relyins_new_application_review_application@processPackages.customer.had_mental_impairments"
+                  }, {
+                    "xcpId" : "license_revoked",
+                    "xtype" : "xcp_checkbox",
+                    "fieldLabel" : "${_UI_Page_relyins_new_application_rev_license_revoked_fieldLabel}",
+                    "valueType" : "BOOLEAN",
+                    "name" : "relyins_new_application_review_application@processPackages.customer.had_license_revoked"
+                  } ]
+                }, {
+                  "xcpId" : "columnvbox36",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "left",
+                  "valign" : "top",
+                  "defaultMargins" : "5",
+                  "items" : [ {
+                    "xcpId" : "moving_violation",
+                    "xtype" : "xcp_checkbox",
+                    "fieldLabel" : "${_UI_Page_relyins_new_application_rev_moving_violation_fieldLabel}",
+                    "valueType" : "BOOLEAN",
+                    "name" : "relyins_new_application_review_application@processPackages.customer.had_moving_violation"
+                  }, {
+                    "xcpId" : "accident",
+                    "xtype" : "xcp_checkbox",
+                    "fieldLabel" : "${_UI_Page_relyins_new_application_rev_accident_fieldLabel}",
+                    "valueType" : "BOOLEAN",
+                    "name" : "relyins_new_application_review_application@processPackages.customer.had_accident"
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        }, {
+          "xcpId" : "columnvbox12",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "20",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5"
+        }, {
+          "xcpId" : "columnvbox7",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "400",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "center",
+          "valign" : "middle",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box1",
+            "xtype" : "xcp_column_box",
+            "title" : "${_UI_Page_relyins_new_application_rev_column_box1_title}",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "black-box",
+            "items" : [ {
+              "xcpId" : "columnvbox6",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "width" : "150",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "center",
+              "valign" : "middle",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "rich_text",
+                "xtype" : "xcp_rich_text",
+                "html" : "${_UI_Page_relyins_new_application_rev_rich_text_html}",
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "hidden",
+                    "setterFunName" : "setHidden",
+                    "etype" : "relyins_new_application_rev_rich_text_hidden_1",
+                    "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+                  } ]
+                } ]
+              }, {
+                "xcpId" : "value_display4",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "",
+                "valueType" : "HTML",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processPackages.customer.risk",
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "hidden",
+                    "setterFunName" : "setHidden",
+                    "etype" : "relyins_new_application_rev_value_display4_hidden_1",
+                    "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+                  }, {
+                    "propertyId" : "value",
+                    "setterFunName" : "setValue",
+                    "etype" : "relyins_new_application_rev_value_display4_value_1",
+                    "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+                  } ]
+                } ]
+              } ]
+            }, {
+              "xcpId" : "columnvbox10",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "center",
+              "valign" : "middle",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "image4",
+                "xtype" : "xcp_image",
+                "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Greenplum logo white.png",
+                "behavior" : false,
+                "width" : 105,
+                "height" : 65,
+                "isInternal" : true
+              }, {
+                "xcpId" : "button",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_new_application_rev_button_text}",
+                "actionInstanceId" : "da_def_invoke_stateless_processupdate_risk_assessm_initiate_button"
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box6",
+            "xtype" : "xcp_column_box",
+            "title" : "${_UI_Page_relyins_new_application_rev_column_box6_title}",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "black-box",
+            "items" : [ {
+              "xcpId" : "columnvbox13",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "width" : "150",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "center",
+              "valign" : "middle",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "image5",
+                "xtype" : "xcp_image",
+                "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Telematic.png",
+                "behavior" : false,
+                "width" : 128,
+                "height" : 128,
+                "isInternal" : true
+              } ]
+            }, {
+              "xcpId" : "columnvbox14",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 120,
+              "labelAlign" : "left",
+              "halign" : "center",
+              "valign" : "middle",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "rich_text2",
+                "xtype" : "xcp_rich_text",
+                "html" : "${_UI_Page_relyins_new_application_rev_rich_text2_html}"
+              }, {
+                "xcpId" : "button3",
+                "xtype" : "xcp_button",
+                "text" : "${_UI_Page_relyins_new_application_rev_button3_text}",
+                "action" : {
+                  "redirectStyle" : "current"
+                }
+              } ]
+            } ]
+          } ]
+        }, {
+          "xcpId" : "columnvbox39",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "20",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5"
+        }, {
+          "xcpId" : "columnvbox40",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "250",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box21",
+            "xtype" : "xcp_column_box",
+            "title" : "${_UI_Page_relyins_new_application_rev_column_box21_title}",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "black-box",
+            "items" : [ {
+              "xcpId" : "columnvbox41",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "top",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "deductible_input",
+                "xtype" : "xcp_number_input",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_deductible_input_fieldLabel}",
+                "allowDecimals" : false,
+                "hideTrigger" : true,
+                "keyNavEnabled" : false,
+                "mouseWheelEnabled" : false,
+                "autoStripChars" : true,
+                "hstretch" : true,
+                "valueType" : "INTEGER",
+                "name" : "relyins_new_application_review_application@processPackages.policy.deductible"
+              }, {
+                "xcpId" : "coverage_input",
+                "xtype" : "xcp_number_input",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_coverage_input_fieldLabel}",
+                "allowDecimals" : false,
+                "hideTrigger" : true,
+                "keyNavEnabled" : false,
+                "mouseWheelEnabled" : false,
+                "autoStripChars" : true,
+                "hstretch" : true,
+                "valueType" : "INTEGER",
+                "name" : "relyins_new_application_review_application@processPackages.policy.total_coverage"
+              }, {
+                "xcpId" : "payment_policy",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_payment_policy_fieldLabel}",
+                "valueType" : "HTML",
+                "isRepeating" : false,
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "value",
+                    "setterFunName" : "setValue",
+                    "etype" : "relyins_new_application_rev_payment_policy_value_1",
+                    "events" : ["payment_input.change" ]
+                  } ]
+                } ]
+              }, {
+                "xcpId" : "value_display28",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "",
+                "valueType" : "STRING",
+                "isRepeating" : false
+              } ]
+            } ]
+          }, {
+            "xcpId" : "column_box2",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ {
+                "propertyId" : "hidden",
+                "setterFunName" : "setHidden",
+                "etype" : "relyins_new_application_rev_column_box2_hidden_1"
+              } ]
+            } ],
+            "items" : [ {
+              "xcpId" : "columnvbox44",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "payment_input",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_payment_input_fieldLabel}",
+                "valueType" : "FLOAT",
+                "isRepeating" : false,
+                "format" : {
+                  "xtype" : "xcp_float_formatter",
+                  "decimalPrecision" : 2,
+                  "useThousandSeparator" : true,
+                  "separatorStyle" : "LOCALE",
+                  "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+                },
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "value",
+                    "setterFunName" : "setValue",
+                    "etype" : "relyins_new_application_rev_payment_input_value_1",
+                    "events" : ["body_policy.change","property_policy.change","medical_policy.change","comprehensive_policy.change","collision_policy.change","insurance_declined.change","physical_impairment.change","license_revoked.change","moving_violation.change","accident.change","coverage_input.change","deductible_input.change","relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "tab",
+      "xtype" : "xcp_tab",
+      "title" : "${_UI_Page_relyins_new_application_rev_tab_title}",
+      "items" : [ {
+        "xcpId" : "column_box8",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "items" : [ {
+          "xcpId" : "columnvbox2",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "520",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box",
+            "xtype" : "xcp_column_box",
+            "title" : "${_UI_Page_relyins_new_application_rev_column_box_title}",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "black-box",
+            "items" : [ {
+              "xcpId" : "columnvbox4",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "width" : "80",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "center",
+              "valign" : "middle",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "image3",
+                "xtype" : "xcp_image",
+                "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Customer_Orange.png",
+                "behavior" : false,
+                "width" : 48,
+                "height" : 48,
+                "isInternal" : true
+              } ]
+            }, {
+              "xcpId" : "columnvbox1",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 80,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "value_display",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processPackages.customer.customer_id"
+              }, {
+                "xcpId" : "value_display1",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display1_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processPackages.customer.first_name"
+              }, {
+                "xcpId" : "value_display2",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display2_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processPackages.customer.last_name"
+              }, {
+                "xcpId" : "value_display3",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display3_fieldLabel}",
+                "valueType" : "DATETIME",
+                "isRepeating" : false,
+                "format" : {
+                  "xtype" : "xcp_datetime_formatter",
+                  "dateFormat" : "short",
+                  "timeFormat" : "short",
+                  "dateStyle" : "date"
+                },
+                "name" : "relyins_new_application_review_application@processPackages.customer.birth_date"
+              } ]
+            } ]
+          }, {
+            "xcpId" : "value_display30",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "",
+            "valueType" : "STRING",
+            "isRepeating" : false
+          }, {
+            "xcpId" : "column_box9",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "grey-box-no-header",
+            "items" : [ {
+              "xcpId" : "columnvbox16",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "width" : "120",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "center",
+              "valign" : "middle",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "image6",
+                "xtype" : "xcp_image",
+                "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Map.png",
+                "behavior" : false,
+                "width" : 100,
+                "height" : 100,
+                "isInternal" : true
+              }, {
+                "xcpId" : "rich_text3",
+                "xtype" : "xcp_rich_text",
+                "html" : "${_UI_Page_relyins_new_application_rev_rich_text3_html}"
+              } ]
+            }, {
+              "xcpId" : "columnvbox17",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 120,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "street_input",
+                "xtype" : "xcp_text_input",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_street_input_fieldLabel}",
+                "hstretch" : true,
+                "valueType" : "STRING",
+                "name" : "relyins_new_application_review_application@processPackages.customer.street"
+              }, {
+                "xcpId" : "city_input",
+                "xtype" : "xcp_text_input",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_city_input_fieldLabel}",
+                "hstretch" : true,
+                "valueType" : "STRING",
+                "name" : "relyins_new_application_review_application@processPackages.customer.city"
+              }, {
+                "xcpId" : "zip_input",
+                "xtype" : "xcp_text_input",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_zip_input_fieldLabel}",
+                "hstretch" : true,
+                "valueType" : "STRING",
+                "name" : "relyins_new_application_review_application@processPackages.customer.zip"
+              }, {
+                "xcpId" : "state_input",
+                "xtype" : "xcp_text_input",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_state_input_fieldLabel}",
+                "hstretch" : true,
+                "valueType" : "STRING",
+                "name" : "relyins_new_application_review_application@processPackages.customer.state"
+              } ]
+            } ]
+          }, {
+            "xcpId" : "value_display29",
+            "xtype" : "xcp_value_display",
+            "fieldLabel" : "",
+            "valueType" : "STRING",
+            "isRepeating" : false
+          }, {
+            "xcpId" : "column_box10",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "grey-box-no-header",
+            "items" : [ {
+              "xcpId" : "columnvbox18",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "width" : "120",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "center",
+              "valign" : "middle",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "image7",
+                "xtype" : "xcp_image",
+                "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Profile.png",
+                "behavior" : false,
+                "width" : 100,
+                "height" : 100,
+                "isInternal" : true
+              }, {
+                "xcpId" : "rich_text4",
+                "xtype" : "xcp_rich_text",
+                "html" : "${_UI_Page_relyins_new_application_rev_rich_text4_html}"
+              } ]
+            }, {
+              "xcpId" : "columnvbox19",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 120,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "value_display11",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display11_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processPackages.customer.driver_license"
+              }, {
+                "xcpId" : "value_display9",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display9_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processPackages.customer.ssn"
+              }, {
+                "xcpId" : "value_display10",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display10_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processPackages.customer.phone"
+              }, {
+                "xcpId" : "value_display12",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display12_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processPackages.customer.email"
+              }, {
+                "xcpId" : "value_display13",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display13_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processPackages.customer.occupation"
+              } ]
+            } ]
+          } ]
+        }, {
+          "xcpId" : "columnvbox24",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "20",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5"
+        }, {
+          "xcpId" : "columnvbox42",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "650",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box13",
+            "xtype" : "xcp_column_box",
+            "title" : "${_UI_Page_relyins_new_application_rev_column_box13_title}",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "black-box",
+            "items" : [ {
+              "xcpId" : "columnvbox25",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 0,
+              "labelAlign" : "left",
+              "halign" : "center",
+              "valign" : "middle",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "value_display14",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "",
+                "valueType" : "HTML",
+                "isRepeating" : false,
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "value",
+                    "setterFunName" : "setValue",
+                    "etype" : "relyins_new_application_rev_value_display14_value_1",
+                    "events" : ["street_input.change","city_input.change","zip_input.change","state_input.change" ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "tab2",
+      "xtype" : "xcp_tab",
+      "title" : "${_UI_Page_relyins_new_application_rev_tab2_title}",
+      "items" : [ {
+        "xcpId" : "viewer",
+        "xtype" : "xcp_viewer",
+        "title" : "${_UI_Page_relyins_new_application_rev_viewer_title}",
+        "docName" : false,
+        "height" : 650,
+        "prn" : true,
+        "thm" : true,
+        "ann" : true,
+        "man" : true,
+        "mdc" : true,
+        "hstretch" : true,
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "objectId",
+            "setterFunName" : "setObjectId",
+            "etype" : "relyins_new_application_rev_viewer_objectId_1",
+            "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+          }, {
+            "propertyId" : "contentType",
+            "setterFunName" : "setContentType",
+            "etype" : "relyins_new_application_rev_viewer_contentType_1"
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "tab1",
+      "xtype" : "xcp_tab",
+      "title" : "${_UI_Page_relyins_new_application_rev_tab1_title}",
+      "items" : [ {
+        "xcpId" : "column_box14",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "items" : [ {
+          "xcpId" : "columnvbox26",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "520",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box17",
+            "xtype" : "xcp_column_box",
+            "title" : "${_UI_Page_relyins_new_application_rev_column_box17_title}",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "black-box",
+            "items" : [ {
+              "xcpId" : "columnvbox32",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "column_box11",
+                "xtype" : "xcp_column_box",
+                "title" : "${_UI_Page_relyins_new_application_rev_column_box11_title}",
+                "collapsible" : false,
+                "collapsed" : false,
+                "collapseFirst" : true,
+                "border" : false,
+                "defaultMargins" : "5",
+                "layout" : "xcp_columnbox",
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "hidden",
+                    "setterFunName" : "setHidden",
+                    "etype" : "relyins_new_application_rev_column_box11_hidden_1"
+                  } ]
+                } ],
+                "items" : [ {
+                  "xcpId" : "columnvbox20",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "left",
+                  "valign" : "top",
+                  "defaultMargins" : "5"
+                }, {
+                  "xcpId" : "columnvbox21",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "left",
+                  "valign" : "top",
+                  "defaultMargins" : "5"
+                } ]
+              }, {
+                "xcpId" : "column_box16",
+                "xtype" : "xcp_column_box",
+                "collapsible" : false,
+                "collapsed" : false,
+                "collapseFirst" : true,
+                "border" : false,
+                "defaultMargins" : "5",
+                "layout" : "xcp_columnbox",
+                "items" : [ {
+                  "xcpId" : "columnvbox30",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "width" : "90",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "center",
+                  "valign" : "middle",
+                  "defaultMargins" : "5",
+                  "items" : [ {
+                    "xcpId" : "image8",
+                    "xtype" : "xcp_image",
+                    "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Car.png",
+                    "behavior" : false,
+                    "width" : 80,
+                    "height" : 80,
+                    "isInternal" : true
+                  } ]
+                }, {
+                  "xcpId" : "columnvbox31",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "center",
+                  "valign" : "middle",
+                  "defaultMargins" : "5",
+                  "items" : [ {
+                    "xcpId" : "rich_text5",
+                    "xtype" : "xcp_rich_text",
+                    "html" : "${_UI_Page_relyins_new_application_rev_rich_text5_html}"
+                  } ]
+                } ]
+              }, {
+                "xcpId" : "value_display15",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display15_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processPackages.vehicle.make"
+              }, {
+                "xcpId" : "value_display16",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display16_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processPackages.vehicle.model"
+              }, {
+                "xcpId" : "value_display17",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display17_fieldLabel}",
+                "valueType" : "INTEGER",
+                "isRepeating" : false,
+                "format" : {
+                  "xtype" : "xcp_integer_formatter",
+                  "decimalPrecision" : 0,
+                  "useThousandSeparator" : false,
+                  "separatorStyle" : "LOCALE",
+                  "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+                },
+                "name" : "relyins_new_application_review_application@processPackages.vehicle.year"
+              }, {
+                "xcpId" : "value_display18",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display18_fieldLabel}",
+                "valueType" : "HTML",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processPackages.vehicle.rating"
+              } ]
+            } ]
+          } ]
+        }, {
+          "xcpId" : "columnvbox28",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "20",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5"
+        }, {
+          "xcpId" : "columnvbox27",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "300",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box15",
+            "xtype" : "xcp_column_box",
+            "title" : "${_UI_Page_relyins_new_application_rev_column_box15_title}",
+            "collapsible" : false,
+            "collapsed" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "cls" : "grey-box",
+            "items" : [ {
+              "xcpId" : "columnvbox29",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "column_box18",
+                "xtype" : "xcp_column_box",
+                "collapsible" : false,
+                "collapsed" : false,
+                "collapseFirst" : true,
+                "border" : false,
+                "defaultMargins" : "5",
+                "layout" : "xcp_columnbox",
+                "items" : [ {
+                  "xcpId" : "columnvbox33",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "center",
+                  "valign" : "middle",
+                  "defaultMargins" : "5",
+                  "items" : [ {
+                    "xcpId" : "value_display19",
+                    "xtype" : "xcp_value_display",
+                    "fieldLabel" : "",
+                    "valueType" : "HTML",
+                    "isRepeating" : false,
+                    "name" : "relyins_new_application_review_application@processPackages.vehicle.make",
+                    "plugins" : [ {
+                      "ptype" : "xcp_expression_properties",
+                      "expression" : [ {
+                        "propertyId" : "value",
+                        "setterFunName" : "setValue",
+                        "etype" : "relyins_new_application_rev_value_display19_value_1",
+                        "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+                      } ]
+                    } ]
+                  } ]
+                } ]
+              }, {
+                "xcpId" : "value_display20",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display20_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processPackages.vehicle.body_type"
+              }, {
+                "xcpId" : "value_display27",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display27_fieldLabel}",
+                "valueType" : "FLOAT",
+                "isRepeating" : false,
+                "format" : {
+                  "xtype" : "xcp_float_formatter",
+                  "decimalPrecision" : 2,
+                  "useThousandSeparator" : true,
+                  "separatorStyle" : "LOCALE",
+                  "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+                },
+                "name" : "relyins_new_application_review_application@processPackages.vehicle.msrp"
+              }, {
+                "xcpId" : "value_display26",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display26_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processVariables.vin"
+              }, {
+                "xcpId" : "value_display22",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display22_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "name" : "relyins_new_application_review_application@processVariables.license"
+              }, {
+                "xcpId" : "value_display21",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_value_display21_fieldLabel}",
+                "valueType" : "INTEGER",
+                "isRepeating" : false,
+                "format" : {
+                  "xtype" : "xcp_integer_formatter",
+                  "decimalPrecision" : 0,
+                  "useThousandSeparator" : true,
+                  "separatorStyle" : "LOCALE",
+                  "negativeNumberStyle" : "FORMAT_MINUS_SIGN_STYLE_NONE"
+                },
+                "name" : "relyins_new_application_review_application@processVariables.mileage"
+              }, {
+                "xcpId" : "new_yes",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_new_yes_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "hidden",
+                    "setterFunName" : "setHidden",
+                    "etype" : "relyins_new_application_rev_new_yes_hidden_1",
+                    "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+                  }, {
+                    "propertyId" : "value",
+                    "setterFunName" : "setValue",
+                    "etype" : "relyins_new_application_rev_new_yes_value_1"
+                  } ]
+                } ]
+              }, {
+                "xcpId" : "new_no",
+                "xtype" : "xcp_value_display",
+                "fieldLabel" : "${_UI_Page_relyins_new_application_rev_new_no_fieldLabel}",
+                "valueType" : "STRING",
+                "isRepeating" : false,
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "hidden",
+                    "setterFunName" : "setHidden",
+                    "etype" : "relyins_new_application_rev_new_no_hidden_1",
+                    "events" : ["relyins_new_application_review_application.change","relyins_new_application_review_application.load" ]
+                  }, {
+                    "propertyId" : "value",
+                    "setterFunName" : "setValue",
+                    "etype" : "relyins_new_application_rev_new_no_value_1"
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "childModelsToLoad" : [ "relyins_new_application_review_application.processPackages.customer", "relyins_new_application_review_application.processPackages.vehicle", "relyins_new_application_review_application.executionData.currenttask" ]
+}

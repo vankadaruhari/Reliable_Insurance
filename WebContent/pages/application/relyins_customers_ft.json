@@ -1,0 +1,228 @@
+{
+  "padding" : "0",
+  "border" : false,
+  "pageTitle" : "${_UI_Page_relyins_customers_ft_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "facets_customer",
+      "actionModel" : "relyins_facets_customer_outputs",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "q",
+          "setterFunName" : "setInputProperty",
+          "etype" : "relyins_customers_ft_facets_customer_q_1",
+          "events" : ["text_input.change" ]
+        } ],
+        "mapping" : {
+          "q" : ["text_input" ]
+        }
+      } ],
+      "pageSize" : 20,
+      "actionType" : "datasource",
+      "autoLoad" : true
+    } ]
+  }, {
+    "xcpId" : "column_box4",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox4",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "300",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "column_box3",
+        "xtype" : "xcp_column_box",
+        "title" : "${_UI_Page_relyins_customers_ft_column_box3_title}",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "black-box",
+        "items" : [ {
+          "xcpId" : "columnvbox5",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5"
+        }, {
+          "xcpId" : "columnvbox2",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "80",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "center",
+          "valign" : "middle",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "image",
+            "xtype" : "xcp_image",
+            "imageSource" : "urn:relyins:com.emc.xcp.artifact.resource.image:Artifacts/Resources/Customer_Search_Orange.png",
+            "behavior" : false,
+            "width" : 48,
+            "height" : 48,
+            "isInternal" : true
+          } ]
+        }, {
+          "xcpId" : "columnvbox3",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "center",
+          "valign" : "middle",
+          "defaultMargins" : "5"
+        } ]
+      } ]
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "cls" : "grey-box-no-header",
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "100%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "column_box1",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapsed" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "items" : [ {
+          "xcpId" : "columnvbox1",
+          "xtype" : "xcp_columnhbox",
+          "orientation" : "Horizontal",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "defaultMargins" : "5",
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "items" : [ {
+            "xcpId" : "text_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_Page_relyins_customers_ft_text_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          } ]
+        }, {
+          "xcpId" : "columnvbox6",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "button",
+            "xtype" : "xcp_button",
+            "text" : "${_UI_Page_relyins_customers_ft_button_text}",
+            "actionInstanceId" : "facets_customer"
+          } ]
+        } ]
+      }, {
+        "xcpId" : "results_list",
+        "xtype" : "xcp_results_list",
+        "typeName" : "relyins_customer",
+        "modelName" : "relyins_facets_customer_outputs",
+        "storeId" : "facets_customer",
+        "pageSize" : 20,
+        "facets" : [ "facet_city", "facet_vehicles_make", "facet_vehicles_model", "facet_risk", "facet_had_accident", "facet_had_insurance_decli", "facet_had_license_revoked", "facet_had_mental_impairme", "facet_had_moving_violatio", "facet_collision", "facet_comprehensive", "facet_medical_payments", "facet_property_damage", "facet_bodily_injury" ],
+        "facetLabels" : [ "City", "Vehicle Make", "Vehicle Model", "Risk assessment", "Had accident", "Had insurance declined", "Had license revoked", "Had impairments", "Had moving violation", "Covered for collision", "Covered for comprehensive", "Covered for medical payments", "Covered for property damage", "Covered for bodily injury" ],
+        "selectionModel" : false,
+        "columns" : [ {
+          "xcpId" : "results_list_page_link_column",
+          "xtype" : "xcp_results_list_page_link_column",
+          "text" : "${_UI_Page_relyins_customers_ft_results_list_page_link_column_text}",
+          "width" : 150,
+          "dataIndex" : "last_name",
+          "valueType" : "STRING",
+          "isRepeating" : false,
+          "sortable" : false,
+          "menuDisabled" : true
+        }, {
+          "xcpId" : "results_list_column",
+          "xtype" : "xcp_results_list_column",
+          "text" : "${_UI_Page_relyins_customers_ft_results_list_column_text}",
+          "width" : 150,
+          "dataIndex" : "first_name",
+          "valueType" : "STRING",
+          "isRepeating" : false,
+          "sortable" : false,
+          "menuDisabled" : true
+        }, {
+          "xcpId" : "results_list_column2",
+          "xtype" : "xcp_results_list_column",
+          "text" : "${_UI_Page_relyins_customers_ft_results_list_column2_text}",
+          "width" : 150,
+          "dataIndex" : "street",
+          "valueType" : "STRING",
+          "isRepeating" : false,
+          "sortable" : false,
+          "menuDisabled" : true
+        }, {
+          "xcpId" : "results_list_column4",
+          "xtype" : "xcp_results_list_column",
+          "text" : "${_UI_Page_relyins_customers_ft_results_list_column4_text}",
+          "width" : 150,
+          "dataIndex" : "city",
+          "valueType" : "STRING",
+          "isRepeating" : false,
+          "sortable" : false,
+          "menuDisabled" : true
+        }, {
+          "xcpId" : "results_list_column5",
+          "xtype" : "xcp_results_list_column",
+          "text" : "${_UI_Page_relyins_customers_ft_results_list_column5_text}",
+          "dataIndex" : "state",
+          "valueType" : "STRING",
+          "isRepeating" : false,
+          "sortable" : false,
+          "menuDisabled" : true
+        } ]
+      } ]
+    } ]
+  } ]
+}
