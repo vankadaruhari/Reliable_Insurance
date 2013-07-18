@@ -38,7 +38,7 @@ public class HomeController {
     this.sessionManagerProvider = sessionManagerProvider;
   }
 	/**
-	 * Simply selects the home view to render by returning its name.
+	 * Simply selects the home view to render by returning its na.
 	 */
 	@RequestMapping(value = "/hk", method = RequestMethod.GET)
 	public  @ResponseBody String home(Locale locale, Model model) {
